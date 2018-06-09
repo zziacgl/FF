@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDMyBankViewController">
+            <connections>
+                <outlet property="bankLogoImage" destination="Yaz-qu-aVv" id="yvX-MY-86k"/>
+                <outlet property="bankNameLabel" destination="8MA-6E-6WY" id="SXb-eZ-MMN"/>
+                <outlet property="bankNumberLabel" destination="jQy-D3-Zuf" id="aOf-bx-3Ib"/>
+                <outlet property="bankUserLabel" destination="Lhw-Sb-tan" id="VqX-dI-9io"/>
+                <outlet property="removeBankBtn" destination="QGL-Hz-pNb" id="VgH-6F-0Ca"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sq-2S-OuY">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="银行logo_民生.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yaz-qu-aVv">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="JVj-rU-0yc"/>
+                                <constraint firstAttribute="width" constant="30" id="qFP-LO-Boe"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="民生银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MA-6E-6WY">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="hXQ-ch-R9L"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQy-D3-Zuf">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="knQ-r0-MS1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhw-Sb-tan">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="BdY-w6-z46"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.89832019805908203" green="0.70747751374892731" blue="0.27738610877813785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Yaz-qu-aVv" firstAttribute="leading" secondItem="2Sq-2S-OuY" secondAttribute="leading" constant="15" id="3jR-et-tAU"/>
+                        <constraint firstAttribute="height" constant="160" id="40J-YX-e30"/>
+                        <constraint firstAttribute="trailing" secondItem="jQy-D3-Zuf" secondAttribute="trailing" constant="15" id="Fel-Uc-jPN"/>
+                        <constraint firstItem="Lhw-Sb-tan" firstAttribute="leading" secondItem="2Sq-2S-OuY" secondAttribute="leading" constant="15" id="IsA-eP-8R3"/>
+                        <constraint firstItem="8MA-6E-6WY" firstAttribute="top" secondItem="2Sq-2S-OuY" secondAttribute="top" constant="15" id="Mo1-DN-Chq"/>
+                        <constraint firstAttribute="trailing" secondItem="8MA-6E-6WY" secondAttribute="trailing" constant="20" id="WP1-5c-ciV"/>
+                        <constraint firstItem="jQy-D3-Zuf" firstAttribute="top" secondItem="Yaz-qu-aVv" secondAttribute="bottom" constant="10" id="br5-Gp-qNR"/>
+                        <constraint firstItem="8MA-6E-6WY" firstAttribute="leading" secondItem="Yaz-qu-aVv" secondAttribute="trailing" constant="10" id="dFx-2e-b2f"/>
+                        <constraint firstItem="Yaz-qu-aVv" firstAttribute="top" secondItem="2Sq-2S-OuY" secondAttribute="top" constant="15" id="db0-qP-U63"/>
+                        <constraint firstItem="jQy-D3-Zuf" firstAttribute="leading" secondItem="2Sq-2S-OuY" secondAttribute="leading" constant="15" id="iQg-QL-YgT"/>
+                        <constraint firstAttribute="bottom" secondItem="Lhw-Sb-tan" secondAttribute="bottom" constant="20" id="oW4-y8-dgi"/>
+                        <constraint firstAttribute="trailing" secondItem="Lhw-Sb-tan" secondAttribute="trailing" constant="15" id="wxB-Ed-YMZ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGL-Hz-pNb">
+                    <color key="backgroundColor" red="0.99215686274509807" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="JL3-LW-3tc"/>
+                    </constraints>
+                    <state key="normal" title="解除绑定">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="QGL-Hz-pNb" firstAttribute="top" secondItem="2Sq-2S-OuY" secondAttribute="bottom" constant="40" id="ASn-lW-zqr"/>
+                <constraint firstAttribute="trailing" secondItem="QGL-Hz-pNb" secondAttribute="trailing" constant="30" id="AUt-K5-NgQ"/>
+                <constraint firstItem="QGL-Hz-pNb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Aei-ci-2ig"/>
+                <constraint firstAttribute="trailing" secondItem="2Sq-2S-OuY" secondAttribute="trailing" constant="20" id="BWc-c7-GHg"/>
+                <constraint firstItem="2Sq-2S-OuY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Dty-oT-xci"/>
+                <constraint firstItem="2Sq-2S-OuY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="JdB-J6-9mN"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="149" y="42"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="银行logo_民生.png" width="50" height="50"/>
+    </resources>
+</document>

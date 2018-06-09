@@ -1,0 +1,24 @@
+//
+//  DYClassTableViewCell.m
+//  NewDeayou
+//
+//  Created by 郭嘉 on 15/10/19.
+//  Copyright © 2015年 wayne. All rights reserved.
+//
+
+#import "DYClassTableViewCell.h"
+
+@implementation DYClassTableViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+    
+}
+
+@end

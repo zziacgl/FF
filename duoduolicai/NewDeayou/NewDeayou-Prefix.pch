@@ -1,0 +1,287 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+
+//版本:php-资金池
+
+
+//标类型(信用标,净值标,天标,担保标,抵押标,秒标,流转标)
+typedef enum
+{
+    InvestBidTypeCredit   =1  ,
+    InvestBidTypeNetWorth =2  ,
+    InvestBidTypeGod      =3  ,
+    InvestBidTypeAssure   =4  ,
+    InvestBidTypePledge   =5  ,
+    InvestBidTypeSecond   =6  ,
+    InvestBidTypeFlow     =7
+    
+    
+}InvestBidType;
+
+#define kMainScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define kMainScreenWidth  ([UIScreen mainScreen].bounds.size.width)
+
+#define kScreenIphone6plus      (kMainScreenHeight==736&&kMainScreenWidth==414)
+#define kScreenIphone6          (kMainScreenHeight==667&&kMainScreenWidth==375)
+#define kScreenIphone5and5s     (kMainScreenHeight==568&&kMainScreenWidth==320)
+#define kScreenIphone4s         (kMainScreenHeight==480&&kMainScreenWidth==320)
+
+#define iOS10 ([[UIDevice currentDevice].systemVersion doubleValue] >= 10.0)
+//宏定义，判断是否是 iOS10.0以上
+//列表类型
+typedef enum
+{
+    ListTypeInvest =0,       //投资列表
+    ListTypeBondTransfer,    //债权转让
+    
+}ListType;
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+#define kCOLOR_R_G_B_A(r,g,b,a) [UIColor colorWithRed:r/255.0f  green:g/255.0f  blue:b/255.0f alpha:a]
+#define kFont(size) [UIFont systemFontOfSize:size]
+
+//#define kMainColor kCOLOR_R_G_B_A(235, 83, 83, 1)//导航条颜色
+#define kMainColor2  LZColorFromHex(0x926d00)
+
+#define kMainTabBarTitleColor kCOLOR_R_G_B_A(187, 187, 187, 1)
+
+#define kMainColorHighlight kCOLOR_R_G_B_A(26, 180, 245, 1)
+#define kOrangeColorNormal kCOLOR_R_G_B_A(251, 153, 59, 1)
+#define kOrangeColorHighlighted kCOLOR_R_G_B_A(241, 143, 49, 1)
+#define kBackgroundColor  kCOLOR_R_G_B_A(242, 242, 242, 1)
+//#define kBackColor kCOLOR_R_G_B_A(245, 245, 245, 1)
+#define kColorWithHex(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 \
+blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
+
+#define kMainBgColor kCOLOR_R_G_B_A(239, 240, 245, 1)
+// Hex色值
+#define LZColorFromHex(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
+#define kMainColor  LZColorFromHex(0xff5b04)//导航条颜色
+#define kBackColor  LZColorFromHex(0xf4f7f7)//背景颜色
+#define kThemeColor LZColorFromHex(0xf9fafb)//主题颜色
+#define kTextColor  LZColorFromHex(0x926d00)//字体颜色
+#define kNormalColor  LZColorFromHex(0xf0eddb)//浅色字体颜色
+#define kBtnColor  LZColorFromHex(0xff5b04)//浅色字体颜色
+
+#define kShallowColor   LZColorFromHex(0xfb9903)//浅色渐变颜色
+#define kDeepColor   LZColorFromHex(0xf76405)//深色渐变颜色
+
+#define myLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+
+
+
+//银行id
+#define bank_ICBC   3 //中国工商银行
+#define bank_ABC    4 //中国农业银行
+#define bank_CCB    1 //中国建设银行
+#define bank_CMBC   11//民生银行
+#define bank_BOC    2 //中国银行
+#define bank_IBCL   6 //兴业银行
+#define bank_CEB    10//光大银行
+#define bank_CITIC  14//中信银行
+#define bank_PAB    7 //平安银行
+#define bank_Post   8 //中国邮政
+#define bank_BOCOM  13//交通银行
+#define kMianPhone   @"400-000-2883"
+#define kefu_phone_title @"400-000-2883"
+
+#define kefu_phone @"tel://4000002883"
+
+#define kefu_phone_title2 @"400-000-2883"
+
+#define kefu_phone2 @"tel://400-000-2883"
+
+#define kScreenSize [[UIScreen mainScreen] bounds].size
+#define kLoginSuccessNotification @"LoginSuccessNotification"
+#define kRepaymentAllNotification @"RepaymentAllNotification"
+#define kAPPName  @"丰丰金融"
+
+//最低充值金额
+#define kLastRechargeAmount             50
+
+//最低提现金额
+#define KLastWithdrawalAmount           50
+
+
+//加密中的帝友key
+//#define kDiyou_key_huifu @"IG5l%i7FEiy@UI%%nJ0R@k9c8g6CHw9Z"
+#define kDiyou_key_basic    @"74I7@1LVcIH@Q7I5eH$e3Pcg%I#$8K1q"/*多多密匙*/  //@"1t@J7IDx8%QHO%c$S%@42x6fK#qPY!w@"/*帝友密匙*/
+#define kDiyou_key  kDiyou_key_basic
+
+
+
+//加密中的帝友project
+#define kDiyou_project_huifu @"diyou_trust_chinapnr"
+#define kDiyou_project_basic @"csv4zz"
+#define kDiyou_project_diyou @"diyou"
+
+
+//加密中的帝友http
+
+#define  kDiyou_http_diyou_csv4zz      @"csv4zz.phone.diyou.cc"
+#define  kDiyou_http_diyou_v4          @"v4.diyou.cc"
+#define  kDiyou_http_xianyang          @"devxianyang.diyou.cc"
+#define  kDiyou_http_diyou_ysv4zz      @"devkuaichedai.diyou.cc"
+
+#define kAppID @""
+
+
+#define   kDiyou_http    kDiyou_http_diyou_ysv4zz
+
+
+
+
+#define kDiyou_project kDiyou_project_diyou
+
+
+//上传图片的地址\key\主链接
+
+// 新功能测试
+
+#define kNewTestURL                    @"http://csv4zz.diyou.cc/dyserver/phone.php?"
+
+
+//测试站
+#define CSV4ZZ_kUPIMAGE                @"http://www.51duoduo.com/index.php?upload" // @"http://devkuaichedai.diyou.cc/index.php?upload"
+#define CSV4ZZ_kDiyou_key_picture      @"74I7@1LVcIH@Q7I5eH$e3Pcg%I#$8K1q"// @"@$@!#4123rqeOTFjOTE2YzUxODJladf"//     /*上传图片key*/
+
+//#define CSV4ZZ_Url                      @"http://120.78.153.24:8888/dyserver/mobile.php"//测试地址
+
+#define CSV4ZZ_Url                      @"https://www.fengfengjinrong.com/dyserver/mobile.php"//丰丰正式库
+
+#define ffwebURL                      @"https://www.fengfengjinrong.com"//丰丰H5正式库
+//#define ffwebURL                      @"http://120.78.153.24:8888"//丰丰H5测试库
+
+
+
+#define CSV4ZZ_PeopleInfo               @"http://devkuaichedai.diyou.cc/?"
+
+
+#define chongzhi  @"https://www.fengfengjinrong.com/action/recharge/mobilePay?money=100&login_key="
+
+#define pcURL @"https://www.fengfengjinrong.com"//库
+
+//#define pcURL_XW @"https://www.51duoduo.com/libs/xwyh/index.php"//新网正式库
+#define pcURL_XW @"http://120.24.220.186:8888/libs/xwyh"//新网正式库
+
+
+//v4站
+#define v4_kUPIMAGE                     @"http://v4.diyou.cc/index.php?upload"
+#define v4_kDiyou_key_picture           @"IG5l%i7FEiy@UI%%nJ0R@k9c8g6CHw9Z"
+#define v4_Url                          @"http://v4.diyou.cc/dyserver/phone.php?"
+#define v4_PeopleInfo                   @"http://v4.diyou.cc/?"
+
+
+//演示站
+
+#define kURLYS                          @"http://www.diyou.cc/dyserver/phone.php?"
+
+
+#define kHostRuiYi                      @"http://devruiyi.diyou.cc/dyserver/phone.php?"
+
+//ys
+
+#define YSV4ZZ_kUPIMAGE                 @"http://www.diyou.cc/index.php?upload"
+#define YSV4ZZ_kDiyou_key_picture       @"@$@!#4123rqeOTFjOTE2YzUxODJladf"
+#define YSV4ZZ_Url                      @"http://www.diyou.cc/dyserver/phone.php?"
+#define YSV4ZZ_PeopleInfo               @"http://www.diyou.cc/?"
+
+#define downLoadios   @"https://itunes.apple.com/us/app/duo-duo-li-cai-guo-you-qi/id1041863287?l=zh&ls=1&mt=8"
+
+
+#define kUPIMAGE                        CSV4ZZ_kUPIMAGE                         //上传图片地址
+#define kDiyou_key_picture              CSV4ZZ_kDiyou_key_picture               //上传图片的key
+#define kHostName                       CSV4ZZ_Url                              //主链接
+#define kPeopleInfo                     CSV4ZZ_PeopleInfo                       //基本信息
+
+
+
+
+#define IOS7   [[UIDevice currentDevice].systemVersion floatValue]>=7.0?YES:NO
+#define IOS9   [[UIDevice currentDevice].systemVersion floatValue]>=9.0?YES:NO
+
+#define kHostFHName @""
+
+#ifdef DEBUG
+# define DLog(fmt, ...) NSLog((@"[函数名:%s]" "[行号:%d]" fmt),__FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define DLog(...);
+#endif
+
+#define ShowAlertss(title,msg) [[[UIAlertView alloc]initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil, nil] show];
+
+#ifndef youtuiShare_Header_h
+#define youtuiShare_Header_h
+
+#define UmengAppkey @"5a32401a8f4a9d1159000232"
+//56259a1de0f55aba49002c18
+//友推AppKey
+//#define YOUTUIAPPKEY @"884601"
+#define YOUTUIAPPKEY @"516291"
+#define AppUserID [YouTuiSDK GetImei]  //开发者需要自己定义识别用户的ID
+
+
+//微信
+#define WXAppKey @"wxd6a1ca4b18632698"
+#define WXAppSecret @"ad43767c9e05c3ad6f79848797f9d2bf"
+
+//QQ
+#define QQAppID @"1106567759"
+#define QQAppKey @"ZFYPaLlnB1MF4LYx"
+#define QQURI @"https://www.fengfengjinrong.com"
+
+#define RENNAUTH @"RENNAUTH"
+
+#endif
+
+
+
+#import "UIImageView+WebCache.h"
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+Add.h"
+#import "MJExtension.h"
+#import "DYUtils.h"
+#import "DYUser.h"
+#import "DYNetWork.h"
+#import "DYNetWork2.h"
+#import "DYOrderedDictionary.h"
+#import "LeafNotification.h"
+#import "DYLoginVC.h"
+#import "DDNetWoringTool.h"
+#import "UIViewExt.h"
+#import "MJRefresh.h"
+#import "UIView+Extent.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "HeXColor.h"
+#import "ActivityDetailViewController.h"
+#import "DYBaseVC.h"
+#import "SCHeader.h"
+#import "UIView+Ext.h"
+#import "NoDataView.h"
+#import <UMSocialCore/UMSocialCore.h>
+#import <UShareUI/UShareUI.h>
+#import "UMMobClick/MobClick.h"
+
+
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LLDDRepayHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ii0-36-wpq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月应收原标本：900.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhs-OT-lOd">
+                            <rect key="frame" x="17" y="8" width="358" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="taU-9a-W8v"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计原标总收益：120000.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w16-AH-UKP">
+                            <rect key="frame" x="17" y="67" width="358" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="9jS-bT-uRX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预计卡劵或额外总收益：120000.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-PX-zR4">
+                            <rect key="frame" x="17" y="88" width="358" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="fyt-FX-53q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月应收卡劵或额外利息：900.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMa-W8-UvT">
+                            <rect key="frame" x="17" y="29" width="358" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="EhE-Ps-chS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="w16-AH-UKP" firstAttribute="leading" secondItem="ii0-36-wpq" secondAttribute="leading" constant="17" id="1tt-FQ-66F"/>
+                        <constraint firstAttribute="trailing" secondItem="zhs-OT-lOd" secondAttribute="trailing" id="7es-8u-rkZ"/>
+                        <constraint firstItem="OMa-W8-UvT" firstAttribute="leading" secondItem="ii0-36-wpq" secondAttribute="leading" constant="17" id="GdJ-Ou-PhY"/>
+                        <constraint firstAttribute="trailing" secondItem="fxw-PX-zR4" secondAttribute="trailing" id="IS0-cb-2Jp"/>
+                        <constraint firstItem="w16-AH-UKP" firstAttribute="top" secondItem="OMa-W8-UvT" secondAttribute="bottom" constant="17" id="SL8-zz-abY"/>
+                        <constraint firstItem="zhs-OT-lOd" firstAttribute="top" secondItem="ii0-36-wpq" secondAttribute="top" constant="8" id="aK5-d1-SR4"/>
+                        <constraint firstAttribute="trailing" secondItem="w16-AH-UKP" secondAttribute="trailing" id="mau-NI-pgM"/>
+                        <constraint firstAttribute="height" constant="122" id="q52-5N-rRV"/>
+                        <constraint firstItem="OMa-W8-UvT" firstAttribute="top" secondItem="zhs-OT-lOd" secondAttribute="bottom" id="qLX-I2-7ZM"/>
+                        <constraint firstItem="fxw-PX-zR4" firstAttribute="top" secondItem="w16-AH-UKP" secondAttribute="bottom" id="s1T-ez-6EW"/>
+                        <constraint firstAttribute="trailing" secondItem="OMa-W8-UvT" secondAttribute="trailing" id="uxp-T3-kRo"/>
+                        <constraint firstItem="fxw-PX-zR4" firstAttribute="leading" secondItem="ii0-36-wpq" secondAttribute="leading" constant="17" id="wDg-px-bpO"/>
+                        <constraint firstItem="zhs-OT-lOd" firstAttribute="leading" secondItem="ii0-36-wpq" secondAttribute="leading" constant="17" id="zFn-d4-45O"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ii0-36-wpq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Xd-HW-oTh"/>
+                <constraint firstAttribute="trailing" secondItem="ii0-36-wpq" secondAttribute="trailing" id="Nol-Es-5dY"/>
+                <constraint firstItem="ii0-36-wpq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yeX-9D-aDP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="benKJ" destination="OMa-W8-UvT" id="PCe-vT-pjw"/>
+                <outlet property="presentMonth" destination="zhs-OT-lOd" id="bhk-qr-Q6D"/>
+                <outlet property="total" destination="w16-AH-UKP" id="yq1-jM-abP"/>
+                <outlet property="yujiKJ" destination="fxw-PX-zR4" id="kIi-qn-bzT"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-162"/>
+        </view>
+    </objects>
+</document>

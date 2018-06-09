@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="KGk-i7-Jjw" customClass="DYRealtimeFianacailHeadTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总资产（元）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="549-ny-sHQ">
+                        <rect key="frame" x="17" y="19" width="150" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZJ-wf-lfS">
+                        <rect key="frame" x="203" y="19" width="99" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="99" id="LjH-Bt-7IH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="投标记录&gt;&gt;">
+                            <color key="titleColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8i-HX-JFm">
+                        <rect key="frame" x="17" y="56" width="295" height="63"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="K8i-HX-JFm" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="8S9-Xu-IcL"/>
+                    <constraint firstAttribute="trailing" secondItem="MZJ-wf-lfS" secondAttribute="trailing" constant="18" id="8a8-80-xGK"/>
+                    <constraint firstItem="549-ny-sHQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="EIn-su-FGx"/>
+                    <constraint firstItem="549-ny-sHQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="Ko2-Xw-wt7"/>
+                    <constraint firstItem="MZJ-wf-lfS" firstAttribute="leading" secondItem="549-ny-sHQ" secondAttribute="trailing" constant="36" id="bKv-TQ-5bk"/>
+                    <constraint firstItem="K8i-HX-JFm" firstAttribute="top" secondItem="MZJ-wf-lfS" secondAttribute="bottom" constant="4" id="dFJ-uZ-gH0"/>
+                    <constraint firstItem="MZJ-wf-lfS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="k3Q-FO-vVH"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="K8i-HX-JFm" secondAttribute="bottom" constant="2.5" id="mkE-sd-BDx"/>
+                    <constraint firstItem="K8i-HX-JFm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="9" id="x0T-Kz-pUX"/>
+                    <constraint firstItem="K8i-HX-JFm" firstAttribute="top" secondItem="549-ny-sHQ" secondAttribute="bottom" constant="7" id="ys0-Oc-r78"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="InvestRecord" destination="MZJ-wf-lfS" id="wc9-D4-qTI"/>
+                <outlet property="TotalM" destination="K8i-HX-JFm" id="8CR-Hc-cUr"/>
+            </connections>
+            <point key="canvasLocation" x="310" y="359"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+<style>
+  button{margin:0;padding:0;width:50%;height:50px;display:block;margin:40px auto;}
+</style>
+</head>
+
+<body>
+<button onClick="gotoActivity();">打我啊，你打我啊</button>
+<script>
+    function gotoActivity(){
+		var ua = navigator.userAgent;
+		if(ua.match(/iPhone|iPod/i) != null){
+			window.location.href = "activity://gotoActivity";
+            
+		}
+		else if(ua.match(/Android/i) != null){
+			myObj.shareFromJs();
+		}
+	}
+</script>
+</body>
+</html>

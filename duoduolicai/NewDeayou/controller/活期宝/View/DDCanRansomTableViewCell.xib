@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="DDCanRansomTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8b-Pg-Wv8">
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活期宝999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oly-WK-y8A">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="SPk-NW-BD7"/>
+                            <constraint firstAttribute="height" constant="20" id="kRL-bT-zTi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资金额：200000元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odb-90-YKG">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="VXW-4M-aKz"/>
+                            <constraint firstAttribute="width" constant="200" id="eVJ-89-JBw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资时间：2016/11/02-2016/12/02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ca-i3-Wvo">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Lr8-qB-4tc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4F-Xm-ySe">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="ccN-Wy-ydn"/>
+                            <constraint firstAttribute="width" constant="70" id="sQC-cO-RGX"/>
+                        </constraints>
+                        <state key="normal" title="退出">
+                            <color key="titleColor" red="0.99215686270000003" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderbackgroundColor">
+                                <color key="value" red="0.99215686274509807" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="7Ca-i3-Wvo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="2RC-Wd-8eU"/>
+                    <constraint firstAttribute="trailing" secondItem="o8b-Pg-Wv8" secondAttribute="trailing" constant="5" id="CLI-E4-euF"/>
+                    <constraint firstItem="i4F-Xm-ySe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="H7y-pU-toM"/>
+                    <constraint firstAttribute="trailing" secondItem="7Ca-i3-Wvo" secondAttribute="trailing" id="Hil-hX-IPu"/>
+                    <constraint firstItem="Oly-WK-y8A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Tul-lN-6eW"/>
+                    <constraint firstItem="Oly-WK-y8A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ec6-f4-raU"/>
+                    <constraint firstItem="7Ca-i3-Wvo" firstAttribute="top" secondItem="odb-90-YKG" secondAttribute="bottom" constant="2" id="edY-8b-53C"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="i4F-Xm-ySe" secondAttribute="trailing" constant="10" id="fYN-g7-Up0"/>
+                    <constraint firstItem="odb-90-YKG" firstAttribute="top" secondItem="Oly-WK-y8A" secondAttribute="bottom" constant="5" id="oye-QX-2gM"/>
+                    <constraint firstItem="odb-90-YKG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="sOR-sb-nXb"/>
+                    <constraint firstItem="o8b-Pg-Wv8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="u6J-ck-35U"/>
+                    <constraint firstAttribute="bottom" secondItem="o8b-Pg-Wv8" secondAttribute="bottom" constant="2" id="uqc-EP-FPP"/>
+                    <constraint firstItem="o8b-Pg-Wv8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="yjc-9t-pcH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="moneyLabel" destination="odb-90-YKG" id="iHw-dP-sub"/>
+                <outlet property="nameLabel" destination="Oly-WK-y8A" id="pmC-ba-7dT"/>
+                <outlet property="ransomBtn" destination="i4F-Xm-ySe" id="lpU-yF-LpP"/>
+                <outlet property="timeLabel" destination="7Ca-i3-Wvo" id="Gum-Ht-0SL"/>
+            </connections>
+            <point key="canvasLocation" x="-15" y="-51"/>
+        </tableViewCell>
+    </objects>
+</document>

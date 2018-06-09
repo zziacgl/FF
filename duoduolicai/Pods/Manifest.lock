@@ -1,0 +1,20 @@
+PODS:
+  - DDPopView (1.1.1)
+  - SVProgressHUD (2.1.2)
+  - Zhugeio (3.1.0):
+    - Zhugeio/Zhugeio (= 3.1.0)
+  - Zhugeio/Zhugeio (3.1.0)
+
+DEPENDENCIES:
+  - DDPopView
+  - SVProgressHUD
+  - Zhugeio
+
+SPEC CHECKSUMS:
+  DDPopView: 2a8d69b46ca451258864955bab8fb0475f13ee8c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  Zhugeio: 57235cb1a56b2c5e88028cde52807aa5ae26021e
+
+PODFILE CHECKSUM: f1c1219a4d2599537b5c6174c78b7273c5e7efa7
+
+COCOAPODS: 1.1.1

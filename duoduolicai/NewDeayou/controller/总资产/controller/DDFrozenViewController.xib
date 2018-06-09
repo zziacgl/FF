@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDFrozenViewController">
+            <connections>
+                <outlet property="frozenMoneyLabel" destination="4Dp-U4-KtC" id="cq5-lm-HG9"/>
+                <outlet property="topView" destination="RhM-sb-onV" id="HnZ-Nt-I9h"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhM-sb-onV">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="888.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dp-U4-KtC">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="1HY-2w-MaK"/>
+                        <constraint firstAttribute="trailing" secondItem="4Dp-U4-KtC" secondAttribute="trailing" id="27D-Sf-Wwa"/>
+                        <constraint firstItem="4Dp-U4-KtC" firstAttribute="top" secondItem="RhM-sb-onV" secondAttribute="top" id="Gkv-GV-nSy"/>
+                        <constraint firstItem="4Dp-U4-KtC" firstAttribute="leading" secondItem="RhM-sb-onV" secondAttribute="leading" id="fuo-Mh-Gkd"/>
+                        <constraint firstAttribute="bottom" secondItem="4Dp-U4-KtC" secondAttribute="bottom" id="hAg-iZ-rcL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.93925005829999997" green="0.93948134940000005" blue="0.94387588069999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="RhM-sb-onV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5SY-pS-LuR"/>
+                <constraint firstItem="RhM-sb-onV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="H6h-qO-IfH"/>
+                <constraint firstAttribute="trailing" secondItem="RhM-sb-onV" secondAttribute="trailing" id="dSx-w8-Z5x"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

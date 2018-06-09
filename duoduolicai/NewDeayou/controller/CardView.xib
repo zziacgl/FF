@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CardView">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="524"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunbo_default" translatesAutoresizingMaskIntoConstraints="NO" id="aAH-Dm-GUp">
+                    <rect key="frame" x="0.0" y="0.0" width="374" height="141"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="aAH-Dm-GUp" secondAttribute="height" multiplier="640:241" id="RkM-RE-KMD"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年12月50日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPW-24-7ND">
+                    <rect key="frame" x="16" y="483" width="102" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="BG3-If-o5x"/>
+                        <constraint firstAttribute="height" constant="21" id="lb3-sL-QMd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阅读详情&gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-Gs-pGh">
+                    <rect key="frame" x="287" y="483" width="71" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Ziq-Dk-ABj"/>
+                        <constraint firstAttribute="width" constant="71" id="aRs-w9-0XM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机系统公告" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Y3-0W-pck">
+                    <rect key="frame" x="16" y="171" width="342" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="C3R-1r-pkV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们将于今晚8点开始升级3.7版本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yl-JX-fZu">
+                    <rect key="frame" x="16" y="200" width="342" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="gzF-zs-Fcd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MPW-24-7ND" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="0SY-SX-aj4"/>
+                <constraint firstAttribute="trailing" secondItem="QXS-Gs-pGh" secondAttribute="trailing" constant="16" id="1DA-FP-ext"/>
+                <constraint firstAttribute="bottom" secondItem="QXS-Gs-pGh" secondAttribute="bottom" constant="20" id="DLp-hU-yPn"/>
+                <constraint firstItem="1Y3-0W-pck" firstAttribute="top" secondItem="aAH-Dm-GUp" secondAttribute="bottom" constant="30" id="IaA-PF-9nB"/>
+                <constraint firstAttribute="trailing" secondItem="aAH-Dm-GUp" secondAttribute="trailing" id="P70-io-leF"/>
+                <constraint firstAttribute="trailing" secondItem="5yl-JX-fZu" secondAttribute="trailing" constant="16" id="VvD-0n-ORm"/>
+                <constraint firstAttribute="trailing" secondItem="1Y3-0W-pck" secondAttribute="trailing" constant="16" id="XhK-hp-Zlv"/>
+                <constraint firstItem="1Y3-0W-pck" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Xrd-fk-RAr"/>
+                <constraint firstItem="aAH-Dm-GUp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YqM-E8-FyX"/>
+                <constraint firstAttribute="bottom" secondItem="MPW-24-7ND" secondAttribute="bottom" constant="20" id="c8q-vn-dWc"/>
+                <constraint firstItem="aAH-Dm-GUp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nSA-e4-L4B"/>
+                <constraint firstItem="5yl-JX-fZu" firstAttribute="top" secondItem="1Y3-0W-pck" secondAttribute="bottom" constant="8" id="o4n-Fk-CIH"/>
+                <constraint firstItem="5yl-JX-fZu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="rV0-NI-iMg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="content" destination="5yl-JX-fZu" id="YjM-Im-iYO"/>
+                <outlet property="time" destination="MPW-24-7ND" id="0Ad-Jl-3ah"/>
+                <outlet property="typeName" destination="1Y3-0W-pck" id="4pV-Ig-HVW"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="-18"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lunbo_default" width="16" height="9"/>
+    </resources>
+</document>

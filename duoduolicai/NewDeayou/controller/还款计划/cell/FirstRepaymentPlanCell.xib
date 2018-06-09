@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="KGk-i7-Jjw" customClass="FirstRepaymentPlanCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还款方式：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abO-Cs-sbh">
+                        <rect key="frame" x="8" y="5" width="80" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="7pa-pG-wtT"/>
+                            <constraint firstAttribute="height" constant="25" id="G3B-Tu-gE7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-kD-Vmb">
+                        <rect key="frame" x="88" y="5" width="200" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="dBz-9O-ipp"/>
+                            <constraint firstAttribute="height" constant="25" id="wLf-IV-uwx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还款期次：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I9-FL-S7U">
+                        <rect key="frame" x="8" y="30" width="80" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Bgr-zT-Cdh"/>
+                            <constraint firstAttribute="height" constant="25" id="kqy-Zg-qYC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUq-cR-i6x">
+                        <rect key="frame" x="88" y="30" width="200" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="HkI-Xn-yCa"/>
+                            <constraint firstAttribute="height" constant="25" id="zf5-oi-NWs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_cell.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwW-Ts-6Uo">
+                        <rect key="frame" x="8" y="65" width="304" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="BY6-DE-sGs"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4I9-FL-S7U" firstAttribute="top" secondItem="abO-Cs-sbh" secondAttribute="bottom" id="5p8-rV-IUZ"/>
+                    <constraint firstItem="IUq-cR-i6x" firstAttribute="leading" secondItem="4I9-FL-S7U" secondAttribute="trailing" id="Ed8-KY-hyB"/>
+                    <constraint firstItem="4I9-FL-S7U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Ga7-I9-XxM"/>
+                    <constraint firstItem="gXf-kD-Vmb" firstAttribute="leading" secondItem="abO-Cs-sbh" secondAttribute="trailing" id="JJn-HP-R7T"/>
+                    <constraint firstItem="dwW-Ts-6Uo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="MvD-At-8Da"/>
+                    <constraint firstItem="gXf-kD-Vmb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="YeK-dP-sXo"/>
+                    <constraint firstAttribute="trailing" secondItem="dwW-Ts-6Uo" secondAttribute="trailing" constant="8" id="aeZ-jG-KrD"/>
+                    <constraint firstItem="IUq-cR-i6x" firstAttribute="top" secondItem="gXf-kD-Vmb" secondAttribute="bottom" id="bsv-Ig-6L7"/>
+                    <constraint firstItem="abO-Cs-sbh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fSs-lq-bgu"/>
+                    <constraint firstItem="abO-Cs-sbh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="t5b-tQ-h5z"/>
+                    <constraint firstAttribute="bottom" secondItem="dwW-Ts-6Uo" secondAttribute="bottom" id="vF1-Z3-c5v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="RepaymentNumber" destination="IUq-cR-i6x" id="2p3-Xb-YG3"/>
+                <outlet property="RepaymentStyle" destination="gXf-kD-Vmb" id="UpX-Xo-0sa"/>
+            </connections>
+            <point key="canvasLocation" x="634" y="473.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="line_cell.png" width="320" height="1"/>
+    </resources>
+</document>

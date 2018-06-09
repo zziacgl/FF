@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="KGk-i7-Jjw" customClass="DYbasicTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_icon_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="ImP-tK-vVh">
+                        <rect key="frame" x="18" y="7" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="5E1-Sh-3zp"/>
+                            <constraint firstAttribute="width" constant="25" id="j5c-tQ-bBH"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emt-BR-koh">
+                        <rect key="frame" x="51" y="11" width="108" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="108" id="roB-Ed-oQ2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="UR6-li-UN1">
+                        <rect key="frame" x="2" y="44" width="319" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="2D1-YU-a3g"/>
+                        </constraints>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-Bb-c3k">
+                        <rect key="frame" x="0.0" y="0.0" width="319" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="g5G-WF-Dco"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="emt-BR-koh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="51" id="4Ls-Pf-RDY"/>
+                    <constraint firstItem="ImP-tK-vVh" firstAttribute="top" secondItem="9uJ-Bb-c3k" secondAttribute="bottom" constant="6" id="8Q6-ZQ-wdT"/>
+                    <constraint firstAttribute="trailing" secondItem="UR6-li-UN1" secondAttribute="trailing" constant="-35" id="BTi-J1-PLK"/>
+                    <constraint firstItem="9uJ-Bb-c3k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="D2c-ll-Zst"/>
+                    <constraint firstAttribute="trailing" secondItem="9uJ-Bb-c3k" secondAttribute="trailing" constant="-33" id="Feb-62-5ez"/>
+                    <constraint firstItem="UR6-li-UN1" firstAttribute="top" secondItem="ImP-tK-vVh" secondAttribute="bottom" constant="8" symbolic="YES" id="P2g-bh-0Nj"/>
+                    <constraint firstItem="ImP-tK-vVh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="PMM-fh-lxE"/>
+                    <constraint firstItem="emt-BR-koh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Q6C-zr-NvR"/>
+                    <constraint firstItem="ImP-tK-vVh" firstAttribute="bottom" secondItem="emt-BR-koh" secondAttribute="bottom" id="SSB-5X-dyb"/>
+                    <constraint firstItem="9uJ-Bb-c3k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Zaq-gZ-W6G"/>
+                    <constraint firstItem="UR6-li-UN1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="44" id="b7R-VE-9Dv"/>
+                    <constraint firstItem="ImP-tK-vVh" firstAttribute="top" secondItem="9uJ-Bb-c3k" secondAttribute="bottom" constant="6" id="dmk-t9-knk"/>
+                    <constraint firstItem="emt-BR-koh" firstAttribute="leading" secondItem="ImP-tK-vVh" secondAttribute="trailing" constant="8" symbolic="YES" id="hc2-tp-bR4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9uJ-Bb-c3k" secondAttribute="trailing" constant="-41" id="ibA-H4-2TX"/>
+                    <constraint firstItem="9uJ-Bb-c3k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jd1-YV-tX4"/>
+                    <constraint firstItem="UR6-li-UN1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="kS1-db-UcY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="UR6-li-UN1" secondAttribute="bottom" constant="-5.5" id="mfJ-FW-d1o"/>
+                    <constraint firstItem="UR6-li-UN1" firstAttribute="top" secondItem="emt-BR-koh" secondAttribute="bottom" constant="8" symbolic="YES" id="ypd-TY-Emh"/>
+                    <constraint firstItem="emt-BR-koh" firstAttribute="top" secondItem="9uJ-Bb-c3k" secondAttribute="bottom" constant="10" id="zwV-A3-AyU"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Zaq-gZ-W6G"/>
+                        <exclude reference="ibA-H4-2TX"/>
+                        <exclude reference="dmk-t9-knk"/>
+                        <exclude reference="P2g-bh-0Nj"/>
+                        <exclude reference="mfJ-FW-d1o"/>
+                        <exclude reference="ypd-TY-Emh"/>
+                        <exclude reference="zwV-A3-AyU"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="image" destination="ImP-tK-vVh" id="1R6-ia-CIn"/>
+                <outlet property="titleLabel" destination="emt-BR-koh" id="hKA-ek-dSa"/>
+                <outlet property="topline" destination="9uJ-Bb-c3k" id="MIR-Ty-9Pa"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="about_icon_1.png" width="44" height="44"/>
+        <image name="line.png" width="1" height="1"/>
+    </resources>
+</document>

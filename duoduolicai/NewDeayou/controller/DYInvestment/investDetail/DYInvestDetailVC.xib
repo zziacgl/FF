@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DYInvestDetailVC">
+            <connections>
+                <outlet property="btnInvestNow" destination="5fF-MD-BvZ" id="otW-TH-7rR"/>
+                <outlet property="myFootView" destination="mNG-rY-mlk" id="oIr-TL-stJ"/>
+                <outlet property="topImage" destination="Ecw-fc-7ae" id="mzI-Re-Mqa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNG-rY-mlk">
+                    <rect key="frame" x="0.0" y="543" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" userInteractionEnabled="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fF-MD-BvZ">
+                            <rect key="frame" x="30" y="0.0" width="315" height="40"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="进入投标">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="investRightNow:" destination="-1" eventType="touchUpInside" id="7bo-IY-Kr3"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5fF-MD-BvZ" secondAttribute="trailing" constant="30" id="3Ne-Yu-BpB"/>
+                        <constraint firstAttribute="height" constant="60" id="Vsr-AR-zvU"/>
+                        <constraint firstItem="5fF-MD-BvZ" firstAttribute="top" secondItem="mNG-rY-mlk" secondAttribute="top" id="YIS-S9-RUH"/>
+                        <constraint firstItem="5fF-MD-BvZ" firstAttribute="leading" secondItem="mNG-rY-mlk" secondAttribute="leading" constant="30" id="bwr-fW-GOy"/>
+                        <constraint firstAttribute="bottom" secondItem="5fF-MD-BvZ" secondAttribute="bottom" constant="20" id="rdX-CZ-yDU"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ecw-fc-7ae">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="Jxl-WH-vDR"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ecw-fc-7ae" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1fF-s5-tJG"/>
+                <constraint firstAttribute="trailing" secondItem="mNG-rY-mlk" secondAttribute="trailing" id="202-ft-PqZ"/>
+                <constraint firstAttribute="bottom" secondItem="mNG-rY-mlk" secondAttribute="bottom" id="Lx3-fo-RRG"/>
+                <constraint firstItem="mNG-rY-mlk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X5g-eE-Hhz"/>
+                <constraint firstItem="Ecw-fc-7ae" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dNk-sW-C9j"/>
+                <constraint firstAttribute="trailing" secondItem="Ecw-fc-7ae" secondAttribute="trailing" id="gz5-C6-Nya"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="208.5" y="443.5"/>
+        </view>
+    </objects>
+</document>

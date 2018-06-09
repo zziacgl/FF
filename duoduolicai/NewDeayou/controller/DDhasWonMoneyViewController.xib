@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDhasWonMoneyViewController">
+            <connections>
+                <outlet property="TopView" destination="ICR-hJ-YYY" id="Qhb-ly-Hlh"/>
+                <outlet property="havegetMoneyLabel" destination="3YF-at-NWv" id="mgb-mP-JaQ"/>
+                <outlet property="nameLabel" destination="dRx-FA-Lkw" id="HIU-rD-uiQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICR-hJ-YYY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总收益(元)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRx-FA-Lkw">
+                            <rect key="frame" x="0.0" y="8" width="375" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Gb4-VU-b1q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="222333.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YF-at-NWv">
+                            <rect key="frame" x="0.0" y="38" width="375" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94509804249999996" green="0.3058823645" blue="0.33725491169999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="3YF-at-NWv" secondAttribute="bottom" constant="10" id="5bW-ID-Rmf"/>
+                        <constraint firstItem="3YF-at-NWv" firstAttribute="top" secondItem="dRx-FA-Lkw" secondAttribute="bottom" constant="10" id="DZm-5v-t3H"/>
+                        <constraint firstItem="3YF-at-NWv" firstAttribute="leading" secondItem="ICR-hJ-YYY" secondAttribute="leading" id="ObZ-oY-lu7"/>
+                        <constraint firstAttribute="trailing" secondItem="3YF-at-NWv" secondAttribute="trailing" id="buQ-3T-J00"/>
+                        <constraint firstAttribute="height" constant="90" id="gqh-4Z-d5V"/>
+                        <constraint firstAttribute="trailing" secondItem="dRx-FA-Lkw" secondAttribute="trailing" id="hI5-dI-PtH"/>
+                        <constraint firstItem="dRx-FA-Lkw" firstAttribute="leading" secondItem="ICR-hJ-YYY" secondAttribute="leading" id="jQE-9X-Fhz"/>
+                        <constraint firstItem="dRx-FA-Lkw" firstAttribute="top" secondItem="ICR-hJ-YYY" secondAttribute="top" constant="8" id="oSr-bh-Uhg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ICR-hJ-YYY" secondAttribute="trailing" id="dXD-9J-2OB"/>
+                <constraint firstItem="ICR-hJ-YYY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="j8A-pH-agg"/>
+                <constraint firstItem="ICR-hJ-YYY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mLs-Qm-Eru"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="KGk-i7-Jjw" customClass="DYFinancialRecordsHeadCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-06-21 15:24:33" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVX-at-n4O">
+                        <rect key="frame" x="185" y="11" width="121" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10001" contentMode="left" verticalHuggingPriority="251" text="债权出售手续费" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enZ-ca-A8K">
+                        <rect key="frame" x="16" y="13" width="163" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="9J7-bE-Fd5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111117.0元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXA-kb-P9f">
+                        <rect key="frame" x="156" y="33.5" width="150" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="GoY-Eg-Axp"/>
+                            <constraint firstAttribute="width" constant="150" id="epz-eJ-O9A"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="117.0元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgR-vP-qmC">
+                        <rect key="frame" x="14" y="39.5" width="140" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_cell.png" translatesAutoresizingMaskIntoConstraints="NO" id="acU-XK-jDf">
+                        <rect key="frame" x="0.0" y="62.5" width="320" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="9C2-Zj-cLV"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yXA-kb-P9f" firstAttribute="trailing" secondItem="wVX-at-n4O" secondAttribute="trailing" id="2IR-c0-51h"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="yXA-kb-P9f" secondAttribute="trailing" constant="-2" id="Eck-Ab-Iw0"/>
+                    <constraint firstItem="yXA-kb-P9f" firstAttribute="leading" secondItem="zgR-vP-qmC" secondAttribute="trailing" constant="2" id="GD1-JC-0YU"/>
+                    <constraint firstItem="enZ-ca-A8K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="R18-4s-qbo"/>
+                    <constraint firstItem="acU-XK-jDf" firstAttribute="top" secondItem="yXA-kb-P9f" secondAttribute="bottom" constant="8" symbolic="YES" id="Sxd-xf-YwY"/>
+                    <constraint firstItem="enZ-ca-A8K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="TQc-iX-rd1"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="acU-XK-jDf" secondAttribute="bottom" constant="-8.5" id="Yc3-4h-Dx4"/>
+                    <constraint firstItem="acU-XK-jDf" firstAttribute="top" secondItem="zgR-vP-qmC" secondAttribute="bottom" constant="7" id="Zfu-eA-iMg"/>
+                    <constraint firstItem="acU-XK-jDf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bmE-Wf-xCu"/>
+                    <constraint firstItem="zgR-vP-qmC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="kwM-p7-Fwb"/>
+                    <constraint firstItem="yXA-kb-P9f" firstAttribute="top" secondItem="wVX-at-n4O" secondAttribute="bottom" constant="8" symbolic="YES" id="rhg-jc-Ppj"/>
+                    <constraint firstAttribute="trailing" secondItem="acU-XK-jDf" secondAttribute="trailing" id="vqD-ji-SLB"/>
+                    <constraint firstItem="wVX-at-n4O" firstAttribute="leading" secondItem="enZ-ca-A8K" secondAttribute="trailing" constant="6" id="ygZ-20-odc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="527" y="496"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="line_cell.png" width="320" height="1"/>
+    </resources>
+</document>
