@@ -8,7 +8,12 @@
 
 #import "AddRecordViewController.h"
 
-@interface AddRecordViewController ()
+#import "TopTitleCell.h"
+#import "AddGoodsCell.h"
+#import "AddRecordHeaderView.h"
+
+@interface AddRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -19,28 +24,53 @@
     [super viewDidLoad];
     self.title = @"添加记录";
     self.view.backgroundColor = kBackColor;
-    // Do any additional setup after loading the view.
+    [self setUpTableView];
+    [self setupTableViewHeader];
+    [self setupTableViewFooter];
 }
 
 - (void)setUpTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight) style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TopTitleCell" bundle:nil] forCellReuseIdentifier:@"TopTitleCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"AddGoodsCell" bundle:nil] forCellReuseIdentifier:@"AddGoodsCell"];
+}
+
+- (void)setupTableViewHeader {
+//  AddRecordHeaderView
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupTableViewFooter {}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 1) {
+        return 0;
+    }
+    return 1;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return [tableView dequeueReusableCellWithIdentifier:@"TopTitleCell" forIndexPath:indexPath];
+    }
+    if (indexPath.section == 2) {
+        return [tableView dequeueReusableCellWithIdentifier:@"AddGoodsCell" forIndexPath:indexPath];
+    }
+    return nil;
+
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120;
+}
 
 @end

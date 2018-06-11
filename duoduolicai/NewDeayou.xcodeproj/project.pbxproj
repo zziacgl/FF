@@ -284,6 +284,13 @@
 		3A6274311ADBAE9D00CD32EA /* DYAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6274301ADBAE9D00CD32EA /* DYAboutUsViewController.m */; };
 		3A6274341ADBAFB000CD32EA /* DYFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6274331ADBAFB000CD32EA /* DYFeedbackViewController.m */; };
 		3A6274371ADBB06400CD32EA /* DYPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6274361ADBB06400CD32EA /* DYPlaceholderTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		63BDD52120CE098700D4EE81 /* ShellModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDD52020CE098700D4EE81 /* ShellModelTool.m */; };
+		63BDD52520CE0FFC00D4EE81 /* TopTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDD52420CE0FFC00D4EE81 /* TopTitleCell.m */; };
+		63BDD52720CE100C00D4EE81 /* TopTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BDD52620CE100C00D4EE81 /* TopTitleCell.xib */; };
+		63BDD52B20CE10D800D4EE81 /* AddGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDD52920CE10D800D4EE81 /* AddGoodsCell.m */; };
+		63BDD52C20CE10D800D4EE81 /* AddGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BDD52A20CE10D800D4EE81 /* AddGoodsCell.xib */; };
+		63BDD52F20CE144F00D4EE81 /* AddRecordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDD52E20CE144F00D4EE81 /* AddRecordHeaderView.m */; };
+		63BDD53120CE145600D4EE81 /* AddRecordHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BDD53020CE145600D4EE81 /* AddRecordHeaderView.xib */; };
 		651BC7FD1DF5657700F9CEBB /* 首页_消息中心.png in Resources */ = {isa = PBXBuildFile; fileRef = 651BC7FA1DF5657700F9CEBB /* 首页_消息中心.png */; };
 		651BC7FE1DF5657700F9CEBB /* 消息中心_个人消息.png in Resources */ = {isa = PBXBuildFile; fileRef = 651BC7FB1DF5657700F9CEBB /* 消息中心_个人消息.png */; };
 		651BC7FF1DF5657700F9CEBB /* 消息中心_系统公告.png in Resources */ = {isa = PBXBuildFile; fileRef = 651BC7FC1DF5657700F9CEBB /* 消息中心_系统公告.png */; };
@@ -1202,6 +1209,17 @@
 		3A6274361ADBB06400CD32EA /* DYPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYPlaceholderTextView.m; sourceTree = "<group>"; };
 		3A6274381ADBB16D00CD32EA /* DYPlaceholderTextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYPlaceholderTextViewDelegate.h; sourceTree = "<group>"; };
 		5EEB46B9073996ACC8C3209A /* libPods-NewDeayou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewDeayou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63BDD51F20CE098700D4EE81 /* ShellModelTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShellModelTool.h; sourceTree = "<group>"; };
+		63BDD52020CE098700D4EE81 /* ShellModelTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShellModelTool.m; sourceTree = "<group>"; };
+		63BDD52320CE0FFC00D4EE81 /* TopTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopTitleCell.h; sourceTree = "<group>"; };
+		63BDD52420CE0FFC00D4EE81 /* TopTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopTitleCell.m; sourceTree = "<group>"; };
+		63BDD52620CE100C00D4EE81 /* TopTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopTitleCell.xib; sourceTree = "<group>"; };
+		63BDD52820CE10D800D4EE81 /* AddGoodsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsCell.h; sourceTree = "<group>"; };
+		63BDD52920CE10D800D4EE81 /* AddGoodsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsCell.m; sourceTree = "<group>"; };
+		63BDD52A20CE10D800D4EE81 /* AddGoodsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddGoodsCell.xib; sourceTree = "<group>"; };
+		63BDD52D20CE144F00D4EE81 /* AddRecordHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddRecordHeaderView.h; sourceTree = "<group>"; };
+		63BDD52E20CE144F00D4EE81 /* AddRecordHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddRecordHeaderView.m; sourceTree = "<group>"; };
+		63BDD53020CE145600D4EE81 /* AddRecordHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRecordHeaderView.xib; sourceTree = "<group>"; };
 		651BC7FA1DF5657700F9CEBB /* 首页_消息中心.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页_消息中心.png"; sourceTree = "<group>"; };
 		651BC7FB1DF5657700F9CEBB /* 消息中心_个人消息.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息中心_个人消息.png"; sourceTree = "<group>"; };
 		651BC7FC1DF5657700F9CEBB /* 消息中心_系统公告.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息中心_系统公告.png"; sourceTree = "<group>"; };
@@ -2892,6 +2910,30 @@
 			);
 			name = DYAboutUs;
 			path = DYMore/DYAboutUs;
+			sourceTree = "<group>";
+		};
+		63BDD51E20CE08A900D4EE81 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63BDD51F20CE098700D4EE81 /* ShellModelTool.h */,
+				63BDD52020CE098700D4EE81 /* ShellModelTool.m */,
+				CA5A509420CBF6B900B834D7 /* ShellRecordModel.h */,
+				CA5A509520CBF6B900B834D7 /* ShellRecordModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63BDD52220CE0FD400D4EE81 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				63BDD52320CE0FFC00D4EE81 /* TopTitleCell.h */,
+				63BDD52420CE0FFC00D4EE81 /* TopTitleCell.m */,
+				63BDD52620CE100C00D4EE81 /* TopTitleCell.xib */,
+				63BDD52820CE10D800D4EE81 /* AddGoodsCell.h */,
+				63BDD52920CE10D800D4EE81 /* AddGoodsCell.m */,
+				63BDD52A20CE10D800D4EE81 /* AddGoodsCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		651C24DF1DB4ACAA005DA9DC /* FDFullscreenPopGesture */ = {
@@ -4607,7 +4649,7 @@
 			isa = PBXGroup;
 			children = (
 				CA5A503A20C91F4F00B834D7 /* controller */,
-				CA5A503920C91F4F00B834D7 /* Model */,
+				63BDD51E20CE08A900D4EE81 /* Model */,
 				CA5A503B20C91F4F00B834D7 /* View */,
 			);
 			path = RecordMoney;
@@ -4636,8 +4678,6 @@
 		CA5A503320C91F3900B834D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CA5A509420CBF6B900B834D7 /* ShellRecordModel.h */,
-				CA5A509520CBF6B900B834D7 /* ShellRecordModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4684,13 +4724,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		CA5A503920C91F4F00B834D7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CA5A503A20C91F4F00B834D7 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -4705,9 +4738,13 @@
 		CA5A503B20C91F4F00B834D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63BDD52220CE0FD400D4EE81 /* Cells */,
 				CA5A508720CA1E5400B834D7 /* AddRecordFirstTableViewCell.h */,
 				CA5A508820CA1E5400B834D7 /* AddRecordFirstTableViewCell.m */,
 				CA5A508920CA1E5400B834D7 /* AddRecordFirstTableViewCell.xib */,
+				63BDD52D20CE144F00D4EE81 /* AddRecordHeaderView.h */,
+				63BDD52E20CE144F00D4EE81 /* AddRecordHeaderView.m */,
+				63BDD53020CE145600D4EE81 /* AddRecordHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5128,6 +5165,7 @@
 				B8D758A61BFC9C6700F99D48 /* 零钱宝账户.png in Resources */,
 				18D5EB651D9CC98300214DDA /* in_content.png in Resources */,
 				B860F1F11C83DD13005F03DD /* 奖励记录_03.png in Resources */,
+				63BDD52C20CE10D800D4EE81 /* AddGoodsCell.xib in Resources */,
 				B80617241C7C513100B01CA0 /* avatar_03.png in Resources */,
 				184E2E2D1D054418004A7272 /* 我的现金券.png in Resources */,
 				18C99E6D1D19435400616C3C /* 咨询.png in Resources */,
@@ -5193,6 +5231,7 @@
 				B877BD5A1BFC983E00AAC436 /* line_cell.png in Resources */,
 				B070926F1951200600137682 /* InfoPlist.strings in Resources */,
 				B89D56D51CD21B4000ECB49F /* 未标题-1_03(1).png in Resources */,
+				63BDD53120CE145600D4EE81 /* AddRecordHeaderView.xib in Resources */,
 				181FECC71DE68BC000A3E089 /* 卡券_@2x.png in Resources */,
 				B0509FA11976110700E56E92 /* DYQuestionTableViewCell.xib in Resources */,
 				B877BCA91BFC983E00AAC436 /* appicon_share.png in Resources */,
@@ -5356,6 +5395,7 @@
 				B856FF9D1C0D9B5E002B658C /* 零钱宝（2）@2x.png in Resources */,
 				B877BCCD1BFC983E00AAC436 /* tf_circle_check_yes@2x.png in Resources */,
 				B831484F1EE7B30F00A8D99D /* DYInvestSubmitVC.xib in Resources */,
+				63BDD52720CE100C00D4EE81 /* TopTitleCell.xib in Resources */,
 				18A057FD1DF10BBD00E8E633 /* DYMyInvestmentRecordTableViewCell.xib in Resources */,
 				186A95361E0D25510029518A /* DDMessageDetailViewController.xib in Resources */,
 				B80617321C7C5AF400B01CA0 /* DDMidTableViewCell.xib in Resources */,
@@ -5496,6 +5536,7 @@
 				187FC33C1D9A5800000ACE42 /* MZTimerLabel.m in Sources */,
 				182A8B521D080706005F03CF /* DDMoneyCardViewController.m in Sources */,
 				CAFE7C1B2054D644000D68F2 /* versionView.m in Sources */,
+				63BDD52120CE098700D4EE81 /* ShellModelTool.m in Sources */,
 				B87CF5ED1CAE501500A383FF /* DDServiceCenterViewController.m in Sources */,
 				B83148531EE7B4ED00A8D99D /* NewInvestTableViewCell.m in Sources */,
 				B8B3D0AA1C9BA7FF002AACC5 /* QNResumeUpload.m in Sources */,
@@ -5606,6 +5647,7 @@
 				651C25261DB4ADA1005DA9DC /* UIView+MJExtension.m in Sources */,
 				651C251B1DB4ADA1005DA9DC /* MJRefreshAutoStateFooter.m in Sources */,
 				B85BC33E1BFEC93700E83F84 /* DDRechargeViewController.m in Sources */,
+				63BDD52B20CE10D800D4EE81 /* AddGoodsCell.m in Sources */,
 				B8B3D0E01C9BA81C002AACC5 /* AFURLSessionManager.m in Sources */,
 				B01A69F8198A3A210056FF1A /* DYNetWork2.m in Sources */,
 				18A058041DF10C2200E8E633 /* DDRepayModel.m in Sources */,
@@ -5656,6 +5698,7 @@
 				651C25151DB4ADA1005DA9DC /* MJRefreshBackFooter.m in Sources */,
 				1827C0E71D59BAAE00E034D8 /* DDCompleteTransferTableViewController.m in Sources */,
 				18ED83FF1DE2D64800386069 /* DDNewuserModel.m in Sources */,
+				63BDD52520CE0FFC00D4EE81 /* TopTitleCell.m in Sources */,
 				65C921E21DF7EC5B00135FCC /* CardView.m in Sources */,
 				1843F60A1D2F53C300D17958 /* SDWebImageCompat.m in Sources */,
 				245888461981E9380085ADF4 /* DYOrderedDictionary.m in Sources */,
@@ -5682,6 +5725,7 @@
 				B8B8B0D11BE0D8C8006BFE8F /* DYSetNewLoginPwdViewController.m in Sources */,
 				6568B1F21DAE3C0500316ED3 /* WYWebProgressLayer.m in Sources */,
 				3A2689661AD90ED400AFE61F /* DYMoreViewController.m in Sources */,
+				63BDD52F20CE144F00D4EE81 /* AddRecordHeaderView.m in Sources */,
 				CAD020A91E4DA72900869AB1 /* DDDrawMoneyViewController.m in Sources */,
 				B07C625719AD7EFB003DFA63 /* DYRegistPolicyVC.m in Sources */,
 				18A057FC1DF10BBD00E8E633 /* DYMyInvestmentRecordTableViewCell.m in Sources */,
