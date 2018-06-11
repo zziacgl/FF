@@ -8,17 +8,23 @@
 
 #import "AddGoodsCell.h"
 
+@interface AddGoodsCell ()
+
+@property (nonatomic, copy) void(^addGoodsAction)(void);
+@end
+
 @implementation AddGoodsCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (IBAction)addGoodsButtonPressed:(id)sender {
+    if (self.addGoodsAction) self.addGoodsAction();
+}
 
-    // Configure the view for the selected state
+- (void)addGoodsAction:(void(^)(void))action {
+    self.addGoodsAction = action;
 }
 
 @end

@@ -8,14 +8,33 @@
 
 #import "AddRecordHeaderView.h"
 
+@interface AddRecordHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UIView *nickNameBackgroundView;
+@property (weak, nonatomic) IBOutlet UIView *mobileBackgroundView;
+@property (weak, nonatomic) IBOutlet UIView *postageBackgroundView;
+
+@property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
+@property (weak, nonatomic) IBOutlet UITextField *postageTextField;
+
+@end
+
 @implementation AddRecordHeaderView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setupBackgroundView:self.nickNameBackgroundView];
+    [self setupBackgroundView:self.mobileBackgroundView];
+    [self setupBackgroundView:self.postageBackgroundView];
 }
-*/
+
+- (void)setupBackgroundView:(UIView *)view {
+    view.layer.cornerRadius = view.height / 2;
+    view.clipsToBounds = YES;
+    view.layer.borderWidth = 1;
+    view.layer.borderColor = kBackColor.CGColor;
+}
+
 
 @end

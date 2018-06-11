@@ -10,4 +10,6 @@
 
 @interface AddGoodsCell : UITableViewCell
 
+- (void)addGoodsAction:(void(^)(void))action;
+
 @end

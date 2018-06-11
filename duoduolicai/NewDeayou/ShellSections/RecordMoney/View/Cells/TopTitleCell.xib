@@ -63,7 +63,7 @@
                     <constraint firstAttribute="trailing" secondItem="sGd-oc-Oi5" secondAttribute="trailing" id="uWg-R3-EYM"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="197" y="268"/>
+            <point key="canvasLocation" x="198" y="258.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -7,14 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ShellModelTool.h"
 
 @interface ShellRecordModel : NSObject
 
+@property (nonatomic, strong) NSString *recordId;
 @property (nonatomic, strong) NSString *nickName;
 @property (nonatomic, strong) NSString *mobile;
-@property (nonatomic, strong) NSString *postage;
+@property (nonatomic, strong) NSString *postage; // 邮费
+@property (nonatomic, strong) NSString *remark; // 备注
+@property (nonatomic, strong) NSString *createDate;
+@property (nonatomic, strong) NSArray *goods;
 
-@property (nonatomic, strong) NSString *remark;
+@property (nonatomic, assign) RecordType recordType;
+@property (nonatomic, assign) SHippingStatus shippingStatus;
+
+- (NSDictionary *)convertDictionary;
 
 
 @end
