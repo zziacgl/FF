@@ -23,6 +23,8 @@
     // Do any additional setup after loading the view.
 }
 - (void)configController {
+    [UINavigationBar appearance].barTintColor = kMainColor;
+
     ShellHomeViewController *homeVC = [[ShellHomeViewController alloc] init];
     
     homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"tab_home"] selectedImage:[[UIImage imageNamed:@"tab_home_pre"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -45,7 +47,7 @@
     //选中字体颜色
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kThemeColor,NSFontAttributeName:[UIFont boldSystemFontOfSize:12]} forState:UIControlStateSelected];
     
-//    self.tabBar.barTintColor = kMainColor;
+    self.tabBar.barTintColor = [UIColor whiteColor];
     
 }
 

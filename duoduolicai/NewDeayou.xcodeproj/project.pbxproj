@@ -703,6 +703,27 @@
 		CA5A509020CA510800B834D7 /* ShellOverViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5A508E20CA510800B834D7 /* ShellOverViewCell.xib */; };
 		CA5A509320CA664D00B834D7 /* ShellNoDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A509220CA664D00B834D7 /* ShellNoDataView.m */; };
 		CA5A509620CBF6B900B834D7 /* ShellRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A509520CBF6B900B834D7 /* ShellRecordModel.m */; };
+		CA5A509920CE09F600B834D7 /* TrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A509820CE09F600B834D7 /* TrendViewController.m */; };
+		CA5A50A320CE0F6400B834D7 /* DVLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A509F20CE0F6300B834D7 /* DVLineChartView.m */; };
+		CA5A50A420CE0F6400B834D7 /* DVYAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50A020CE0F6300B834D7 /* DVYAxisView.m */; };
+		CA5A50A520CE0F6400B834D7 /* DVXAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50A120CE0F6300B834D7 /* DVXAxisView.m */; };
+		CA5A50A620CE0F6400B834D7 /* DVPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50A220CE0F6300B834D7 /* DVPlot.m */; };
+		CA5A50A920CE0F8100B834D7 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50A820CE0F8000B834D7 /* UIView+Extension.m */; };
+		CA5A50AD20CE0FFE00B834D7 /* TrendChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50AB20CE0FFE00B834D7 /* TrendChartTableViewCell.m */; };
+		CA5A50AE20CE0FFE00B834D7 /* TrendChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5A50AC20CE0FFE00B834D7 /* TrendChartTableViewCell.xib */; };
+		CA5A50B120CE108100B834D7 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50AF20CE108100B834D7 /* UIColor+Hex.m */; };
+		CA5A50B520CE11C600B834D7 /* TrendPieChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50B320CE11C600B834D7 /* TrendPieChartTableViewCell.m */; };
+		CA5A50B620CE11C600B834D7 /* TrendPieChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5A50B420CE11C600B834D7 /* TrendPieChartTableViewCell.xib */; };
+		CA5A50C220CE13F800B834D7 /* WSShowInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50B820CE13F800B834D7 /* WSShowInfoView.m */; };
+		CA5A50C320CE13F800B834D7 /* WSPieForeBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50B920CE13F800B834D7 /* WSPieForeBGView.m */; };
+		CA5A50C420CE13F800B834D7 /* WSPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50BA20CE13F800B834D7 /* WSPieChart.m */; };
+		CA5A50C520CE13F800B834D7 /* WSPieItemsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50BB20CE13F800B834D7 /* WSPieItemsView.m */; };
+		CA5A50C620CE13F800B834D7 /* WSChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50C020CE13F800B834D7 /* WSChart.m */; };
+		CA5A50C920CE44E500B834D7 /* StatisticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50C820CE44E500B834D7 /* StatisticalViewController.m */; };
+		CA5A50CC20CE4A0D00B834D7 /* AddGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50CB20CE4A0D00B834D7 /* AddGoodsViewController.m */; };
+		CA5A50CF20CE5DC400B834D7 /* AddGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50CE20CE5DC400B834D7 /* AddGoodsModel.m */; };
+		CA5A50D220CE5F6100B834D7 /* AddGoosView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50D120CE5F6100B834D7 /* AddGoosView.m */; };
+		CA5A50D420CE5F9600B834D7 /* AddGoosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5A50D320CE5F9600B834D7 /* AddGoosView.xib */; };
 		CA647F1E1E62FFAB0081E7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA647F1D1E62FFAB0081E7CD /* LaunchScreen.storyboard */; };
 		CA73A8812063802E0035FBCE /* PasswordManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73A8802063802E0035FBCE /* PasswordManagementViewController.m */; };
 		CA73A8852063810D0035FBCE /* PasswordManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73A8832063810D0035FBCE /* PasswordManagementTableViewCell.m */; };
@@ -1836,6 +1857,45 @@
 		CA5A509220CA664D00B834D7 /* ShellNoDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShellNoDataView.m; sourceTree = "<group>"; };
 		CA5A509420CBF6B900B834D7 /* ShellRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShellRecordModel.h; sourceTree = "<group>"; };
 		CA5A509520CBF6B900B834D7 /* ShellRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShellRecordModel.m; sourceTree = "<group>"; };
+		CA5A509720CE09F600B834D7 /* TrendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrendViewController.h; sourceTree = "<group>"; };
+		CA5A509820CE09F600B834D7 /* TrendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrendViewController.m; sourceTree = "<group>"; };
+		CA5A509B20CE0F6300B834D7 /* DVYAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVYAxisView.h; sourceTree = "<group>"; };
+		CA5A509C20CE0F6300B834D7 /* DVLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVLineChartView.h; sourceTree = "<group>"; };
+		CA5A509D20CE0F6300B834D7 /* DVXAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVXAxisView.h; sourceTree = "<group>"; };
+		CA5A509E20CE0F6300B834D7 /* DVPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVPlot.h; sourceTree = "<group>"; };
+		CA5A509F20CE0F6300B834D7 /* DVLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVLineChartView.m; sourceTree = "<group>"; };
+		CA5A50A020CE0F6300B834D7 /* DVYAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVYAxisView.m; sourceTree = "<group>"; };
+		CA5A50A120CE0F6300B834D7 /* DVXAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVXAxisView.m; sourceTree = "<group>"; };
+		CA5A50A220CE0F6300B834D7 /* DVPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVPlot.m; sourceTree = "<group>"; };
+		CA5A50A720CE0F8000B834D7 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		CA5A50A820CE0F8000B834D7 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		CA5A50AA20CE0FFE00B834D7 /* TrendChartTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrendChartTableViewCell.h; sourceTree = "<group>"; };
+		CA5A50AB20CE0FFE00B834D7 /* TrendChartTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrendChartTableViewCell.m; sourceTree = "<group>"; };
+		CA5A50AC20CE0FFE00B834D7 /* TrendChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendChartTableViewCell.xib; sourceTree = "<group>"; };
+		CA5A50AF20CE108100B834D7 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		CA5A50B020CE108100B834D7 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		CA5A50B220CE11C600B834D7 /* TrendPieChartTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrendPieChartTableViewCell.h; sourceTree = "<group>"; };
+		CA5A50B320CE11C600B834D7 /* TrendPieChartTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrendPieChartTableViewCell.m; sourceTree = "<group>"; };
+		CA5A50B420CE11C600B834D7 /* TrendPieChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendPieChartTableViewCell.xib; sourceTree = "<group>"; };
+		CA5A50B820CE13F800B834D7 /* WSShowInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSShowInfoView.m; sourceTree = "<group>"; };
+		CA5A50B920CE13F800B834D7 /* WSPieForeBGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPieForeBGView.m; sourceTree = "<group>"; };
+		CA5A50BA20CE13F800B834D7 /* WSPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPieChart.m; sourceTree = "<group>"; };
+		CA5A50BB20CE13F800B834D7 /* WSPieItemsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPieItemsView.m; sourceTree = "<group>"; };
+		CA5A50BC20CE13F800B834D7 /* WSChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSChart.h; sourceTree = "<group>"; };
+		CA5A50BD20CE13F800B834D7 /* WSPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPieChart.h; sourceTree = "<group>"; };
+		CA5A50BE20CE13F800B834D7 /* WSPieForeBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPieForeBGView.h; sourceTree = "<group>"; };
+		CA5A50BF20CE13F800B834D7 /* WSShowInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSShowInfoView.h; sourceTree = "<group>"; };
+		CA5A50C020CE13F800B834D7 /* WSChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSChart.m; sourceTree = "<group>"; };
+		CA5A50C120CE13F800B834D7 /* WSPieItemsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPieItemsView.h; sourceTree = "<group>"; };
+		CA5A50C720CE44E500B834D7 /* StatisticalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatisticalViewController.h; sourceTree = "<group>"; };
+		CA5A50C820CE44E500B834D7 /* StatisticalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatisticalViewController.m; sourceTree = "<group>"; };
+		CA5A50CA20CE4A0D00B834D7 /* AddGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsViewController.h; sourceTree = "<group>"; };
+		CA5A50CB20CE4A0D00B834D7 /* AddGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsViewController.m; sourceTree = "<group>"; };
+		CA5A50CD20CE5DC400B834D7 /* AddGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoodsModel.h; sourceTree = "<group>"; };
+		CA5A50CE20CE5DC400B834D7 /* AddGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoodsModel.m; sourceTree = "<group>"; };
+		CA5A50D020CE5F6100B834D7 /* AddGoosView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoosView.h; sourceTree = "<group>"; };
+		CA5A50D120CE5F6100B834D7 /* AddGoosView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoosView.m; sourceTree = "<group>"; };
+		CA5A50D320CE5F9600B834D7 /* AddGoosView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddGoosView.xib; sourceTree = "<group>"; };
 		CA647F1D1E62FFAB0081E7CD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA73A87F2063802E0035FBCE /* PasswordManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordManagementViewController.h; sourceTree = "<group>"; };
 		CA73A8802063802E0035FBCE /* PasswordManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordManagementViewController.m; sourceTree = "<group>"; };
@@ -4638,6 +4698,8 @@
 			children = (
 				CA5A509420CBF6B900B834D7 /* ShellRecordModel.h */,
 				CA5A509520CBF6B900B834D7 /* ShellRecordModel.m */,
+				CA5A50CD20CE5DC400B834D7 /* AddGoodsModel.h */,
+				CA5A50CE20CE5DC400B834D7 /* AddGoodsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4647,6 +4709,12 @@
 			children = (
 				CA5A504220C9301600B834D7 /* ShellOverViewController.h */,
 				CA5A504320C9301600B834D7 /* ShellOverViewController.m */,
+				CA5A509720CE09F600B834D7 /* TrendViewController.h */,
+				CA5A509820CE09F600B834D7 /* TrendViewController.m */,
+				CA5A50C720CE44E500B834D7 /* StatisticalViewController.h */,
+				CA5A50C820CE44E500B834D7 /* StatisticalViewController.m */,
+				CA5A50CA20CE4A0D00B834D7 /* AddGoodsViewController.h */,
+				CA5A50CB20CE4A0D00B834D7 /* AddGoodsViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -4657,6 +4725,15 @@
 				CA5A508C20CA510800B834D7 /* ShellOverViewCell.h */,
 				CA5A508D20CA510800B834D7 /* ShellOverViewCell.m */,
 				CA5A508E20CA510800B834D7 /* ShellOverViewCell.xib */,
+				CA5A50AA20CE0FFE00B834D7 /* TrendChartTableViewCell.h */,
+				CA5A50AB20CE0FFE00B834D7 /* TrendChartTableViewCell.m */,
+				CA5A50AC20CE0FFE00B834D7 /* TrendChartTableViewCell.xib */,
+				CA5A50B220CE11C600B834D7 /* TrendPieChartTableViewCell.h */,
+				CA5A50B320CE11C600B834D7 /* TrendPieChartTableViewCell.m */,
+				CA5A50B420CE11C600B834D7 /* TrendPieChartTableViewCell.xib */,
+				CA5A50D020CE5F6100B834D7 /* AddGoosView.h */,
+				CA5A50D120CE5F6100B834D7 /* AddGoosView.m */,
+				CA5A50D320CE5F9600B834D7 /* AddGoosView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4715,6 +4792,8 @@
 		CA5A507020CA0E1800B834D7 /* shelllibs */ = {
 			isa = PBXGroup;
 			children = (
+				CA5A50B720CE13F800B834D7 /* WSPieChart */,
+				CA5A509A20CE0F6300B834D7 /* DVLineChartView */,
 				CA5A507A20CA11D800B834D7 /* NYSegmentedControl */,
 				CA5A507120CA0E2400B834D7 /* YUFoldingTableView */,
 			);
@@ -4746,6 +4825,42 @@
 				CA5A508020CA11D800B834D7 /* NYSegmentedControl.h */,
 			);
 			path = NYSegmentedControl;
+			sourceTree = "<group>";
+		};
+		CA5A509A20CE0F6300B834D7 /* DVLineChartView */ = {
+			isa = PBXGroup;
+			children = (
+				CA5A50B020CE108100B834D7 /* UIColor+Hex.h */,
+				CA5A50AF20CE108100B834D7 /* UIColor+Hex.m */,
+				CA5A50A720CE0F8000B834D7 /* UIView+Extension.h */,
+				CA5A50A820CE0F8000B834D7 /* UIView+Extension.m */,
+				CA5A509B20CE0F6300B834D7 /* DVYAxisView.h */,
+				CA5A509C20CE0F6300B834D7 /* DVLineChartView.h */,
+				CA5A509D20CE0F6300B834D7 /* DVXAxisView.h */,
+				CA5A509E20CE0F6300B834D7 /* DVPlot.h */,
+				CA5A509F20CE0F6300B834D7 /* DVLineChartView.m */,
+				CA5A50A020CE0F6300B834D7 /* DVYAxisView.m */,
+				CA5A50A120CE0F6300B834D7 /* DVXAxisView.m */,
+				CA5A50A220CE0F6300B834D7 /* DVPlot.m */,
+			);
+			path = DVLineChartView;
+			sourceTree = "<group>";
+		};
+		CA5A50B720CE13F800B834D7 /* WSPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				CA5A50B820CE13F800B834D7 /* WSShowInfoView.m */,
+				CA5A50B920CE13F800B834D7 /* WSPieForeBGView.m */,
+				CA5A50BA20CE13F800B834D7 /* WSPieChart.m */,
+				CA5A50BB20CE13F800B834D7 /* WSPieItemsView.m */,
+				CA5A50BC20CE13F800B834D7 /* WSChart.h */,
+				CA5A50BD20CE13F800B834D7 /* WSPieChart.h */,
+				CA5A50BE20CE13F800B834D7 /* WSPieForeBGView.h */,
+				CA5A50BF20CE13F800B834D7 /* WSShowInfoView.h */,
+				CA5A50C020CE13F800B834D7 /* WSChart.m */,
+				CA5A50C120CE13F800B834D7 /* WSPieItemsView.h */,
+			);
+			path = WSPieChart;
 			sourceTree = "<group>";
 		};
 		CAB90EF6201F35EE009DE6C5 /* UMSocial */ = {
@@ -5076,6 +5191,7 @@
 				18043B791C57146C009D2795 /* 服务中心_通讯录邀请.png in Resources */,
 				18A0581B1DF10C3500E8E633 /* DDMyInvestViewController.xib in Resources */,
 				18E0CAA11D01797A00DB965C /* 我的投资-2_03.png in Resources */,
+				CA5A50D420CE5F9600B834D7 /* AddGoosView.xib in Resources */,
 				1896326E1D892B5500E3004C /* 首页_系统公告@2x.png in Resources */,
 				B8AEAB541F1608B7007A0FBA /* fingerprint.png in Resources */,
 				18F25E4D1C7EE1ED00418F7A /* 难过_03.png in Resources */,
@@ -5146,6 +5262,7 @@
 				B8BC9F301F5D490700779EB2 /* DYMyAcountMainVC.xib in Resources */,
 				18A133431D9BAB4B001ABDF1 /* DDMyAccountViewController.xib in Resources */,
 				181FECC51DE68BC000A3E089 /* 活动专区_@3x.png in Resources */,
+				CA5A50AE20CE0FFE00B834D7 /* TrendChartTableViewCell.xib in Resources */,
 				653D29911DC339AD002F4E78 /* huankuan_icon_sel@1x.png in Resources */,
 				B07C625819AD7EFB003DFA63 /* DYRegistPolicyVC.xib in Resources */,
 				CACC37F61E275B3B0045F345 /* 已转让_03.png in Resources */,
@@ -5361,6 +5478,7 @@
 				B80617321C7C5AF400B01CA0 /* DDMidTableViewCell.xib in Resources */,
 				188A72121CCDF1E800B74466 /* notification_success.png in Resources */,
 				18EEEBFB1D8E418800A3B512 /* 我的_体验宝@2x.png in Resources */,
+				CA5A50B620CE11C600B834D7 /* TrendPieChartTableViewCell.xib in Resources */,
 				18804D021C7BF15A00C0F549 /* 首页(改)_03.png in Resources */,
 				B8D7587E1BFC9C3900F99D48 /* 多多简介@2x.png in Resources */,
 				1857E1D01DAB3DF100A6D3A3 /* DDTiYanBaoViewController.xib in Resources */,
@@ -5411,6 +5529,7 @@
 				CA2D3E512016D0D2007164DD /* FFBalanceModel.m in Sources */,
 				651C25241DB4ADA1005DA9DC /* UIScrollView+MJExtension.m in Sources */,
 				B87115721BA93F0B005679BA /* CBAutoScrollLabel.h in Sources */,
+				CA5A50A920CE0F8100B834D7 /* UIView+Extension.m in Sources */,
 				B89EC2281BE0A2BB00622DA7 /* DYIncomeDetailCell.m in Sources */,
 				CA5A509620CBF6B900B834D7 /* ShellRecordModel.m in Sources */,
 				B8B3D0E61C9BA81C002AACC5 /* UIAlertView+AFNetworking.m in Sources */,
@@ -5439,6 +5558,7 @@
 				18D669711D52DB5B0062C800 /* LineProgressView.m in Sources */,
 				1843F60D1D2F53C300D17958 /* SDWebImageDownloaderOperation.m in Sources */,
 				18DB6C5A1D9B571F002139E7 /* SJAvatarBrowser.m in Sources */,
+				CA5A50C420CE13F800B834D7 /* WSPieChart.m in Sources */,
 				18A0583D1DF10CAA00E8E633 /* DDAlreadyRansomTableViewCell.m in Sources */,
 				653E79371DC1D584002D02A1 /* NSObject+MJProperty.m in Sources */,
 				3A6274371ADBB06400CD32EA /* DYPlaceholderTextView.m in Sources */,
@@ -5459,6 +5579,7 @@
 				18A0583C1DF10CAA00E8E633 /* DDCanRansomModel.m in Sources */,
 				18A057FA1DF10BBD00E8E633 /* DDRepayCell.m in Sources */,
 				653E79391DC1D584002D02A1 /* README.md in Sources */,
+				CA5A50C620CE13F800B834D7 /* WSChart.m in Sources */,
 				B87B37BB1C225D2A00ED4F30 /* DDMailMessageTableViewCell.m in Sources */,
 				18295C931B74B6E20045C893 /* NSData+SBJSON.m in Sources */,
 				1843F60F1D2F53C300D17958 /* SDWebImagePrefetcher.m in Sources */,
@@ -5466,6 +5587,7 @@
 				B02964ED195BFA8D0035C55A /* DYCustomBoxMoreVC.m in Sources */,
 				B8AEAB591F1608B7007A0FBA /* MYZGestureView.m in Sources */,
 				18A058191DF10C3500E8E633 /* DDInRecoverViewController.m in Sources */,
+				CA5A50C520CE13F800B834D7 /* WSPieItemsView.m in Sources */,
 				182A8B551D08222E005F03CF /* DDNoCardTableViewCell.m in Sources */,
 				CAE1105E200F43D300C80EE2 /* FFCanUseCardViewController.m in Sources */,
 				653E79331DC1D584002D02A1 /* MJPropertyType.m in Sources */,
@@ -5476,6 +5598,7 @@
 				CA5A509320CA664D00B834D7 /* ShellNoDataView.m in Sources */,
 				CAFE7C1E2054D66E000D68F2 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				B8B3D09E1C9BA7FF002AACC5 /* QNConfig.m in Sources */,
+				CA5A50A320CE0F6400B834D7 /* DVLineChartView.m in Sources */,
 				188D5E391D8E6DF0004DB676 /* JTNavigationController.m in Sources */,
 				B8B3D0A21C9BA7FF002AACC5 /* GTMBase64.m in Sources */,
 				CAD020961E4C4F2400869AB1 /* DDotherWayHeaderView.m in Sources */,
@@ -5520,6 +5643,7 @@
 				B8B3D0DB1C9BA81C002AACC5 /* AFNetworkReachabilityManager.m in Sources */,
 				CAD020A21E4C570E00869AB1 /* DDChangePhoneLastViewController.m in Sources */,
 				188A72111CCDF1E800B74466 /* LeafNotification.m in Sources */,
+				CA5A50AD20CE0FFE00B834D7 /* TrendChartTableViewCell.m in Sources */,
 				18D669701D52DB5B0062C800 /* LineProgressLayer.m in Sources */,
 				B0DA707D196BEEA0002078EB /* DYLoginVC.m in Sources */,
 				CA5A508320CA11D800B834D7 /* NYSegmentIndicator.m in Sources */,
@@ -5535,7 +5659,9 @@
 				1827C0D11D59858200E034D8 /* DDBondViewController.m in Sources */,
 				CAFE7C1A2054D644000D68F2 /* versionModel.m in Sources */,
 				B82BAE771CC8CE26002DA751 /* DYAuthenticationTableViewCell.m in Sources */,
+				CA5A50CF20CE5DC400B834D7 /* AddGoodsModel.m in Sources */,
 				B8B3D0A11C9BA7FF002AACC5 /* QNUrlSafeBase64.m in Sources */,
+				CA5A50CC20CE4A0D00B834D7 /* AddGoodsViewController.m in Sources */,
 				1838A1951D93B6E600D1D210 /* DDActivityAreaTableViewCell.m in Sources */,
 				18A0581A1DF10C3500E8E633 /* DDMyInvestViewController.m in Sources */,
 				CAC6F40A1FF4CA17002B9D5F /* FFMineModel.m in Sources */,
@@ -5552,11 +5678,13 @@
 				18A058171DF10C3500E8E633 /* DDEndRecoverViewController.m in Sources */,
 				B8B8B0CC1BE0D8BD006BFE8F /* DYUpdateLoginPwdViewController.m in Sources */,
 				B8B3D0E91C9BA81C002AACC5 /* UIProgressView+AFNetworking.m in Sources */,
+				CA5A50C320CE13F800B834D7 /* WSPieForeBGView.m in Sources */,
 				651C25191DB4ADA1005DA9DC /* MJRefreshAutoGifFooter.m in Sources */,
 				B0144EF3197F4A7500946054 /* DYInvestListCell.m in Sources */,
 				18A058181DF10C3500E8E633 /* DDInInvestViewController.m in Sources */,
 				B8B8B1011BE0DA72006BFE8F /* DYFinancialRecordsFootCell.m in Sources */,
 				653E79351DC1D584002D02A1 /* NSObject+MJCoding.m in Sources */,
+				CA5A509920CE09F600B834D7 /* TrendViewController.m in Sources */,
 				CAEE272E20871E06008CC8C4 /* FFHomeThirdTableViewCell.m in Sources */,
 				B82157701BE9F88000696910 /* DYReahargeRecordsVC.m in Sources */,
 				1843F60B1D2F53C300D17958 /* SDWebImageDecoder.m in Sources */,
@@ -5589,6 +5717,7 @@
 				184E2E311D054BF9004A7272 /* DDMyCardTableViewCell.m in Sources */,
 				B8B3D0E71C9BA81C002AACC5 /* UIButton+AFNetworking.m in Sources */,
 				B03CA6C2196682D100438BD1 /* MKNetworkEngine.m in Sources */,
+				CA5A50B520CE11C600B834D7 /* TrendPieChartTableViewCell.m in Sources */,
 				1843F6101D2F53C300D17958 /* UIButton+WebCache.m in Sources */,
 				B8B3D0A31C9BA7FF002AACC5 /* QNDns.m in Sources */,
 				B8B3D09F1C9BA7FF002AACC5 /* QNCrc32.m in Sources */,
@@ -5597,6 +5726,7 @@
 				18D669741D52DB630062C800 /* ZFProgressView.m in Sources */,
 				CA5A502E20C8FA9300B834D7 /* ShellTabBarViewController.m in Sources */,
 				CAEE272420871DAB008CC8C4 /* FFHomeSecondTableViewCell.m in Sources */,
+				CA5A50A620CE0F6400B834D7 /* DVPlot.m in Sources */,
 				186A95351E0D25510029518A /* DDMessageDetailViewController.m in Sources */,
 				B0144EF5197F4A7500946054 /* DYInvestmentMainVC.m in Sources */,
 				1816071C1DE7E6B80082A29D /* SCGenericChart.m in Sources */,
@@ -5647,6 +5777,7 @@
 				18295C981B74B6E20045C893 /* SBJsonParser.m in Sources */,
 				653E79301DC1D584002D02A1 /* MJFoundation.m in Sources */,
 				B8B3D0A41C9BA7FF002AACC5 /* QNHttpManager.m in Sources */,
+				CA5A50A420CE0F6400B834D7 /* DVYAxisView.m in Sources */,
 				653E792F1DC1D584002D02A1 /* MJExtensionConst.m in Sources */,
 				653E79321DC1D584002D02A1 /* MJPropertyKey.m in Sources */,
 				CA2D3E4920119B6E007164DD /* NoDataView.m in Sources */,
@@ -5659,6 +5790,7 @@
 				65C921E21DF7EC5B00135FCC /* CardView.m in Sources */,
 				1843F60A1D2F53C300D17958 /* SDWebImageCompat.m in Sources */,
 				245888461981E9380085ADF4 /* DYOrderedDictionary.m in Sources */,
+				CA5A50C220CE13F800B834D7 /* WSShowInfoView.m in Sources */,
 				B8AEAB581F1608B7007A0FBA /* MYZGestureShapeView.m in Sources */,
 				18A0583B1DF10CAA00E8E633 /* DDAlreadyRansomModel.m in Sources */,
 				181607211DE7E6B80082A29D /* UICountingLabel.m in Sources */,
@@ -5678,6 +5810,7 @@
 				B89C9EDD1BF329EE00A88953 /* DDSmallWalletTableViewCell.m in Sources */,
 				B8B3D0E21C9BA81C002AACC5 /* README.md in Sources */,
 				18A133421D9BAB4B001ABDF1 /* DDMyAccountViewController.m in Sources */,
+				CA5A50B120CE108100B834D7 /* UIColor+Hex.m in Sources */,
 				1843F6161D2F53C300D17958 /* UIView+WebCacheOperation.m in Sources */,
 				B8B8B0D11BE0D8C8006BFE8F /* DYSetNewLoginPwdViewController.m in Sources */,
 				6568B1F21DAE3C0500316ED3 /* WYWebProgressLayer.m in Sources */,
@@ -5730,9 +5863,11 @@
 				B0485B441953E58E006C2DE2 /* MBProgressHUD.m in Sources */,
 				B8B46EB31FCFEFC500143AD8 /* DDInformManageTableViewCell.m in Sources */,
 				B03CA6BC196682D100438BD1 /* NSData+MKBase64.m in Sources */,
+				CA5A50A520CE0F6400B834D7 /* DVXAxisView.m in Sources */,
 				18456A4C1E07C6EE00AE7942 /* DDBarnerModel.m in Sources */,
 				B034DAF81958168D00948527 /* MDRadialProgressView.m in Sources */,
 				B03CA6C3196682D100438BD1 /* MKNetworkOperation.m in Sources */,
+				CA5A50D220CE5F6100B834D7 /* AddGoosView.m in Sources */,
 				1843F5E41D2F52FC00D17958 /* UIView+SDExtension.m in Sources */,
 				18C9DD1E1D5B18E7003691E0 /* DDCircle.m in Sources */,
 				1856DC671E1200A5007B2C9F /* AdvertiseView.m in Sources */,
@@ -5777,6 +5912,7 @@
 				B80617311C7C5AF400B01CA0 /* DDMidTableViewCell.m in Sources */,
 				B0F1B1481BA812FE001A7948 /* DYRegistViewController.m in Sources */,
 				1857E1CF1DAB3DF100A6D3A3 /* DDTiYanBaoViewController.m in Sources */,
+				CA5A50C920CE44E500B834D7 /* StatisticalViewController.m in Sources */,
 				B8B8B0DB1BE0D8F9006BFE8F /* DYBankInfoViewController.m in Sources */,
 				18A057FE1DF10BBD00E8E633 /* LLDDRepayHeadView.m in Sources */,
 				B827ED651BFABEBD0041EE0C /* DDWalletTurnInViewController.m in Sources */,

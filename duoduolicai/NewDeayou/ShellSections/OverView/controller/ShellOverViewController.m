@@ -8,6 +8,9 @@
 
 #import "ShellOverViewController.h"
 #import "ShellOverViewCell.h"
+#import "TrendViewController.h"
+#import "StatisticalViewController.h"
+#import "AddGoodsViewController.h"
 @interface ShellOverViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UIImageView *topImageView;
 @property (nonatomic, strong) UITableView *tableView;
@@ -108,6 +111,47 @@ static NSString *inentifier = @"footcell";
     }
 
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0:{
+            TrendViewController *trendVC = [[TrendViewController alloc] init];
+            trendVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:trendVC animated:YES];
+        }
+            
+            break;
+        case 1:{
+            UIAlertController *alerVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"该功能暂未开放，敬请期待" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSLog(@"OK Action");
+            }];
+            
+            [alerVC addAction:okAction];
+
+            [self presentViewController:alerVC animated:YES completion:nil];
+        }
+            break;
+        case 2:{
+            AddGoodsViewController *addVC = [[AddGoodsViewController alloc] init];
+            addVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:addVC animated:YES];
+        }
+            
+            break;
+        case 3:{
+            StatisticalViewController *statistVC = [[StatisticalViewController alloc] init];
+            statistVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:statistVC animated:YES];
+        }
+        
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
