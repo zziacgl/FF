@@ -12,7 +12,7 @@
 
 @interface WriteGoodsInfoView : UIView
 
-+ (void)showViewSureButtonAction:(void(^)(ShellGoodsModel *shellGoodsModel))sureButtonAction;
++ (void)showWithView:(UIView *)view sureButtonAction:(void(^)(ShellGoodsModel *shellGoodsModel))sureButtonAction;
 
 
 @end

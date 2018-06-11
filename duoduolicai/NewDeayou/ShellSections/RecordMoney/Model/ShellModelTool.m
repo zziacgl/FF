@@ -11,32 +11,43 @@
 
 #import "YYKit.h"
 
+#define kCachePath(str) [[self cachePath] stringByAppendingPathComponent:str]
+
 @implementation ShellModelTool
 
 + (NSArray *)getRecord:(RecordType)recordType {
     NSArray *totalArr = [self totalArray];
+    
     NSMutableArray *modelArr = [NSMutableArray array];
     for (NSString *path in totalArr) {
-        NSArray *dayArr = [NSArray arrayWithContentsOfFile:path];
+        NSArray *dayArr = [NSArray arrayWithContentsOfFile:kCachePath(path)];
         NSMutableArray *array = [NSMutableArray new];
         for (NSString *subPath in dayArr) {
-            NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:subPath];
+            NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:kCachePath(subPath)];
             ShellRecordModel *model = [ShellRecordModel new];
             [model setValuesForKeysWithDictionary:dict];
             [array addObject:model];
         }
         [modelArr addObject:array];
     }
+    
     return modelArr;
 }
 
 + (void)saveRecordModel:(ShellRecordModel *)recordModel {
+    if (!recordModel.recordId) {
+        recordModel.recordId = [self recordId];
+    }
+    
+    if (!recordModel.createDate) {
+        recordModel.createDate = [[NSDate date] stringWithISOFormat];
+    }
     // 保存当前记录的id，便于查询
     [self storeTodayDataArray:recordModel.recordId];
     NSDictionary *dict = [recordModel convertDictionary];
     
     NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-    cachePath = [cachePath stringByAppendingPathComponent:@""];
+    cachePath = [cachePath stringByAppendingPathComponent:recordModel.recordId];
     [dict writeToFile:cachePath atomically:YES];
 }
 
@@ -74,7 +85,7 @@
     if (todayArr){
         [arr addObjectsFromArray:todayArr];
     }else {
-        [self storeTodayArray:path];
+        [self storeTodayArray:dateStr];
     }
     [arr addObject:recordId];
     [arr writeToFile:path atomically:YES];
@@ -86,6 +97,14 @@
 
 + (NSString *)totalArrayPath {
     return [[self cachePath] stringByAppendingPathComponent:@"TotalArray"];
+}
+
++ (NSString *)recordId {
+    NSString *key = @"record_id_index";
+    NSInteger recordid = [[NSUserDefaults standardUserDefaults] integerForKey:key];
+    recordid++;
+    [[NSUserDefaults standardUserDefaults] setInteger:recordid forKey:key];
+    return [NSString stringWithFormat:@"%ld",recordid];
 }
 
 @end

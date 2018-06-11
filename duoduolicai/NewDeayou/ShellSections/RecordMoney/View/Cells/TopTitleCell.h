@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ShellGoodsModel;
+
 @interface TopTitleCell : UITableViewCell
+
+@property (nonatomic, strong) ShellGoodsModel *goodsModel;
 
 @end

@@ -23,6 +23,7 @@
 @interface AddRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *goods;
 
 @end
 
@@ -31,30 +32,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"添加记录";
+    self.goods = [NSMutableArray new];
     self.view.backgroundColor = kBackColor;
     [self setUpTableView];
     [self setupTableViewHeader];
     [self setupTableViewFooter];
     [[IQKeyboardManager sharedManager] setEnable:YES];
-    
-//    ShellRecordModel *recordModel = [ShellRecordModel new];
-//    recordModel.nickName = @"zhoubiwen";
-//    recordModel.mobile = @"123456";
-//    recordModel.postage = @"50";
-//    recordModel.remark = @"你们好";
-//    NSMutableArray *arr = [NSMutableArray new];
-//    ShellGoodsModel *model = [ShellGoodsModel new];
-//    model.goodsName = @"hahaha";
-//    model.buyingPrice = @"11";
-//    model.sellingPrice = @"22";
-//    model.goodsName = @"10";
-//
-//    recordModel.goods = arr;
-//    
-//    [ShellModelTool saveRecordModel:recordModel];
-//    
-//    NSArray *modelArr = [ShellModelTool getRecord:Sale];
-    
 }
 
 - (void)setUpTableView {
@@ -91,7 +74,7 @@
     if (section == 1) {
         return 1;
     }
-    return 2;
+    return self.goods.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,12 +82,16 @@
     if (indexPath.section == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"AddGoodsCell" forIndexPath:indexPath];
         [(AddGoodsCell *)cell addGoodsAction:^{
-            [WriteGoodsInfoView showViewSureButtonAction:^(ShellGoodsModel *shellGoodsModel) {
-                
+            [WriteGoodsInfoView showWithView:self.navigationController.view sureButtonAction:^(ShellGoodsModel *shellGoodsModel) {
+                [self.goods addObject:shellGoodsModel];
+                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.goods.count inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
             }];
         }];
     }else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"TopTitleCell" forIndexPath:indexPath];
+        if (indexPath.row > 0) {
+            [(TopTitleCell *)cell setGoodsModel:self.goods[indexPath.row - 1]];
+        }
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

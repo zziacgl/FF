@@ -7,19 +7,28 @@
 //
 
 #import "WriteGoodsInfoView.h"
+#import "ShellGoodsModel.h"
 
 @interface WriteGoodsInfoView ()
+
+@property (nonatomic, copy) void(^sureButtonAction)(ShellGoodsModel *shellGoodsModel);
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *buyPriceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *sellPriceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *countTextField;
 
 @end
 
 @implementation WriteGoodsInfoView
 
 
-+ (void)showViewSureButtonAction:(void(^)(ShellGoodsModel *shellGoodsModel))sureButtonAction {
-    WriteGoodsInfoView *view = [[NSBundle mainBundle] loadNibNamed:@"WriteGoodsInfoView" owner:nil options:nil].firstObject;
-    view.frame = [UIScreen mainScreen].bounds;
-    [view show];
-    [[UIApplication sharedApplication].keyWindow addSubview:view];
++ (void)showWithView:(UIView *)view sureButtonAction:(void(^)(ShellGoodsModel *shellGoodsModel))sureButtonAction {
+    WriteGoodsInfoView *goodsView = [[NSBundle mainBundle] loadNibNamed:@"WriteGoodsInfoView" owner:nil options:nil].firstObject;
+    goodsView.frame = view.bounds;
+    goodsView.sureButtonAction = sureButtonAction;
+    [goodsView show];
+    [view addSubview:goodsView];
+//    [[UIApplication sharedApplication].keyWindow addSubview:view];
     
 }
 
@@ -49,6 +58,13 @@
 }
 
 - (IBAction)sureButtonPressed:(id)sender {
+    ShellGoodsModel *model = [ShellGoodsModel new];
+    model.goodsName = self.nameTextField.text;
+    model.count = self.countTextField.text;
+    model.buyingPrice = self.buyPriceTextField.text;
+    model.sellingPrice = self.sellPriceTextField.text;
+    if (self.sureButtonAction) self.sureButtonAction(model);
+    [self hide];
 }
 
 @end

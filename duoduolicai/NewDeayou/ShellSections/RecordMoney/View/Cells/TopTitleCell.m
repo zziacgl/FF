@@ -7,18 +7,30 @@
 //
 
 #import "TopTitleCell.h"
+#import "ShellGoodsModel.h"
+
+@interface TopTitleCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *goodsName;
+@property (weak, nonatomic) IBOutlet UILabel *count;
+@property (weak, nonatomic) IBOutlet UILabel *buyPrice;
+@property (weak, nonatomic) IBOutlet UILabel *sellPrice;
+
+@end
 
 @implementation TopTitleCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setGoodsModel:(ShellGoodsModel *)goodsModel {
+    _goodsModel = goodsModel;
+    self.goodsName.text = goodsModel.goodsName;
+    self.count.text = goodsModel.count;
+    self.buyPrice.text = goodsModel.buyingPrice;
+    self.sellPrice.text = goodsModel.sellingPrice;
 }
+
 
 @end

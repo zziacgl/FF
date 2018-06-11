@@ -10,6 +10,10 @@
 #import "NYSegmentedControl.h"
 #import "AddRecordViewController.h"
 #import "ShellNoDataView.h"
+
+#import "ShellModelTool.h"
+#import "ShellRecordModel.h"
+
 @interface ShellHomeViewController ()
 @property (nonatomic, strong) UIImageView *topImageView;
 @property (nonatomic, weak) YUFoldingTableView *foldingTableView;
@@ -33,8 +37,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.dataAry removeAllObjects];
+    [self.dataAry addObjectsFromArray:[ShellModelTool getRecord:0]];
+    [self.foldingTableView reloadData];
 }
 
 - (NSMutableArray *)dataAry {
@@ -101,11 +107,11 @@
 #pragma mark - YUFoldingTableViewDelegate / required（必须实现的代理）
 - (NSInteger )numberOfSectionForYUFoldingTableView:(YUFoldingTableView *)yuTableView
 {
-    return 6;
+    return self.dataAry.count;
 }
 - (NSInteger )yuFoldingTableView:(YUFoldingTableView *)yuTableView numberOfRowsInSection:(NSInteger )section
 {
-    return 3;
+    return [self.dataAry[section] count];
 }
 - (CGFloat )yuFoldingTableView:(YUFoldingTableView *)yuTableView heightForHeaderInSection:(NSInteger )section
 {
@@ -122,14 +128,17 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"Row %ld -- section %ld", (long)indexPath.row, (long)indexPath.section];
+//    cell.textLabel.text = [NSString stringWithFormat:@"Row %ld -- section %ld", (long)indexPath.row, (long)indexPath.section];
     
+    ShellRecordModel *model = self.dataAry[indexPath.section][indexPath.row];
+    cell.textLabel.text = model.nickName;
     return cell;
 }
 #pragma mark - YUFoldingTableViewDelegate / optional （可选择实现的）
 
 - (NSString *)yuFoldingTableView:(YUFoldingTableView *)yuTableView titleForHeaderInSection:(NSInteger)section
 {
+    
     return [NSString stringWithFormat:@"Title %ld",(long)section];
 }
 
@@ -167,8 +176,8 @@
 
 - (void)handleRight {
     AddRecordViewController *addVC = [[AddRecordViewController alloc] init];
+    addVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:addVC animated:YES];
-    
 }
 
 - (void)didReceiveMemoryWarning {

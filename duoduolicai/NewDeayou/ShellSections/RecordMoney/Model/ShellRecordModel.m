@@ -12,6 +12,19 @@
 
 @implementation ShellRecordModel
 
+- (void)setValue:(id)value forKey:(NSString *)key {
+    [super setValue:value forKey:key];
+    if ([key isEqualToString:@"goods"]) {
+        NSMutableArray *arr = [NSMutableArray new];
+        for (NSDictionary *dict in arr) {
+            ShellGoodsModel *model = [ShellGoodsModel new];
+            [model setValuesForKeysWithDictionary:dict];
+            [arr addObject:model];
+        }
+        self.goods = arr;
+    }
+}
+
 - (NSDictionary *)convertDictionary {
     NSMutableDictionary *dict = [NSMutableDictionary new];
     unsigned int count = 0;
