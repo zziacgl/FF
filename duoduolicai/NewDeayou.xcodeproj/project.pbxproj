@@ -4738,13 +4738,10 @@
 		CA5A503320C91F3900B834D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				CA5A509420CBF6B900B834D7 /* ShellRecordModel.h */,
 				CA5A509520CBF6B900B834D7 /* ShellRecordModel.m */,
 				CA5A50CD20CE5DC400B834D7 /* AddGoodsModel.h */,
 				CA5A50CE20CE5DC400B834D7 /* AddGoodsModel.m */,
-=======
->>>>>>> 402be5eb3da9eeefe2bf59eb15e87018b4e86809
 			);
 			path = Model;
 			sourceTree = "<group>";
