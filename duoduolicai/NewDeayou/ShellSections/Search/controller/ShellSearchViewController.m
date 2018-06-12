@@ -7,11 +7,14 @@
 //
 
 #import "ShellSearchViewController.h"
-
-@interface ShellSearchViewController ()<UISearchBarDelegate>
+#import "ShellSearchTableViewCell.h"
+@interface ShellSearchViewController ()<UISearchBarDelegate,UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, assign) BOOL isContent;//判断搜索框是否有内容
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
+static NSString *inentifier = @"ShellSearchTableViewCell";
 
 @implementation ShellSearchViewController
 
@@ -19,6 +22,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = kBackColor;
     [self setOutNavView];
+    [self setUpTableView];
     // Do any additional setup after loading the view.
 }
 - (void)viewDidAppear:(BOOL)animated
@@ -58,6 +62,40 @@
     
     
 }
+
+- (void)setUpTableView {
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0, kMainScreenWidth, kMainScreenHeight ) style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = false;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    [self.tableView registerNib:[UINib nibWithNibName:@"ShellSearchTableViewCell" bundle:nil] forCellReuseIdentifier:inentifier];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self.view addSubview:self.tableView];
+    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor clearColor]];
+    
+}
+#pragma mark -- UITableViewDelegate, UITableViewDataSource
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+//    return self.dataArray.count;
+    return 3;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 108;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ShellSearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:inentifier forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+    
+}
+
 #pragma mark - UISearchBarDelegate
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
     return YES;
@@ -85,8 +123,8 @@
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.searchBar resignFirstResponder];
-    //    [self.addView.GoodsNameTF resignFirstResponder];
-    //    [self.addView.GoodsMoneyTF resignFirstResponder];
+    [self.view resignFirstResponder];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

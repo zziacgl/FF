@@ -22,7 +22,7 @@
         self.frame =  MainScreenRect;
         self.backgroundColor = kBackColor;
         
-        self.backImage = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth / 2 - 60, kMainScreenHeight / 2 - 120, 125, 95)];
+        self.backImage = [[UIImageView alloc] initWithFrame:CGRectMake(kMainScreenWidth / 2 - 75, kMainScreenHeight / 2 - 120, 150, 130)];
         _backImage.image = [UIImage imageNamed:imageName];
         [self addSubview:self.backImage];
         

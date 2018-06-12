@@ -12,6 +12,7 @@
 @interface StatisticalViewController ()
 @property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, strong) WJPopoverViewController *popView;
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation StatisticalViewController
@@ -36,6 +37,18 @@
     [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:btnLeft];
 }
+- (void)configTableView {
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight) style:UITableViewStylePlain];
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self.view addSubview:self.tableView];
+}
+
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }

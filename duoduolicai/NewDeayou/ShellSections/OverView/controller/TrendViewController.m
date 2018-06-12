@@ -75,7 +75,7 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
     
     [self.view addSubview:self.tableView];
     [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor clearColor]];
-    self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"" image:@"nodataImage"];
+    self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"暂无数据" image:@"shellNoData"];
     self.nodataBackView.frame = self.view.bounds;
     self.nodataBackView.alpha = 0;
     [self.view addSubview:self.nodataBackView];

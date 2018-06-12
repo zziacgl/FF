@@ -25,7 +25,7 @@
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
-#define JPushAppKey @"49a7e149737a26fccad91f39"
+#define JPushAppKey @"9542079fc676edb92a818462"
 #define Channel @"App Store"
 #define isProduction 1
 #define  kAlert @"kAlert"
@@ -52,37 +52,37 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-//
-//    //友盟
-//    /* 打开调试日志 */
-//    [[UMSocialManager defaultManager] openLog:YES];
-//
-//    /* 设置友盟appkey */
-//    [[UMSocialManager defaultManager] setUmSocialAppkey:UmengAppkey];
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WXAppKey appSecret:WXAppSecret redirectURL:nil];
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppID/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"https://www.fengfengjinrong.com"];
-//
-//
-//    [UMConfigure initWithAppkey:UmengAppkey channel:@"App Store"];
-//    [UMConfigure setLogEnabled:YES];
-//    [UMCommonLogManager setUpUMCommonLogManager];
-//    //    [MobClick startWithConfigure:UMConfigInstance];
-//
-//    //极光推送
-//    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
-//    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
-//    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-//        // 可以添加自定义categories
-//        // NSSet<UNNotificationCategory *> *categories for iOS10 or later
-//        // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
-//    }
-//    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
-//    [JPUSHService setupWithOption:launchOptions appKey:JPushAppKey
-//                          channel:Channel
-//                 apsForProduction:isProduction
-//            advertisingIdentifier:nil];
-//
-//
+
+    //友盟
+    /* 打开调试日志 */
+    [[UMSocialManager defaultManager] openLog:YES];
+
+    /* 设置友盟appkey */
+    [[UMSocialManager defaultManager] setUmSocialAppkey:UmengAppkey];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WXAppKey appSecret:WXAppSecret redirectURL:nil];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppID/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"https://www.fengfengjinrong.com"];
+
+
+    [UMConfigure initWithAppkey:UmengAppkey channel:@"App Store"];
+    [UMConfigure setLogEnabled:YES];
+    [UMCommonLogManager setUpUMCommonLogManager];
+    //    [MobClick startWithConfigure:UMConfigInstance];
+
+    //极光推送
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        // 可以添加自定义categories
+        // NSSet<UNNotificationCategory *> *categories for iOS10 or later
+        // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
+    }
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    [JPUSHService setupWithOption:launchOptions appKey:JPushAppKey
+                          channel:Channel
+                 apsForProduction:isProduction
+            advertisingIdentifier:nil];
+
+
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
 //    DYMainTabBarController *mineVC = [[DYMainTabBarController alloc] init];

@@ -837,6 +837,8 @@
 		CAB90F2020205F2D009DE6C5 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB90F1F20205F2D009DE6C5 /* libSocialWeChat.a */; };
 		CAB90F2220205F3A009DE6C5 /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB90F2120205F3A009DE6C5 /* libUMSocialLog.a */; };
 		CAB90F2420205F5A009DE6C5 /* libFMDeviceManager_without_IDFA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB90F2320205F59009DE6C5 /* libFMDeviceManager_without_IDFA.a */; };
+		CAC3B3C520CF98BF0075EB6F /* ShellSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC3B3C320CF98BF0075EB6F /* ShellSearchTableViewCell.m */; };
+		CAC3B3C620CF98BF0075EB6F /* ShellSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC3B3C420CF98BF0075EB6F /* ShellSearchTableViewCell.xib */; };
 		CAC6F40A1FF4CA17002B9D5F /* FFMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC6F4091FF4CA17002B9D5F /* FFMineModel.m */; };
 		CACC37F41E2753DF0045F345 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC37F31E2753DF0045F345 /* libsqlite3.0.tbd */; };
 		CACC37F61E275B3B0045F345 /* 已转让_03.png in Resources */ = {isa = PBXBuildFile; fileRef = CACC37F51E275B3B0045F345 /* 已转让_03.png */; };
@@ -2194,6 +2196,9 @@
 		CAB90F1F20205F2D009DE6C5 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
 		CAB90F2120205F3A009DE6C5 /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
 		CAB90F2320205F59009DE6C5 /* libFMDeviceManager_without_IDFA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFMDeviceManager_without_IDFA.a; sourceTree = "<group>"; };
+		CAC3B3C220CF98BF0075EB6F /* ShellSearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShellSearchTableViewCell.h; sourceTree = "<group>"; };
+		CAC3B3C320CF98BF0075EB6F /* ShellSearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShellSearchTableViewCell.m; sourceTree = "<group>"; };
+		CAC3B3C420CF98BF0075EB6F /* ShellSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShellSearchTableViewCell.xib; sourceTree = "<group>"; };
 		CAC6F4081FF4CA17002B9D5F /* FFMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMineModel.h; sourceTree = "<group>"; };
 		CAC6F4091FF4CA17002B9D5F /* FFMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMineModel.m; sourceTree = "<group>"; };
 		CACC37F31E2753DF0045F345 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -5329,6 +5334,9 @@
 		CA5A503820C91F4600B834D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CAC3B3C220CF98BF0075EB6F /* ShellSearchTableViewCell.h */,
+				CAC3B3C320CF98BF0075EB6F /* ShellSearchTableViewCell.m */,
+				CAC3B3C420CF98BF0075EB6F /* ShellSearchTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5824,6 +5832,7 @@
 				B860F1F11C83DD13005F03DD /* 奖励记录_03.png in Resources */,
 				63BDD52C20CE10D800D4EE81 /* AddGoodsCell.xib in Resources */,
 				B80617241C7C513100B01CA0 /* avatar_03.png in Resources */,
+				CAC3B3C620CF98BF0075EB6F /* ShellSearchTableViewCell.xib in Resources */,
 				184E2E2D1D054418004A7272 /* 我的现金券.png in Resources */,
 				18C99E6D1D19435400616C3C /* 咨询.png in Resources */,
 				180F9FEC1D9237B3009D2386 /* 投资详情-人保2@x.png in Resources */,
@@ -6262,6 +6271,7 @@
 				B8396B031C3CBB03006B7530 /* LGGradientBackgroundView.m in Sources */,
 				B82923681C0470B2002B9D1B /* DDLingQianBaoContentTableViewCell.m in Sources */,
 				B8AEAB531F1608B7007A0FBA /* UIView+Ext.m in Sources */,
+				CAC3B3C520CF98BF0075EB6F /* ShellSearchTableViewCell.m in Sources */,
 				1827C0D11D59858200E034D8 /* DDBondViewController.m in Sources */,
 				CAFE7C1A2054D644000D68F2 /* versionModel.m in Sources */,
 				B82BAE771CC8CE26002DA751 /* DYAuthenticationTableViewCell.m in Sources */,

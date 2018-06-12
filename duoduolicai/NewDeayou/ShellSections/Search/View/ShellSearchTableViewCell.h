@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ShellSearchTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *searchBackView;
+@property (weak, nonatomic) IBOutlet UILabel *nickLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goodsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *noteLabel;
 
 @end

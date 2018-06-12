@@ -12,6 +12,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.searchBackView.layer.cornerRadius = 5;
+    self.searchBackView.layer.masksToBounds = YES;
+    self.searchBackView.layer.borderWidth = 1;
+    self.searchBackView.layer.borderColor = kCOLOR_R_G_B_A(243, 181, 58, 1).CGColor;
     // Initialization code
 }
 
