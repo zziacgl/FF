@@ -14,6 +14,7 @@ typedef enum : NSUInteger {
 } RecordType;
 
 typedef enum : NSUInteger {
+    Goodinit,  // 初始值
     GoodNotDispatched, // 未发货
     GoodHasDispatched, // 已发货
 } SHippingStatus;

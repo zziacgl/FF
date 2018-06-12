@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *sureButton;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIButton *hasSendButton;
+@property (weak, nonatomic) IBOutlet UIButton *notSendButton;
 
 @end

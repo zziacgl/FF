@@ -247,6 +247,11 @@
                                 <constraint firstAttribute="trailing" secondItem="uY0-1h-58l" secondAttribute="trailing" id="ch5-oE-eR9"/>
                                 <constraint firstItem="uY0-1h-58l" firstAttribute="leading" secondItem="Ysg-U9-3av" secondAttribute="leading" id="jy2-DE-u6u"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <constraints>

@@ -26,7 +26,9 @@
             NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:kCachePath(subPath)];
             ShellRecordModel *model = [ShellRecordModel new];
             [model setValuesForKeysWithDictionary:dict];
-            [array addObject:model];
+            if (recordType == model.recordType) {
+                [array addObject:model];
+            }
         }
         [modelArr addObject:array];
     }

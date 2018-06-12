@@ -28,6 +28,8 @@
 @property (nonatomic, weak) AddRecordHeaderView *headerView;
 @property (nonatomic, weak) AddRecordFooterView *footerView;
 
+@property (nonatomic, assign) SHippingStatus shippingStatus;
+
 @end
 
 @implementation AddRecordViewController
@@ -36,6 +38,7 @@
     [super viewDidLoad];
     self.title = @"添加记录";
     self.goods = [NSMutableArray new];
+    self.shippingStatus = Goodinit;
     self.view.backgroundColor = kBackColor;
     [self setUpTableView];
     [self setupTableViewHeader];
@@ -67,6 +70,8 @@
     footerView.frame = CGRectMake(0, 0, kMainScreenWidth, 210);
     [footerView.sureButton addTarget:self action:@selector(sureButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableFooterView = footerView;
+    [footerView.hasSendButton addTarget:self action:@selector(hasSendButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [footerView.notSendButton addTarget:self action:@selector(notSendButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setupRecordModel {
@@ -80,6 +85,20 @@
         [self.tableView reloadData];
         
         [self.footerView.sureButton setTitle:@"确认修改" forState:UIControlStateNormal];
+        if (self.recordModel.remark.length) {
+            self.footerView.textView.text = self.recordModel.remark;
+        }
+        switch (self.recordModel.shippingStatus) {
+            case GoodNotDispatched:
+                [self.footerView.notSendButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateNormal];
+                break;
+            case GoodHasDispatched:
+                [self.footerView.hasSendButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateNormal];
+                break;
+
+            default:
+                break;
+        }
     }
 }
 
@@ -103,16 +122,21 @@
         [MBProgressHUD errorHudWithView:self.view label:@"商品不能为空" hidesAfter:1.0];
         return;
     }
-    
+    if (self.shippingStatus == Goodinit) {
+        [MBProgressHUD errorHudWithView:self.view label:@"请选择物流状态" hidesAfter:1.0];
+        return;
+    }
     ShellRecordModel *model = [ShellRecordModel new];
     model.nickName = headerView.nickNameTextField.text;
     model.mobile = headerView.mobileTextField.text;
     model.postage = headerView.postageTextField.text;
-    if (footerView.textView.text.length) {
+    model.shippingStatus = self.shippingStatus;
+    
+    if (footerView.textView.text.length
+            && ![footerView.textView.text isEqualToString:@"请填写相关备注"]) {
         model.remark = footerView.textView.text;
     }
     model.recordType = self.recordType;
-    model.shippingStatus = GoodNotDispatched;
     model.goods = self.goods;
     
     if (self.recordModel) {
@@ -124,6 +148,19 @@
     [ShellModelTool saveRecordModel:model];
     [MBProgressHUD checkHudWithView:self.view label:@"添加记录成功" hidesAfter:1.0];
     
+}
+
+- (void)hasSendButtonPressed:(UIButton *)button {
+    self.shippingStatus = GoodHasDispatched;
+    [self.footerView.hasSendButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateNormal];
+    [self.footerView.notSendButton setImage:[UIImage imageNamed:@"select"] forState:UIControlStateNormal];
+
+}
+
+- (void)notSendButtonPressed:(UIButton *)button {
+    self.shippingStatus = GoodNotDispatched;
+    [self.footerView.hasSendButton setImage:[UIImage imageNamed:@"select"] forState:UIControlStateNormal];
+    [self.footerView.notSendButton setImage:[UIImage imageNamed:@"selected"] forState:UIControlStateNormal];
 }
 
 #pragma mark - UITableViewDataSource

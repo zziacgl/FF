@@ -24,16 +24,20 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-60-sBC">
-                    <rect key="frame" x="35" y="115" width="46" height="30"/>
-                    <state key="normal" title="已发货"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-60-sBC">
+                    <rect key="frame" x="35" y="115" width="85" height="22"/>
+                    <state key="normal" title="  已发货" image="未选中副本">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-T1-uhu">
-                    <rect key="frame" x="456" y="115" width="46" height="30"/>
-                    <state key="normal" title="未发货"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-T1-uhu">
+                    <rect key="frame" x="417" y="115" width="85" height="22"/>
+                    <state key="normal" title="  未发货" image="未选中副本">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNz-1p-OP3">
-                    <rect key="frame" x="20" y="165" width="497" height="40"/>
+                    <rect key="frame" x="20" y="157" width="497" height="40"/>
                     <color key="backgroundColor" red="0.086274509799999996" green="0.21960784310000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Wf6-Cn-OFv"/>
@@ -41,6 +45,11 @@
                     <state key="normal" title="确定">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,10 +68,15 @@
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="hasSendButton" destination="FkF-60-sBC" id="57M-RU-NrW"/>
+                <outlet property="notSendButton" destination="U3F-T1-uhu" id="4Ff-ss-NcF"/>
                 <outlet property="sureButton" destination="CNz-1p-OP3" id="Nrt-GN-ifh"/>
                 <outlet property="textView" destination="eLf-eo-HG3" id="71I-c5-pwf"/>
             </connections>
             <point key="canvasLocation" x="32" y="-46"/>
         </view>
     </objects>
+    <resources>
+        <image name="未选中副本" width="20" height="20"/>
+    </resources>
 </document>
