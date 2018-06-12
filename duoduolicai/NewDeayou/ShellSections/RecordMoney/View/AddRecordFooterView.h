@@ -10,5 +10,7 @@
 
 @interface AddRecordFooterView : UIView
 
+@property (weak, nonatomic) IBOutlet UIButton *sureButton;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end

@@ -10,7 +10,6 @@
 
 @interface AddRecordFooterView ()
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
 @end
 
 @implementation AddRecordFooterView

@@ -58,6 +58,22 @@
 }
 
 - (IBAction)sureButtonPressed:(id)sender {
+    if (!self.nameTextField.text.length) {
+        [MBProgressHUD errorHudWithView:self label:@"商品名称不能为空" hidesAfter:1.2];
+        return;
+    }
+    if (!self.buyPriceTextField.text.length) {
+        [MBProgressHUD errorHudWithView:self label:@"进价不能为空" hidesAfter:1.2];
+        return;
+    }
+    if (!self.sellPriceTextField.text.length) {
+        [MBProgressHUD errorHudWithView:self label:@"售价不能为空" hidesAfter:1.2];
+        return;
+    }
+    if (!self.countTextField.text.length) {
+        [MBProgressHUD errorHudWithView:self label:@"数量不能为空" hidesAfter:1.2];
+        return;
+    }
     ShellGoodsModel *model = [ShellGoodsModel new];
     model.goodsName = self.nameTextField.text;
     model.count = self.countTextField.text;

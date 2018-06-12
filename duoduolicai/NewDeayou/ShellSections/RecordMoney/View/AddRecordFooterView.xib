@@ -32,6 +32,16 @@
                     <rect key="frame" x="456" y="115" width="46" height="30"/>
                     <state key="normal" title="未发货"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNz-1p-OP3">
+                    <rect key="frame" x="20" y="165" width="497" height="40"/>
+                    <color key="backgroundColor" red="0.086274509799999996" green="0.21960784310000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Wf6-Cn-OFv"/>
+                    </constraints>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -41,11 +51,15 @@
                 <constraint firstItem="FkF-60-sBC" firstAttribute="leading" secondItem="eLf-eo-HG3" secondAttribute="leading" constant="20" id="dch-3W-ZCo"/>
                 <constraint firstItem="U3F-T1-uhu" firstAttribute="trailing" secondItem="eLf-eo-HG3" secondAttribute="trailing" constant="-20" id="dgK-DL-26R"/>
                 <constraint firstItem="eLf-eo-HG3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="i2r-9o-oR2"/>
+                <constraint firstAttribute="trailing" secondItem="CNz-1p-OP3" secondAttribute="trailing" constant="20" id="iOj-hj-x4V"/>
                 <constraint firstAttribute="trailing" secondItem="eLf-eo-HG3" secondAttribute="trailing" constant="15" id="ln4-f6-54J"/>
+                <constraint firstItem="CNz-1p-OP3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="maK-5I-NLd"/>
+                <constraint firstItem="CNz-1p-OP3" firstAttribute="top" secondItem="FkF-60-sBC" secondAttribute="bottom" constant="20" id="wQa-Ml-pa6"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="sureButton" destination="CNz-1p-OP3" id="Nrt-GN-ifh"/>
                 <outlet property="textView" destination="eLf-eo-HG3" id="71I-c5-pwf"/>
             </connections>
             <point key="canvasLocation" x="32" y="-46"/>

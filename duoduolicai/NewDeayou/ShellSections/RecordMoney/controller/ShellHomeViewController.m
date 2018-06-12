@@ -111,7 +111,7 @@
 }
 - (NSInteger )yuFoldingTableView:(YUFoldingTableView *)yuTableView numberOfRowsInSection:(NSInteger )section
 {
-    return [self.dataAry[section] count];
+    return [(NSArray *)self.dataAry[section] count];
 }
 - (CGFloat )yuFoldingTableView:(YUFoldingTableView *)yuTableView heightForHeaderInSection:(NSInteger )section
 {
@@ -138,13 +138,17 @@
 
 - (NSString *)yuFoldingTableView:(YUFoldingTableView *)yuTableView titleForHeaderInSection:(NSInteger)section
 {
-    
-    return [NSString stringWithFormat:@"Title %ld",(long)section];
+    ShellRecordModel *model = [self.dataAry[section] firstObject];
+    return model.createDate;
 }
 
 - (void )yuFoldingTableView:(YUFoldingTableView *)yuTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [yuTableView deselectRowAtIndexPath:indexPath animated:YES];
+    AddRecordViewController *addVC = [[AddRecordViewController alloc] init];
+    addVC.hidesBottomBarWhenPushed = YES;
+    addVC.recordModel = self.dataAry[indexPath.section][indexPath.row];
+    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 // 返回箭头的位置
@@ -177,6 +181,7 @@
 - (void)handleRight {
     AddRecordViewController *addVC = [[AddRecordViewController alloc] init];
     addVC.hidesBottomBarWhenPushed = YES;
+    
     [self.navigationController pushViewController:addVC animated:YES];
 }
 

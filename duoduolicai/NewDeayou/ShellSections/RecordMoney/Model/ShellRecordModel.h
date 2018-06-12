@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *postage; // 邮费
 @property (nonatomic, strong) NSString *remark; // 备注
 @property (nonatomic, strong) NSString *createDate;
+@property (nonatomic, strong) NSString *createTime;
 @property (nonatomic, strong) NSArray *goods;
 
 @property (nonatomic, assign) RecordType recordType;

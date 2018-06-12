@@ -14,9 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIView *mobileBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *postageBackgroundView;
 
-@property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
-@property (weak, nonatomic) IBOutlet UITextField *postageTextField;
 
 @end
 

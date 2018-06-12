@@ -40,19 +40,26 @@
     }
     
     if (!recordModel.createDate) {
-        recordModel.createDate = [[NSDate date] stringWithISOFormat];
+        recordModel.createDate = [[NSDate date] stringWithFormat:@"YYYY-MM-dd"];
     }
+    if (!recordModel.createTime) {
+        recordModel.createTime = [[NSDate date] stringWithFormat:@"YYYY-MM-dd HH:mm:ss"];
+    }
+
     // 保存当前记录的id，便于查询
     [self storeTodayDataArray:recordModel.recordId];
     NSDictionary *dict = [recordModel convertDictionary];
     
-    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-    cachePath = [cachePath stringByAppendingPathComponent:recordModel.recordId];
-    [dict writeToFile:cachePath atomically:YES];
+    [dict writeToFile:kCachePath(recordModel.recordId) atomically:YES];
 }
 
 + (void)modifyRecordModel:(ShellRecordModel *)recordModel {
-    
+    if (!recordModel.recordId) {
+        NSLog(@"%s %d\n修改的记录id不存在",__func__,__LINE__);
+        return;
+    }
+    NSDictionary *dict = [recordModel convertDictionary];
+    [dict writeToFile:kCachePath(recordModel.recordId) atomically:YES];
 }
 
 + (void)deleteRecordModel:(ShellRecordModel *)recordModel {

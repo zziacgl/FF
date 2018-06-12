@@ -10,4 +10,8 @@
 
 @interface AddRecordHeaderView : UIView
 
+@property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
+@property (weak, nonatomic) IBOutlet UITextField *postageTextField;
+
 @end

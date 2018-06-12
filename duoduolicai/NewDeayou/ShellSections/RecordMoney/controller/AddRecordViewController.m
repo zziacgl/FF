@@ -25,6 +25,9 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *goods;
 
+@property (nonatomic, weak) AddRecordHeaderView *headerView;
+@property (nonatomic, weak) AddRecordFooterView *footerView;
+
 @end
 
 @implementation AddRecordViewController
@@ -37,6 +40,7 @@
     [self setUpTableView];
     [self setupTableViewHeader];
     [self setupTableViewFooter];
+    [self setupRecordModel];
     [[IQKeyboardManager sharedManager] setEnable:YES];
 }
 
@@ -52,18 +56,75 @@
 
 - (void)setupTableViewHeader {
     AddRecordHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"AddRecordHeaderView" owner:nil options:nil].firstObject;
+    self.headerView = headerView;
     headerView.frame = CGRectMake(0, 0, kMainScreenWidth, 160);
     self.tableView.tableHeaderView = headerView;
 }
 
 - (void)setupTableViewFooter {
     AddRecordFooterView *footerView = [[NSBundle mainBundle] loadNibNamed:@"AddRecordFooterView" owner:nil options:nil].firstObject;
-    footerView.frame = CGRectMake(0, 0, kMainScreenWidth, 150);
+    self.footerView = footerView;
+    footerView.frame = CGRectMake(0, 0, kMainScreenWidth, 210);
+    [footerView.sureButton addTarget:self action:@selector(sureButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableFooterView = footerView;
 }
 
-#pragma mark - private
+- (void)setupRecordModel {
+    if (self.recordModel) {
+        [self.goods removeAllObjects];
+        
+        [self.goods addObjectsFromArray:self.recordModel.goods];
+        self.headerView.nickNameTextField.text = self.recordModel.nickName;
+        self.headerView.mobileTextField.text = self.recordModel.mobile;
+        self.headerView.postageTextField.text = self.recordModel.postage;
+        [self.tableView reloadData];
+        
+        [self.footerView.sureButton setTitle:@"确认修改" forState:UIControlStateNormal];
+    }
+}
 
+#pragma mark - private
+- (void)sureButtonPressed:(UIButton *)button {
+    AddRecordHeaderView *headerView = (AddRecordHeaderView *)self.tableView.tableHeaderView;
+    AddRecordFooterView *footerView = (AddRecordFooterView *)self.tableView.tableFooterView;
+    if (!headerView.nickNameTextField.text.length) {
+        [MBProgressHUD errorHudWithView:self.view label:@"昵称不能为空" hidesAfter:1.0];
+        return;
+    }
+    if (!headerView.mobileTextField.text.length) {
+        [MBProgressHUD errorHudWithView:self.view label:@"手机号不能为空" hidesAfter:1.0];
+        return;
+    }
+    if (!headerView.postageTextField.text.length) {
+        [MBProgressHUD errorHudWithView:self.view label:@"邮费不能为空" hidesAfter:1.0];
+        return;
+    }
+    if (!self.goods.count) {
+        [MBProgressHUD errorHudWithView:self.view label:@"商品不能为空" hidesAfter:1.0];
+        return;
+    }
+    
+    ShellRecordModel *model = [ShellRecordModel new];
+    model.nickName = headerView.nickNameTextField.text;
+    model.mobile = headerView.mobileTextField.text;
+    model.postage = headerView.postageTextField.text;
+    if (footerView.textView.text.length) {
+        model.remark = footerView.textView.text;
+    }
+    model.recordType = self.recordType;
+    model.shippingStatus = GoodNotDispatched;
+    model.goods = self.goods;
+    
+    if (self.recordModel) {
+        [self.recordModel setValuesForKeysWithDictionary:[model convertDictionary]];
+        [ShellModelTool modifyRecordModel:self.recordModel];
+        [MBProgressHUD checkHudWithView:self.view label:@"修改记录成功" hidesAfter:1.0];
+        return;
+    }
+    [ShellModelTool saveRecordModel:model];
+    [MBProgressHUD checkHudWithView:self.view label:@"添加记录成功" hidesAfter:1.0];
+    
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

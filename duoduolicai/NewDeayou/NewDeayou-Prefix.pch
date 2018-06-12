@@ -284,4 +284,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #import "UMMobClick/MobClick.h"
 
 
-
+#import "ShellModelTool.h"
+#import "ShellGoodsModel.h"
+#import "ShellRecordModel.h"

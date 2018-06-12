@@ -10,4 +10,7 @@
 
 @interface AddRecordViewController : UIViewController
 
+@property (nonatomic, assign) RecordType recordType;
+@property (nonatomic, strong) ShellRecordModel *recordModel;
+
 @end

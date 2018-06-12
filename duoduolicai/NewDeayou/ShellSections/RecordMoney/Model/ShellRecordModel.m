@@ -16,7 +16,7 @@
     [super setValue:value forKey:key];
     if ([key isEqualToString:@"goods"]) {
         NSMutableArray *arr = [NSMutableArray new];
-        for (NSDictionary *dict in arr) {
+        for (NSDictionary *dict in value) {
             ShellGoodsModel *model = [ShellGoodsModel new];
             [model setValuesForKeysWithDictionary:dict];
             [arr addObject:model];
