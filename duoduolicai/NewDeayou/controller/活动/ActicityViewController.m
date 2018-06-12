@@ -180,7 +180,7 @@ static NSString *identifier=@"acticity";
         }
         
 //        [cell.activityIamge sd_setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"icon"]]];
-        [cell.activityIamge sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", [dic objectForKey:@"icon"]]] placeholderImage:[UIImage imageNamed:@"backImage"]];
+        [cell.activityIamge sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", [dic objectForKey:@"icon"]]] placeholderImage:[UIImage imageNamed:@"ffbackImage"]];
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateStyle:NSDateFormatterMediumStyle];

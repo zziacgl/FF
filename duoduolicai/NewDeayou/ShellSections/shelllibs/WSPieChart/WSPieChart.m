@@ -10,7 +10,7 @@
 #import "WSPieItemsView.h"
 #import "WSPieForeBGView.h"
 #import "WSShowInfoView.h"
-#define k_COLOR_STOCK @[[UIColor colorWithRed:22/255.0 green:56/255.0 blue:96/255.0 alpha:1],[UIColor colorWithRed:241/255.0 green:187/255.0 blue:62/255.0 alpha:1],[UIColor colorWithRed:163/255.0 green:200/255.0 blue:240/255.0 alpha:1]]
+#define k_COLOR_STOCK @[[UIColor colorWithRed:224/255.0 green:72/255.0 blue:22/255.0 alpha:1],[UIColor colorWithRed:241/255.0 green:187/255.0 blue:62/255.0 alpha:1],[UIColor colorWithRed:163/255.0 green:200/255.0 blue:240/255.0 alpha:1]]
 
 @interface WSPieChart()
 

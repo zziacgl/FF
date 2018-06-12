@@ -62,7 +62,7 @@
         if (!_backImage) {
             
             self.backImage = [[UIImageView alloc] initWithFrame:self.frame];
-            self.backImage.image = [UIImage imageNamed:@"lunbo_default"];
+            self.backImage.image = [UIImage imageNamed:@"ffbackImage"];
             [self addSubview:self.backImage];
         }
     }else {
@@ -113,7 +113,7 @@
         bannerView.layer.masksToBounds = YES;
     }
     
-    [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", self.aryADImages[index]]] placeholderImage:[UIImage imageNamed:@"backImage"]];
+    [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", self.aryADImages[index]]] placeholderImage:[UIImage imageNamed:@"ffbackImage"]];
 
 //    bannerView.mainImageView.image = self.aryADImages[index];
     

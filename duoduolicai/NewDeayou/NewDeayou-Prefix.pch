@@ -166,12 +166,12 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define CSV4ZZ_kUPIMAGE                @"http://www.51duoduo.com/index.php?upload" // @"http://devkuaichedai.diyou.cc/index.php?upload"
 #define CSV4ZZ_kDiyou_key_picture      @"74I7@1LVcIH@Q7I5eH$e3Pcg%I#$8K1q"// @"@$@!#4123rqeOTFjOTE2YzUxODJladf"//     /*上传图片key*/
 
-//#define CSV4ZZ_Url                      @"http://120.78.153.24:8888/dyserver/mobile.php"//测试地址
+#define CSV4ZZ_Url                      @"http://120.78.153.24:8888/dyserver/mobile.php"//测试地址
 
-#define CSV4ZZ_Url                      @"https://www.fengfengjinrong.com/dyserver/mobile.php"//丰丰正式库
+//#define CSV4ZZ_Url                      @"https://www.fengfengjinrong.com/dyserver/mobile.php"//丰丰正式库
 
-#define ffwebURL                      @"https://www.fengfengjinrong.com"//丰丰H5正式库
-//#define ffwebURL                      @"http://120.78.153.24:8888"//丰丰H5测试库
+//#define ffwebURL                      @"https://www.fengfengjinrong.com"//丰丰H5正式库
+#define ffwebURL                      @"http://120.78.153.24:8888"//丰丰H5测试库
 
 
 

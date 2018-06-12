@@ -21,6 +21,10 @@
 @property (nonatomic, assign) BOOL searchActive;
 @property (nonatomic, strong) AddGoosView *addView;
 @property (nonatomic, strong) NSArray *myData;
+@property(nonatomic,strong)NSMutableArray *resultArray;
+@property(nonatomic,strong)NSMutableArray *requltIndexData;
+
+
 
 @end
 
@@ -29,20 +33,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kBackColor;
-//    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-//    [ud setObject:_myData forKey:@""];
+
     [self setOutNavView];
     [self setUpTableView];
     self.rightButton =[UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame=CGRectMake(0, 0, 20, 20);
-    self.rightButton.backgroundColor = [UIColor whiteColor];
-    [self.rightButton setImage:[UIImage imageNamed:@"choseBtn"] forState:UIControlStateNormal];
+//    self.rightButton.backgroundColor = [UIColor whiteColor];
+    [self.rightButton setImage:[UIImage imageNamed:@"addgoods"] forState:UIControlStateNormal];
     [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(handleAddGoods) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
-    // Do any additional setup after loading the view.
-}
 
+    NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
+    NSArray *myArray = [[NSArray alloc] initWithArray:[userDefaultes arrayForKey:@"myArray"]];
+    self.dataAry = [NSMutableArray array];
+    self.dataAry = [myArray mutableCopy];
+    CGSize btnImageSize = CGSizeMake(22, 22);
+    UIButton * btnLeft=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLeft setImage:[UIImage imageNamed:@"shellBack"] forState:UIControlStateNormal];
+    [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btnLeft.frame=CGRectMake(0, 0, btnImageSize.width, btnImageSize.height);
+    [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:btnLeft];
+    
+}
+- (void)back{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(NSMutableArray *)resultArray{
+    
+    if (!_resultArray) {
+        _resultArray = [NSMutableArray array];
+    }
+    return _resultArray;
+}
 - (void)handleAddGoods {
     kbackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight)];
     kbackView.backgroundColor = [UIColor blackColor];
@@ -52,7 +76,9 @@
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     tap1.cancelsTouchesInView = NO;
     [self.tabBarController.view addGestureRecognizer:tap1];
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchviewTapped:)];
+    tap.cancelsTouchesInView = NO;
+    [self.tabBarController.view addGestureRecognizer:tap1];
     self.addView = [[NSBundle mainBundle]loadNibNamed:@"AddGoosView" owner:nil options:nil].lastObject;
     self.addView.frame = CGRectMake(20, 150, kMainScreenWidth - 40, 150);
     self.addView.layer.cornerRadius = 8;
@@ -71,13 +97,18 @@
     
 }
 - (void)handleSure {
-    self.dataAry = [NSMutableArray array];
-    AddGoodsModel *model = [[AddGoodsModel alloc] init];
-    if (self.addView.GoodsMoneyTF.text.length > 0 && self.addView.GoodsNameTF.text.length > 0) {
-        model.goodsName = self.addView.GoodsNameTF.text;
-        model.goodsMoney = self.addView.GoodsMoneyTF.text;
-    }
-    [self.dataAry addObject:model];
+    
+
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    
+    [dic setValue:self.addView.GoodsNameTF.text forKey:@"goodsName"];
+    [dic setValue:self.addView.GoodsMoneyTF.text forKey:@"goodsMoney"];
+    [self.dataAry insertObject:dic atIndex:0];
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.dataAry forKey:@"myArray"];
+
+    
     [self.tableView reloadData];
     [self handleCancel];
     
@@ -116,7 +147,7 @@
 #pragma mark -- tableDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataAry.count;
+    return _searchActive ? _resultArray.count : _dataAry.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -126,25 +157,122 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.selectionStyle = UITableViewCellAccessoryNone;
-    AddGoodsModel *model = self.dataAry[indexPath.row];
-    cell.textLabel.text = model.goodsName;
+//    AddGoodsModel *model = self.dataAry[indexPath.row];
+//    self.dataAry = [NSMutableArray arrayWithContentsOfFile:@"adddata"];
+//    cell.textLabel.text = model.goodsName;
+    NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
+
+    NSArray *myArray = [[NSArray alloc] initWithArray:[userDefaultes arrayForKey:@"myArray"]];
+    self.dataAry = [myArray mutableCopy];
+    cell.textLabel.text = _searchActive ? [self.resultArray[indexPath.row] objectForKey:@"goodsName"]:[self.dataAry[indexPath.row] objectForKey:@"goodsName"];
     return cell;
 }
-
--(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-
+#pragma mark -- searchDelegate
+-(BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar{
+    return YES;
 }
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText.length == 0) {
+        _searchActive = NO;
+        [self.tableView reloadData];
+        return;
+    }
+    _searchActive = YES;
+    [self.resultArray removeAllObjects];
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(0, 0);
+    dispatch_async(globalQueue, ^{
+        if (searchText!=nil && searchText.length>0) {
+            
+            for (NSDictionary *dic in self.dataAry) {
+                
+                NSString *tempStr = [dic objectForKey:@"goodsName"];
+                
+                NSString *pinyin = [self transformToPinyin:tempStr];
+                NSLog(@"pinyin--%@",pinyin);
+                
+                if ([pinyin rangeOfString:searchText options:NSCaseInsensitiveSearch].length >0 ) {
+                    [self.resultArray addObject:dic];
+                    
+                }
+            }
+        }else{
+            self.resultArray = [NSMutableArray arrayWithArray:self.dataAry];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableView reloadData];
+        });
+    });
+    
+  
+   
+    
+  
+   
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.searchBar resignFirstResponder];
-    [self.addView.GoodsNameTF resignFirstResponder];
-    [self.addView.GoodsMoneyTF resignFirstResponder];
+//    [self.addView.GoodsNameTF resignFirstResponder];
+//    [self.addView.GoodsMoneyTF resignFirstResponder];
 }
+-(void)searchviewTapped:(UITapGestureRecognizer*)tap{
+    [self.view endEditing:YES];
+}
+
 -(void)viewTapped:(UITapGestureRecognizer*)tap1
 {
     
     [self.tabBarController.view endEditing:YES];
     
 }
+- (NSString *)transformToPinyin:(NSString *)aString
+{
+    //转成了可变字符串
+    NSMutableString *str = [NSMutableString stringWithString:aString];
+    CFStringTransform((CFMutableStringRef)str,NULL, kCFStringTransformMandarinLatin,NO);
+    //再转换为不带声调的拼音
+    CFStringTransform((CFMutableStringRef)str,NULL, kCFStringTransformStripDiacritics,NO);
+    NSArray *pinyinArray = [str componentsSeparatedByString:@" "];
+    NSMutableString *allString = [NSMutableString new];
+    
+    int count = 0;
+    
+    for (int  i = 0; i < pinyinArray.count; i++)
+    {
+        
+        for(int i = 0; i < pinyinArray.count;i++)
+        {
+            if (i == count) {
+                [allString appendString:@"#"];//区分第几个字母
+            }
+            [allString appendFormat:@"%@",pinyinArray[i]];
+            
+        }
+        [allString appendString:@","];
+        count ++;
+        
+    }
+    
+    NSMutableString *initialStr = [NSMutableString new];//拼音首字母
+    
+    for (NSString *s in pinyinArray)
+    {
+        if (s.length > 0)
+        {
+            
+            [initialStr appendString:  [s substringToIndex:1]];
+        }
+    }
+    
+    [allString appendFormat:@"#%@",initialStr];
+    [allString appendFormat:@",#%@",aString];
+    
+    return allString;
+}
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIImageView *topImageView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *titleAry;
+@property (nonatomic, strong) NSArray *imageAry;
 @end
 static NSString *inentifier = @"footcell";
 
@@ -33,6 +34,7 @@ static NSString *inentifier = @"footcell";
 
 - (void)setUpOverView {
     self.topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenWidth / 74 * 42)];
+    _topImageView.image = [UIImage imageNamed:@"overtop"];
     _topImageView.backgroundColor = kMainColor;
     [self.view addSubview:self.topImageView];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, kMainScreenWidth, self.navigationController.navigationBar.frame.size.height)];
@@ -68,12 +70,18 @@ static NSString *inentifier = @"footcell";
     
     return _titleAry;
 }
-
+- (NSArray *)imageAry {
+    if (!_imageAry) {
+        self.imageAry = @[@"qushi", @"jinhuo", @"shangpin", @"overuser"];
+    }
+    return _imageAry;
+    
+}
 #pragma mark -- UITableViewDelegate, UITableViewDataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 4) {
-        return 100;
+        return 260;
     }else {
         return 55;
     }
@@ -100,6 +108,8 @@ static NSString *inentifier = @"footcell";
         }
         [tableView setSeparatorInset:UIEdgeInsetsMake(10, 15, 0, 10)];
         cell.textLabel.text = self.titleAry[indexPath.row];
+        cell.imageView.image = [UIImage imageNamed:self.imageAry[indexPath.row]];
+        cell.textLabel.textColor = kCOLOR_R_G_B_A(224, 72, 22, 1);
         if (indexPath.row == 2) {
             cell.detailTextLabel.text = @"点击右上角“+”添加商品";
             cell.detailTextLabel.font = [UIFont systemFontOfSize:12];

@@ -27,16 +27,16 @@
 
     ShellHomeViewController *homeVC = [[ShellHomeViewController alloc] init];
     
-    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"tab_home"] selectedImage:[[UIImage imageNamed:@"tab_home_pre"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"记账" image:[UIImage imageNamed:@"jizhang"] selectedImage:[[UIImage imageNamed:@"jizhangsel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
     
     ShellSearchViewController *investVC = [[ShellSearchViewController alloc] init];
-    investVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"理财" image:[UIImage imageNamed:@"tab_licai"] selectedImage:[[UIImage imageNamed:@"tab_licai_pre"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    investVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"搜索" image:[UIImage imageNamed:@"shellsousuo"] selectedImage:[[UIImage imageNamed:@"shellsousuosel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     UINavigationController *investNav = [[UINavigationController alloc] initWithRootViewController:investVC];
     
     ShellOverViewController *mineVC = [[ShellOverViewController alloc] init];
-    mineVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"tab_account"] selectedImage:[[UIImage imageNamed:@"tab_account_pre"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    mineVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"总览" image:[UIImage imageNamed:@"shellover"] selectedImage:[[UIImage imageNamed:@"shelloversel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     UINavigationController *mineVav = [[UINavigationController alloc] initWithRootViewController:mineVC];
     
     
@@ -45,9 +45,21 @@
     
     self.viewControllers = @[homeNav, investNav, mineVav];
     //选中字体颜色
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kThemeColor,NSFontAttributeName:[UIFont boldSystemFontOfSize:12]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kMainColor,NSFontAttributeName:[UIFont boldSystemFontOfSize:12]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:12]} forState:UIControlStateNormal];
+
+    // 拿到整个导航控制器的外观
+    UIBarButtonItem * item = [UIBarButtonItem appearance];
+    item.tintColor = [UIColor whiteColor];
+    // 设置字典的字体大小
+    NSMutableDictionary * atts = [NSMutableDictionary dictionary];
     
-    self.tabBar.barTintColor = [UIColor whiteColor];
+    atts[NSFontAttributeName] = [UIFont systemFontOfSize:17];
+    atts[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    // 将字典给item
+    [item setTitleTextAttributes:atts forState:UIControlStateNormal];
+    
+    self.tabBar.barTintColor = kCOLOR_R_G_B_A(243, 181, 58, 1);
     
 }
 

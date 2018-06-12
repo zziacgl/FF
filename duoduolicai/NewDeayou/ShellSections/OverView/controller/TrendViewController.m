@@ -10,11 +10,15 @@
 #import "TrendChartTableViewCell.h"
 #import "TrendPieChartTableViewCell.h"
 #import "WJPopoverViewController.h"
+#import "ShellNoDataView.h"
 
 @interface TrendViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, strong) WJPopoverViewController *popView;
+@property (nonatomic, copy) NSString *choseStr;
+@property (nonatomic, strong) NSArray *dataAry;
+@property (nonatomic, strong) ShellNoDataView *nodataBackView;
 
 @end
 
@@ -26,18 +30,33 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"趋势";
+    self.choseStr = @"1";
     self.view.backgroundColor = kBackColor;
+    CGSize btnImageSize = CGSizeMake(20, 20);
+    UIButton * btnLeft=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLeft setImage:[UIImage imageNamed:@"shellBack"] forState:UIControlStateNormal];
+    [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btnLeft.frame=CGRectMake(0, 0, btnImageSize.width, btnImageSize.height);
+    [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:btnLeft];
     [self configTableView];
     self.rightButton =[UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame=CGRectMake(0, 0, 20, 20);
-    self.rightButton.backgroundColor = [UIColor whiteColor];
-    [self.rightButton setImage:[UIImage imageNamed:@"choseBtn"] forState:UIControlStateNormal];
+    [self.rightButton setImage:[UIImage imageNamed:@"shaixuan"] forState:UIControlStateNormal];
     [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(handleScreen:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
     // Do any additional setup after loading the view.
 }
-
+- (void)back{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (NSArray *)dataAry {
+    if (!_dataAry) {
+        self.dataAry = [NSArray array];
+    }
+    return _dataAry;
+}
 - (void)configTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight ) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -56,31 +75,55 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
     
     [self.view addSubview:self.tableView];
     [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor clearColor]];
+    self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"" image:@"nodataImage"];
+    self.nodataBackView.frame = self.view.bounds;
+    self.nodataBackView.alpha = 0;
+    [self.view addSubview:self.nodataBackView];
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return 320;
+    if ([self.choseStr isEqualToString:@"1"]) {
+        if (indexPath.row == 0) {
+            return 320;
+        }else {
+            return kMainScreenWidth / 3 * 2 + 50;
+        }
     }else {
-        return kMainScreenWidth / 3 * 2 + 50;
+        return 50;
     }
+   
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    if ([self.choseStr isEqualToString:@"1"]) {
+        return 2;
+    }else {
+        return self.dataAry.count;
+    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        TrendChartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:firstinentifier forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellAccessoryNone;
-
-        return cell;
+    if ([self.choseStr isEqualToString:@"1"]) {
+        if (indexPath.row == 0) {
+            TrendChartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:firstinentifier forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellAccessoryNone;
+            
+            return cell;
+        }else {
+            TrendPieChartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:secondinentifier forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellAccessoryNone;
+            
+            return cell;
+        }
     }else {
-        TrendPieChartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:secondinentifier forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellAccessoryNone;
-
+        static NSString *inditifier = @"mine";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:inditifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:inditifier];
+        }
         return cell;
     }
+    
 }
 
 #pragma mark -- 筛选
@@ -123,8 +166,17 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
     NSInteger index = sender.tag - 500;
     switch (index) {
         case 0:
+            self.choseStr = @"1";
+            [self.tableView reloadData];
            break;
         case 1:
+            self.choseStr = @"2";
+            if (self.dataAry.count > 0) {
+                 self.nodataBackView.alpha = 0;
+            }else {
+                self.nodataBackView.alpha = 1;
+            }
+            [self.tableView reloadData];
             break;
        
         default:

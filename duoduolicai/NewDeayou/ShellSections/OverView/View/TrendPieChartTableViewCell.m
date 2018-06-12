@@ -22,7 +22,7 @@
 - (void)setUpPieChartView {
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, kMainScreenWidth, 20)];
     titleLabel.text = @"收益占比：";
-    titleLabel.textColor = [UIColor darkGrayColor];
+    titleLabel.textColor = kCOLOR_R_G_B_A(224, 72, 22, 1);
     titleLabel.font = [UIFont systemFontOfSize:16];
     [self.contentView addSubview:titleLabel];
     WSPieChart *pie = [[WSPieChart alloc] initWithFrame:CGRectMake(0, 70, kMainScreenWidth / 3 * 2 , kMainScreenWidth / 3 * 2 )];
@@ -44,7 +44,7 @@
             UIView *firstView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(colorView.frame) / 2 - 8, 16, 16)];
             firstView.layer.cornerRadius = 8;
             firstView.layer.masksToBounds = YES;
-            firstView.backgroundColor = [UIColor colorWithRed:22/255.0 green:56/255.0 blue:96/255.0 alpha:1];
+            firstView.backgroundColor = kCOLOR_R_G_B_A(224, 72, 22, 1);
             [colorView addSubview:firstView];
             self.firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, CGRectGetWidth(colorView.frame) - 20, CGRectGetHeight(colorView.frame))];
             self.firstLabel.textColor = k_COLOR_STOCK[i];

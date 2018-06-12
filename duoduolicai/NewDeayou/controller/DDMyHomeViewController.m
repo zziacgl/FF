@@ -83,7 +83,7 @@ static NSString *invest = @"invest";
     
     [super viewWillAppear:animated];
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-    [self getOperationData];
+   
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -119,7 +119,7 @@ static NSString *invest = @"invest";
     [self.view addSubview:self.tableView];
     
     [self queryADImages];
-    
+     [self getOperationData];
     [self MJ_refresh];
     
     [self smallImage];

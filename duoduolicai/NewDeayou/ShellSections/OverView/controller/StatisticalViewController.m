@@ -22,12 +22,22 @@
     self.view.backgroundColor = kBackColor;
     self.rightButton =[UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame=CGRectMake(0, 0, 20, 20);
-    self.rightButton.backgroundColor = [UIColor whiteColor];
-    [self.rightButton setImage:[UIImage imageNamed:@"choseBtn"] forState:UIControlStateNormal];
+//    self.rightButton.backgroundColor = [UIColor whiteColor];
+    [self.rightButton setImage:[UIImage imageNamed:@"shaixuan"] forState:UIControlStateNormal];
     [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(handleScreen:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
     // Do any additional setup after loading the view.
+    CGSize btnImageSize = CGSizeMake(22, 22);
+    UIButton * btnLeft=[UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLeft setImage:[UIImage imageNamed:@"shellBack"] forState:UIControlStateNormal];
+    [btnLeft setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btnLeft.frame=CGRectMake(0, 0, btnImageSize.width, btnImageSize.height);
+    [btnLeft addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:btnLeft];
+}
+- (void)back{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark -- 筛选
 - (void)handleScreen:(UIButton *)sender forEvent:(UIEvent *)event{

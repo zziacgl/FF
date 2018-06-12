@@ -44,7 +44,7 @@
     self.cycleView.delegate = self;
     self.cycleView.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
     self.cycleView.pageDotImage = [UIImage imageNamed:@"pageControlDot"];
-    self.cycleView.placeholderImage = [UIImage imageNamed:@"backImage"];
+    self.cycleView.placeholderImage = [UIImage imageNamed:@"ffbackImage"];
     
     self.lineProgress.backgroundColor = kCOLOR_R_G_B_A(253, 83, 83, 1);
     

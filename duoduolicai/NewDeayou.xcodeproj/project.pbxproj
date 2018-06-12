@@ -811,6 +811,7 @@
 		CA5A50CF20CE5DC400B834D7 /* AddGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50CE20CE5DC400B834D7 /* AddGoodsModel.m */; };
 		CA5A50D220CE5F6100B834D7 /* AddGoosView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A50D120CE5F6100B834D7 /* AddGoosView.m */; };
 		CA5A50D420CE5F9600B834D7 /* AddGoosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5A50D320CE5F9600B834D7 /* AddGoosView.xib */; };
+		CA5A50D620CF58CF00B834D7 /* fengfengqidong.png in Resources */ = {isa = PBXBuildFile; fileRef = CA5A50D520CF58CF00B834D7 /* fengfengqidong.png */; };
 		CA647F1E1E62FFAB0081E7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA647F1D1E62FFAB0081E7CD /* LaunchScreen.storyboard */; };
 		CA73A8812063802E0035FBCE /* PasswordManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73A8802063802E0035FBCE /* PasswordManagementViewController.m */; };
 		CA73A8852063810D0035FBCE /* PasswordManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA73A8832063810D0035FBCE /* PasswordManagementTableViewCell.m */; };
@@ -875,7 +876,6 @@
 		CAFE7C1A2054D644000D68F2 /* versionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE7C162054D644000D68F2 /* versionModel.m */; };
 		CAFE7C1B2054D644000D68F2 /* versionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE7C192054D644000D68F2 /* versionView.m */; };
 		CAFE7C1E2054D66E000D68F2 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE7C1D2054D66E000D68F2 /* UILabel+LabelHeightAndWidth.m */; };
-		CAFE7C20205616DB000D68F2 /* fengfengqidong.png in Resources */ = {isa = PBXBuildFile; fileRef = CAFE7C1F205616DA000D68F2 /* fengfengqidong.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2156,6 +2156,7 @@
 		CA5A50D020CE5F6100B834D7 /* AddGoosView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddGoosView.h; sourceTree = "<group>"; };
 		CA5A50D120CE5F6100B834D7 /* AddGoosView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddGoosView.m; sourceTree = "<group>"; };
 		CA5A50D320CE5F9600B834D7 /* AddGoosView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddGoosView.xib; sourceTree = "<group>"; };
+		CA5A50D520CF58CF00B834D7 /* fengfengqidong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fengfengqidong.png; sourceTree = "<group>"; };
 		CA647F1D1E62FFAB0081E7CD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA73A87F2063802E0035FBCE /* PasswordManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordManagementViewController.h; sourceTree = "<group>"; };
 		CA73A8802063802E0035FBCE /* PasswordManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordManagementViewController.m; sourceTree = "<group>"; };
@@ -2251,7 +2252,6 @@
 		CAFE7C192054D644000D68F2 /* versionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = versionView.m; sourceTree = "<group>"; };
 		CAFE7C1C2054D66D000D68F2 /* UILabel+LabelHeightAndWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeightAndWidth.h"; sourceTree = "<group>"; };
 		CAFE7C1D2054D66E000D68F2 /* UILabel+LabelHeightAndWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeightAndWidth.m"; sourceTree = "<group>"; };
-		CAFE7C1F205616DA000D68F2 /* fengfengqidong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fengfengqidong.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3964,8 +3964,8 @@
 		B070926B1951200600137682 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CAFE7C1F205616DA000D68F2 /* fengfengqidong.png */,
 				CAEE2741208F1D4C008CC8C4 /* ffqidong.png */,
+				CA5A50D520CF58CF00B834D7 /* fengfengqidong.png */,
 				B070926C1951200600137682 /* NewDeayou-Info.plist */,
 				653D29691DC2FE67002F4E78 /* Images.xcassets */,
 				B070926D1951200600137682 /* InfoPlist.strings */,
@@ -5270,8 +5270,6 @@
 		CA5A503320C91F3900B834D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CA5A509420CBF6B900B834D7 /* ShellRecordModel.h */,
-				CA5A509520CBF6B900B834D7 /* ShellRecordModel.m */,
 				CA5A50CD20CE5DC400B834D7 /* AddGoodsModel.h */,
 				CA5A50CE20CE5DC400B834D7 /* AddGoodsModel.m */,
 			);
@@ -5856,7 +5854,6 @@
 				651C25221DB4ADA1005DA9DC /* MJRefresh.bundle in Resources */,
 				B8B46EB41FCFEFC500143AD8 /* DDInformManageTableViewCell.xib in Resources */,
 				18EFDC451BAAC52300E06BE0 /* DYRegistComfirmViewController.xib in Resources */,
-				CAFE7C20205616DB000D68F2 /* fengfengqidong.png in Resources */,
 				184E2E1B1D0515B5004A7272 /* DDMyCardVoucherViewController.xib in Resources */,
 				18EBA0371D0FB4130001981A /* 站内信_03.png in Resources */,
 				185D9F381C7FFC8C00297D7D /* 我的团队_男.png in Resources */,
@@ -5892,6 +5889,7 @@
 				B070926F1951200600137682 /* InfoPlist.strings in Resources */,
 				B89D56D51CD21B4000ECB49F /* 未标题-1_03(1).png in Resources */,
 				63BDD53120CE145600D4EE81 /* AddRecordHeaderView.xib in Resources */,
+				CA5A50D620CF58CF00B834D7 /* fengfengqidong.png in Resources */,
 				181FECC71DE68BC000A3E089 /* 卡券_@2x.png in Resources */,
 				B0509FA11976110700E56E92 /* DYQuestionTableViewCell.xib in Resources */,
 				B877BCA91BFC983E00AAC436 /* appicon_share.png in Resources */,
