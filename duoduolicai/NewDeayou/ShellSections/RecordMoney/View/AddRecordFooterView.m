@@ -17,7 +17,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.textView.layer.cornerRadius = 5;
-    self.textView.layer.borderColor = kBackColor.CGColor;
+    self.textView.layer.borderColor = kMainColor.CGColor;
     self.textView.layer.borderWidth = 1;
     self.textView.clipsToBounds = YES;
 }

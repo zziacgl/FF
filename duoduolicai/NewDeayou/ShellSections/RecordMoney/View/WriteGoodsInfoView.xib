@@ -276,8 +276,12 @@
             <connections>
                 <outlet property="buyPriceTextField" destination="ifn-JQ-Ie0" id="rNl-eM-KZ5"/>
                 <outlet property="countTextField" destination="w9W-U9-B3O" id="H9Y-5Z-fzs"/>
+                <outlet property="firstBackgroundView" destination="IJk-Wn-naX" id="I4v-3B-NbW"/>
+                <outlet property="fourBackgroundView" destination="gJv-y6-Llw" id="xeX-Hb-ETX"/>
                 <outlet property="nameTextField" destination="5x0-4a-vdl" id="ScA-yl-fWb"/>
+                <outlet property="secondBackgroundView" destination="QQu-xG-Gzn" id="jhS-nX-N4C"/>
                 <outlet property="sellPriceTextField" destination="pF3-1b-I5d" id="SSq-m2-mA8"/>
+                <outlet property="thirdBackgroundView" destination="mi5-0a-m46" id="VDc-aB-Ov6"/>
             </connections>
             <point key="canvasLocation" x="-29" y="-23"/>
         </view>

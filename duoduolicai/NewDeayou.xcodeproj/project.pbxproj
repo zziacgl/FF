@@ -284,6 +284,8 @@
 		3A6274311ADBAE9D00CD32EA /* DYAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6274301ADBAE9D00CD32EA /* DYAboutUsViewController.m */; };
 		3A6274341ADBAFB000CD32EA /* DYFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6274331ADBAFB000CD32EA /* DYFeedbackViewController.m */; };
 		3A6274371ADBB06400CD32EA /* DYPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6274361ADBB06400CD32EA /* DYPlaceholderTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		636D7BF420CFCD47007C48EF /* RecordMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D7BF220CFCD47007C48EF /* RecordMoneyCell.m */; };
+		636D7BF520CFCD47007C48EF /* RecordMoneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636D7BF320CFCD47007C48EF /* RecordMoneyCell.xib */; };
 		63BDD52120CE098700D4EE81 /* ShellModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDD52020CE098700D4EE81 /* ShellModelTool.m */; };
 		63BDD52520CE0FFC00D4EE81 /* TopTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BDD52420CE0FFC00D4EE81 /* TopTitleCell.m */; };
 		63BDD52720CE100C00D4EE81 /* TopTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BDD52620CE100C00D4EE81 /* TopTitleCell.xib */; };
@@ -1312,6 +1314,9 @@
 		3A6274361ADBB06400CD32EA /* DYPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYPlaceholderTextView.m; sourceTree = "<group>"; };
 		3A6274381ADBB16D00CD32EA /* DYPlaceholderTextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYPlaceholderTextViewDelegate.h; sourceTree = "<group>"; };
 		5EEB46B9073996ACC8C3209A /* libPods-NewDeayou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewDeayou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		636D7BF120CFCD47007C48EF /* RecordMoneyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordMoneyCell.h; sourceTree = "<group>"; };
+		636D7BF220CFCD47007C48EF /* RecordMoneyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordMoneyCell.m; sourceTree = "<group>"; };
+		636D7BF320CFCD47007C48EF /* RecordMoneyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordMoneyCell.xib; sourceTree = "<group>"; };
 		63BDD51F20CE098700D4EE81 /* ShellModelTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShellModelTool.h; sourceTree = "<group>"; };
 		63BDD52020CE098700D4EE81 /* ShellModelTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShellModelTool.m; sourceTree = "<group>"; };
 		63BDD52320CE0FFC00D4EE81 /* TopTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopTitleCell.h; sourceTree = "<group>"; };
@@ -3241,6 +3246,9 @@
 				63BDD52820CE10D800D4EE81 /* AddGoodsCell.h */,
 				63BDD52920CE10D800D4EE81 /* AddGoodsCell.m */,
 				63BDD52A20CE10D800D4EE81 /* AddGoodsCell.xib */,
+				636D7BF120CFCD47007C48EF /* RecordMoneyCell.h */,
+				636D7BF220CFCD47007C48EF /* RecordMoneyCell.m */,
+				636D7BF320CFCD47007C48EF /* RecordMoneyCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -5919,6 +5927,7 @@
 				B89EC2291BE0A2BB00622DA7 /* DYIncomeDetailCell.xib in Resources */,
 				B8E25CC41C0836FA0014C428 /* 理财_07.png in Resources */,
 				B80617121C7BF98800B01CA0 /* 账户(箭头).png in Resources */,
+				636D7BF520CFCD47007C48EF /* RecordMoneyCell.xib in Resources */,
 				181606B91DE7D0A80082A29D /* DDAllMoneyTableViewCell.xib in Resources */,
 				CAB90F0A201F35EE009DE6C5 /* UMSocialSDKResources.bundle in Resources */,
 				18EEEBFC1D8E418800A3B512 /* 我的_债权转让@2x.png in Resources */,
@@ -6395,6 +6404,7 @@
 				63BDD56320CE203000D4EE81 /* IQUIViewController+Additions.m in Sources */,
 				65C921E91DF7ED8B00135FCC /* DDCardModel.m in Sources */,
 				63BDD61620CE6BCE00D4EE81 /* UIScrollView+YYAdd.m in Sources */,
+				636D7BF420CFCD47007C48EF /* RecordMoneyCell.m in Sources */,
 				B8B3D0D81C9BA81C002AACC5 /* AFHTTPRequestOperation.m in Sources */,
 				CA73A88E206B48610035FBCE /* MakeSurePayPasswordViewController.m in Sources */,
 				65C921D51DF5766F00135FCC /* DDHomeMessageViewController.m in Sources */,

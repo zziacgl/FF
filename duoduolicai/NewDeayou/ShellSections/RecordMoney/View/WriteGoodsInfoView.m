@@ -17,6 +17,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *sellPriceTextField;
 @property (weak, nonatomic) IBOutlet UITextField *countTextField;
 
+@property (weak, nonatomic) IBOutlet UIView *firstBackgroundView;
+@property (weak, nonatomic) IBOutlet UIView *secondBackgroundView;
+@property (weak, nonatomic) IBOutlet UIView *thirdBackgroundView;
+@property (weak, nonatomic) IBOutlet UIView *fourBackgroundView;
+
 @end
 
 @implementation WriteGoodsInfoView
@@ -28,14 +33,24 @@
     goodsView.sureButtonAction = sureButtonAction;
     [goodsView show];
     [view addSubview:goodsView];
-//    [[UIApplication sharedApplication].keyWindow addSubview:view];
     
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.layer.cornerRadius = 5;
     
+    [self setupBackgroundView:self.firstBackgroundView];
+    [self setupBackgroundView:self.secondBackgroundView];
+    [self setupBackgroundView:self.thirdBackgroundView];
+    [self setupBackgroundView:self.fourBackgroundView];
+
+}
+
+- (void)setupBackgroundView:(UIView *)view {
+    view.layer.cornerRadius = view.height / 2;
+    view.clipsToBounds = YES;
+    view.layer.borderWidth = 1;
+    view.layer.borderColor = kMainColor.CGColor;
 }
 
 - (void)show {
@@ -82,5 +97,6 @@
     if (self.sureButtonAction) self.sureButtonAction(model);
     [self hide];
 }
+
 
 @end

@@ -9,7 +9,9 @@
 #import "ShellHomeViewController.h"
 #import "NYSegmentedControl.h"
 #import "AddRecordViewController.h"
+
 #import "ShellNoDataView.h"
+#import "RecordMoneyCell.h"
 
 #import "ShellModelTool.h"
 #import "ShellRecordModel.h"
@@ -95,7 +97,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     YUFoldingTableView *foldingTableView = [[YUFoldingTableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topImageView.frame), kMainScreenWidth, kMainScreenHeight - kMainScreenWidth / 74 * 42)];
     _foldingTableView = foldingTableView;
-    
+    [foldingTableView registerNib:[UINib nibWithNibName:@"RecordMoneyCell" bundle:nil] forCellReuseIdentifier:@"RecordMoneyCell"];
     [self.view addSubview:foldingTableView];
     foldingTableView.foldingState = YUFoldingSectionStateShow;
     foldingTableView.foldingDelegate = self;
@@ -104,7 +106,6 @@
     self.nodataBackView.frame = self.foldingTableView.bounds;
     self.nodataBackView.alpha = 0;
     [self.view addSubview:self.nodataBackView];
-    
 }
 
 - (void)reloadData {
@@ -129,22 +130,24 @@
 
 - (CGFloat )yuFoldingTableView:(YUFoldingTableView *)yuTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 120;
 }
 
 - (UITableViewCell *)yuFoldingTableView:(YUFoldingTableView *)yuTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"cellIdentifier";
-    UITableViewCell *cell = [yuTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"RecordMoneyCell";
+    RecordMoneyCell *cell = [yuTableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[RecordMoneyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-//    cell.textLabel.text = [NSString stringWithFormat:@"Row %ld -- section %ld", (long)indexPath.row, (long)indexPath.section];
-    
     ShellRecordModel *model = self.dataAry[indexPath.section][indexPath.row];
-    cell.textLabel.text = model.nickName;
+    cell.nickNameLabel.text = [NSString stringWithFormat:@"客户昵称：%@",model.nickName];
+    cell.goodNameLabel.text = [NSString stringWithFormat:@"邮   费：%@",model.postage];
+    cell.remark.text = [NSString stringWithFormat:@"备   注：%@",model.remark];;
+    cell.postStatusLabel.text = model.nickName;
     return cell;
 }
+
 #pragma mark - YUFoldingTableViewDelegate / optional （可选择实现的）
 
 - (NSString *)yuFoldingTableView:(YUFoldingTableView *)yuTableView titleForHeaderInSection:(NSInteger)section

@@ -30,7 +30,7 @@
     view.layer.cornerRadius = view.height / 2;
     view.clipsToBounds = YES;
     view.layer.borderWidth = 1;
-    view.layer.borderColor = kBackColor.CGColor;
+    view.layer.borderColor = kMainColor.CGColor;
 }
 
 
