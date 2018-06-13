@@ -34,7 +34,6 @@
 @property (nonatomic, strong) UILabel *tittleLabel;
 @property (nonatomic, strong) UILabel *tittleStyleLabel;
 
-@property (nonatomic,assign) InvestBidType bidType;
 @property (nonatomic,assign) float bidAward;
 @property (nonatomic,assign) float bidTotal;
 @property (nonatomic,assign) float bidRate;

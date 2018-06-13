@@ -102,7 +102,7 @@
     foldingTableView.foldingState = YUFoldingSectionStateShow;
     foldingTableView.foldingDelegate = self;
     
-    self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"暂无数据" image:@"nodataImage"];
+    self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"暂无记录\n点击右上角“+”号开始记录" image:@"shellNoData"];
     self.nodataBackView.frame = self.foldingTableView.frame;
     self.nodataBackView.alpha = 0;
     [self.view addSubview:self.nodataBackView];
