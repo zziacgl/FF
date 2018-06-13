@@ -51,48 +51,6 @@
     return modelArr;
 }
 
-// 销量最高
-+ (NSArray *)getXiaoLiang {
-    NSArray *allArr = [self getAllRecord];
-    NSMutableArray *arr = [NSMutableArray new];
-    
-    NSInteger goodsCount = 0;
-    for (ShellRecordModel *model in allArr) {
-        NSInteger count = 0;
-        for (ShellGoodsModel *goodsModel in model.goods) {
-           count = goodsModel.count.integerValue;
-        }
-        if (goodsCount > count) {
-            [arr addObject:model];
-        }else {
-            [arr insertObject:model atIndex:0];
-        }
-        goodsCount = goodsCount < count ? count : goodsCount;
-    }
-    return allArr;
-}
-
-// 利润最高
-+ (NSArray *)getLiRun {
-    NSArray *allArr = [self getAllRecord];
-    NSMutableArray *arr = [NSMutableArray new];
-    
-    CGFloat goodsCount = 0;
-    for (ShellRecordModel *model in allArr) {
-        CGFloat count = 0;
-        for (ShellGoodsModel *goodsModel in model.goods) {
-            count = (goodsModel.sellingPrice.floatValue - goodsModel.buyingPrice.floatValue) * goodsModel.count.integerValue;
-        }
-        if (goodsCount > count) {
-            [arr addObject:model];
-        }else {
-            [arr insertObject:model atIndex:0];
-        }
-        goodsCount = goodsCount < count ? count : goodsCount;
-    }
-    return allArr;
-}
-
 + (void)saveRecordModel:(ShellRecordModel *)recordModel {
     if (!recordModel.recordId) {
         recordModel.recordId = [self recordId];

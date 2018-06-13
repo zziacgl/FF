@@ -27,13 +27,6 @@ typedef enum : NSUInteger {
 
 + (NSArray *)getAllRecord;
 
-// 销量最高
-+ (NSArray *)getXiaoLiang;
-
-// 利润最高
-+ (NSArray *)getLiRun;
-
-
 + (void)saveRecordModel:(ShellRecordModel *)recordModel;
 
 + (void)modifyRecordModel:(ShellRecordModel *)recordModel;
