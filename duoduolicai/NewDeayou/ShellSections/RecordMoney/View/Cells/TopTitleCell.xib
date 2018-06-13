@@ -43,9 +43,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibW-Z2-wUX">
+                        <rect key="frame" x="20" y="139.5" width="472" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="HoJ-tu-d1d"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="0gT-Jr-11E" firstAttribute="top" secondItem="Ole-zZ-X2t" secondAttribute="top" id="0AN-Bf-9Kg"/>
+                    <constraint firstItem="ibW-Z2-wUX" firstAttribute="leading" secondItem="Ole-zZ-X2t" secondAttribute="leading" constant="20" id="0Ue-bU-hFS"/>
                     <constraint firstItem="KW0-kY-Tlk" firstAttribute="leading" secondItem="0gT-Jr-11E" secondAttribute="trailing" id="30O-Cr-2L9"/>
                     <constraint firstItem="0gT-Jr-11E" firstAttribute="leading" secondItem="Ole-zZ-X2t" secondAttribute="leading" id="Cp0-go-fBl"/>
                     <constraint firstItem="LJE-Y4-r3q" firstAttribute="width" secondItem="KW0-kY-Tlk" secondAttribute="width" id="DkQ-EX-uAz"/>
@@ -57,9 +65,11 @@
                     <constraint firstItem="0gT-Jr-11E" firstAttribute="width" secondItem="Ole-zZ-X2t" secondAttribute="width" multiplier="1:4" id="Y58-R6-Rjb"/>
                     <constraint firstItem="LJE-Y4-r3q" firstAttribute="top" secondItem="Ole-zZ-X2t" secondAttribute="top" id="a3U-dD-TJs"/>
                     <constraint firstItem="sGd-oc-Oi5" firstAttribute="top" secondItem="Ole-zZ-X2t" secondAttribute="top" id="gd8-e7-Egl"/>
+                    <constraint firstAttribute="bottom" secondItem="ibW-Z2-wUX" secondAttribute="bottom" id="mMD-mr-0sn"/>
                     <constraint firstItem="KW0-kY-Tlk" firstAttribute="width" secondItem="0gT-Jr-11E" secondAttribute="width" id="n5p-D6-4cg"/>
                     <constraint firstAttribute="bottom" secondItem="KW0-kY-Tlk" secondAttribute="bottom" id="px1-Rv-Yjh"/>
                     <constraint firstAttribute="bottom" secondItem="0gT-Jr-11E" secondAttribute="bottom" id="qiq-mI-cbY"/>
+                    <constraint firstAttribute="trailing" secondItem="ibW-Z2-wUX" secondAttribute="trailing" constant="20" id="sat-Xf-qOs"/>
                     <constraint firstAttribute="trailing" secondItem="sGd-oc-Oi5" secondAttribute="trailing" id="uWg-R3-EYM"/>
                 </constraints>
             </tableViewCellContentView>

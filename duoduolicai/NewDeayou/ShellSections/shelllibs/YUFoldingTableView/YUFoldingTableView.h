@@ -43,6 +43,11 @@
 - (void )yuFoldingTableView:(YUFoldingTableView *)yuTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
+ *  取消点击cell
+ */
+- (void )yuFoldingTableView:(YUFoldingTableView *)yuTableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
  *  点击sectionHeaderView
  */
 - (void )yuFoldingTableView:(YUFoldingTableView *)yuTableView didSelectHeaderViewAtSection:(NSInteger)section;

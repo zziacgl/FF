@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *secondBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *thirdBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *fourBackgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end
 
@@ -43,6 +44,9 @@
     [self setupBackgroundView:self.secondBackgroundView];
     [self setupBackgroundView:self.thirdBackgroundView];
     [self setupBackgroundView:self.fourBackgroundView];
+
+    self.cancelButton.layer.borderColor = kColorWithHex(0xE04816).CGColor;
+    self.cancelButton.layer.borderWidth = 1;
 
 }
 

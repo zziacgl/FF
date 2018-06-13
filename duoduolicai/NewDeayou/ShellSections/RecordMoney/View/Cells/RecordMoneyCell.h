@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *goodNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *remark;
 @property (weak, nonatomic) IBOutlet UILabel *postStatusLabel;
+@property (weak, nonatomic) IBOutlet UIView *cellBackgroundView;
+
 
 @end

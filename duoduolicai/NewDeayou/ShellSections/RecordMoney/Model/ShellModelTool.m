@@ -30,7 +30,7 @@
                 [array addObject:model];
             }
         }
-        [modelArr addObject:array];
+        if (array.count) [modelArr addObject:array];
     }
     
     return modelArr;

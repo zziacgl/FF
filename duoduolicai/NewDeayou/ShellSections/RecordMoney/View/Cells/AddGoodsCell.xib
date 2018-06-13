@@ -19,24 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgM-e1-iZx">
-                        <rect key="frame" x="216" y="20" width="28" height="28"/>
+                        <rect key="frame" x="216" y="58.5" width="28" height="28"/>
                         <state key="normal" backgroundImage="添加副本"/>
                         <connections>
                             <action selector="addGoodsButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vRD-4C-KOZ"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品列表为空，请点击添加" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9u-jL-w9W">
-                        <rect key="frame" x="126" y="68" width="208" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lgM-e1-iZx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="D2l-Ap-AiB"/>
-                    <constraint firstItem="B9u-jL-w9W" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Jo1-UZ-hKn"/>
                     <constraint firstItem="lgM-e1-iZx" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="OyB-ae-reb"/>
-                    <constraint firstItem="B9u-jL-w9W" firstAttribute="top" secondItem="lgM-e1-iZx" secondAttribute="bottom" constant="20" id="bOR-2p-AOx"/>
+                    <constraint firstItem="lgM-e1-iZx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ccE-iX-rLo"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="23" y="50.5"/>

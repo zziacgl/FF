@@ -269,6 +269,15 @@ id YUSafeObject(NSArray *array, NSInteger index) {
     }
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_foldingDelegate && [_foldingDelegate respondsToSelector:@selector(yuFoldingTableView:didDeselectRowAtIndexPath:)]) {
+        [_foldingDelegate yuFoldingTableView:self didDeselectRowAtIndexPath:indexPath];
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+}
 
 #pragma mark - YUFoldingSectionHeader
 

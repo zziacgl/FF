@@ -22,6 +22,8 @@
 @property (nonatomic, strong) NSMutableArray *dataAry;
 @property (nonatomic, strong) ShellNoDataView *nodataBackView;
 @property (nonatomic, strong) NYSegmentedControl *foursquareSegmentedControl;
+@property (nonatomic, strong) UIButton *bottomSelectButton;
+@property (nonatomic, strong) NSMutableArray *selectArray;
 
 @end
 
@@ -33,10 +35,7 @@
     self.view.backgroundColor = kBackColor;
     [self configView];
     self.arrowPosition = 1;
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
-
-//    self.fd_prefersNavigationBarHidden = YES;
-    // Do any additional setup after loading the view.
+    self.selectArray = [NSMutableArray new];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,21 +59,21 @@
     
     
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, kMainScreenWidth, 44)];
-//    topView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:topView];
     
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     leftBtn.frame = CGRectMake(20, 10, 24, 24);
+    [leftBtn addTarget:self action:@selector(leftButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [leftBtn setImage:[UIImage imageNamed:@"moreChose"] forState:UIControlStateNormal];
     [topView addSubview:leftBtn];
     
     NYSegmentedControl *foursquareSegmentedControl = [[NYSegmentedControl alloc] initWithItems:@[@"出售", @"进货"]];
     self.foursquareSegmentedControl = foursquareSegmentedControl;
-    foursquareSegmentedControl.titleTextColor = [UIColor colorWithRed:0.38f green:0.68f blue:0.93f alpha:1.0f];
+    foursquareSegmentedControl.titleTextColor = [UIColor blackColor];
     foursquareSegmentedControl.selectedTitleTextColor = [UIColor whiteColor];
     foursquareSegmentedControl.selectedTitleFont = [UIFont systemFontOfSize:16.0f];
-    foursquareSegmentedControl.segmentIndicatorBackgroundColor = [UIColor colorWithRed:0.38f green:0.68f blue:0.93f alpha:1.0f];
-    foursquareSegmentedControl.backgroundColor = [UIColor colorWithRed:0.31f green:0.53f blue:0.72f alpha:1.0f];
+    foursquareSegmentedControl.segmentIndicatorBackgroundColor = kCOLOR_R_G_B_A(224, 72, 22, 1);
+    foursquareSegmentedControl.backgroundColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.75f];
     [foursquareSegmentedControl addTarget:self action:@selector(handleACticity:) forControlEvents:UIControlEventValueChanged];
     foursquareSegmentedControl.borderWidth = 0.0f;
     foursquareSegmentedControl.segmentIndicatorBorderWidth = 0.0f;
@@ -97,21 +96,32 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     YUFoldingTableView *foldingTableView = [[YUFoldingTableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topImageView.frame), kMainScreenWidth, kMainScreenHeight - kMainScreenWidth / 74 * 42)];
     _foldingTableView = foldingTableView;
+    foldingTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [foldingTableView registerNib:[UINib nibWithNibName:@"RecordMoneyCell" bundle:nil] forCellReuseIdentifier:@"RecordMoneyCell"];
     [self.view addSubview:foldingTableView];
     foldingTableView.foldingState = YUFoldingSectionStateShow;
     foldingTableView.foldingDelegate = self;
     
-    self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"暂无数据" image:@"no_data"];
-    self.nodataBackView.frame = self.foldingTableView.bounds;
+    self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"暂无数据" image:@"nodataImage"];
+    self.nodataBackView.frame = self.foldingTableView.frame;
     self.nodataBackView.alpha = 0;
     [self.view addSubview:self.nodataBackView];
+    
+    self.bottomSelectButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.bottomSelectButton.frame = CGRectMake(15, CGRectGetMaxY(foldingTableView.frame), ScreenWidth - 30, 40);
+    self.bottomSelectButton.backgroundColor = kCOLOR_R_G_B_A(224, 72, 22, 1);
+    self.bottomSelectButton.layer.cornerRadius = 20;
+    [self.bottomSelectButton setTitle:@"确定" forState:UIControlStateNormal];
+    [self.bottomSelectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.bottomSelectButton addTarget:self action:@selector(bottomButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.bottomSelectButton];
 }
 
 - (void)reloadData {
     [self.dataAry removeAllObjects];
     [self.dataAry addObjectsFromArray:[ShellModelTool getRecord:self.foursquareSegmentedControl.selectedSegmentIndex]];
     [self.foldingTableView reloadData];
+    self.nodataBackView.alpha = self.dataAry.count == 0;
 }
 
 #pragma mark - YUFoldingTableViewDelegate / required（必须实现的代理）
@@ -137,14 +147,23 @@
 {
     static NSString *cellIdentifier = @"RecordMoneyCell";
     RecordMoneyCell *cell = [yuTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell.selectionStyle = yuTableView.editing ? UITableViewCellSelectionStyleDefault : UITableViewCellSelectionStyleNone;
     if (cell == nil) {
         cell = [[RecordMoneyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     ShellRecordModel *model = self.dataAry[indexPath.section][indexPath.row];
     cell.nickNameLabel.text = [NSString stringWithFormat:@"客户昵称：%@",model.nickName];
     cell.goodNameLabel.text = [NSString stringWithFormat:@"邮   费：%@",model.postage];
-    cell.remark.text = [NSString stringWithFormat:@"备   注：%@",model.remark];;
-    cell.postStatusLabel.text = model.nickName;
+    NSString *remark = model.remark.length ? model.remark : @"暂无";
+    cell.remark.text = [NSString stringWithFormat:@"备   注：%@",remark];
+    NSString *postage = @"";
+    if (model.shippingStatus == GoodNotDispatched) {
+        postage = @"未发货";
+    }
+    if (model.shippingStatus == GoodHasDispatched) {
+        postage = @"已发货";
+    }
+    cell.postStatusLabel.text = postage;
     return cell;
 }
 
@@ -156,13 +175,25 @@
     return model.createDate;
 }
 
-- (void )yuFoldingTableView:(YUFoldingTableView *)yuTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)yuFoldingTableView:(YUFoldingTableView *)yuTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [yuTableView deselectRowAtIndexPath:indexPath animated:YES];
-    AddRecordViewController *addVC = [[AddRecordViewController alloc] init];
-    addVC.hidesBottomBarWhenPushed = YES;
-    addVC.recordModel = self.dataAry[indexPath.section][indexPath.row];
-    [self.navigationController pushViewController:addVC animated:YES];
+    ShellRecordModel *model = self.dataAry[indexPath.section][indexPath.row];
+    if (yuTableView.editing) {
+        [self.selectArray addObject:model];
+    }else {
+        [yuTableView deselectRowAtIndexPath:indexPath animated:YES];
+        AddRecordViewController *addVC = [[AddRecordViewController alloc] init];
+        addVC.hidesBottomBarWhenPushed = YES;
+        addVC.recordModel = model;
+        [self.navigationController pushViewController:addVC animated:YES];
+    }
+}
+
+- (void)yuFoldingTableView:(YUFoldingTableView *)yuTableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (yuTableView.editing) {
+        ShellRecordModel *model = self.dataAry[indexPath.section][indexPath.row];
+        [self.selectArray removeObject:model];
+    }
 }
 
 // 返回箭头的位置
@@ -190,25 +221,44 @@
     return @"";
 }
 
-- (void)handleACticity:(UISegmentedControl*)sender {
-    [self reloadData];
-    
-    NSUInteger index = sender.selectedSegmentIndex;
-    
-    switch (index) {
-        case 0:
-            NSLog(@"1");
-            break;
-        case 1:
-            NSLog(@"2");
-            break;
-        default:
-            break;
+#pragma mark - Actions
+- (void)leftButtonPressed:(UIButton *)button {
+    [self.foldingTableView setEditing:!self.foldingTableView.editing];
+    [self.foldingTableView reloadData];
+    [UIView animateWithDuration:0.25 animations:^{
+        BOOL editing = self.foldingTableView.editing;
+        if (editing) {
+            self.tabBarController.tabBar.mj_y += self.tabBarController.tabBar.height;
+            self.bottomSelectButton.mj_y -= 49;
+        }else {
+            self.tabBarController.tabBar.mj_y -= self.tabBarController.tabBar.height;
+            self.bottomSelectButton.mj_y += 49;
+        }
+    }];
+}
+
+- (void)bottomButtonPressed:(UIButton *)button {
+    if (!self.selectArray.count) {
+        [MBProgressHUD errorHudWithView:self.view label:@"请选择记录" hidesAfter:1.0];
+        return;
     }
     
+    for (ShellRecordModel *model in self.selectArray) {
+        model.shippingStatus = GoodHasDispatched;
+        [ShellModelTool modifyRecordModel:model];
+    }
+    [self leftButtonPressed:nil];
+    [self reloadData];
+    [self.selectArray removeAllObjects];
+}
+
+- (void)handleACticity:(UISegmentedControl*)sender {
+    [self.selectArray removeAllObjects];
+    [self reloadData];
 }
 
 - (void)handleRight {
+    if (self.foldingTableView.editing) [self leftButtonPressed:nil];
     AddRecordViewController *addVC = [[AddRecordViewController alloc] init];
     addVC.hidesBottomBarWhenPushed = YES;
     addVC.recordType = self.foursquareSegmentedControl.selectedSegmentIndex;

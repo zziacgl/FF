@@ -27,6 +27,7 @@
 
 @property (nonatomic, weak) AddRecordHeaderView *headerView;
 @property (nonatomic, weak) AddRecordFooterView *footerView;
+@property (nonatomic, strong) UIView *contentView;
 
 @property (nonatomic, assign) SHippingStatus shippingStatus;
 
@@ -47,6 +48,10 @@
     [[IQKeyboardManager sharedManager] setEnable:YES];
 }
 
+- (void)dealloc {
+    [self.tableView removeObserver:self forKeyPath:@"contentSize"];
+}
+
 - (void)setUpTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -55,6 +60,7 @@
     [self.view addSubview:self.tableView];
     [self.tableView registerNib:[UINib nibWithNibName:@"TopTitleCell" bundle:nil] forCellReuseIdentifier:@"TopTitleCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"AddGoodsCell" bundle:nil] forCellReuseIdentifier:@"AddGoodsCell"];
+    [self.tableView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)setupTableViewHeader {
@@ -99,6 +105,15 @@
             default:
                 break;
         }
+    }
+}
+
+#pragma mark - observer
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+    if (self.tableView.tableHeaderView && self.tableView.tableFooterView) {
+        self.contentView.mj_y = CGRectGetMaxY(self.tableView.tableHeaderView.frame);
+        self.contentView.height = self.tableView.tableFooterView.mj_y - self.contentView.mj_y;
     }
 }
 
@@ -200,7 +215,24 @@
     if (indexPath.section == 0) {
         return 50;
     }
-    return 90;
+    return 50;
+}
+
+#pragma mark - lazyLoad
+- (UIView *)contentView {
+    if (!_contentView) {
+        _contentView = [UIView new];
+        _contentView.frame = CGRectMake(15, 0, ScreenWidth - 30, 0);
+        _contentView.backgroundColor = [UIColor redColor];
+        _contentView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+        _contentView.layer.borderWidth = 1.0;
+        _contentView.layer.borderColor = kMainColor.CGColor;
+        _contentView.layer.cornerRadius = 5;
+        _contentView.userInteractionEnabled = NO;
+        [self.tableView addSubview:_contentView];
+//        [self.tableView insertSubview:_contentView atIndex:0];
+    }
+    return _contentView;
 }
 
 @end

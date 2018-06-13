@@ -12,13 +12,53 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.cellBackgroundView.layer.cornerRadius = 5;
+    self.cellBackgroundView.layer.masksToBounds = YES;
+    self.cellBackgroundView.layer.borderWidth = 1;
+    self.cellBackgroundView.layer.borderColor = kCOLOR_R_G_B_A(243, 181, 58, 1).CGColor;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+-(void)layoutSubviews
+{
+    for (UIControl *control in self.subviews){
+        if ([control isMemberOfClass:NSClassFromString(@"UITableViewCellEditControl")]){
+            for (UIView *v in control.subviews)
+            {
+                if ([v isKindOfClass: [UIImageView class]]) {
+                    UIImageView *img=(UIImageView *)v;
+                    if (self.selected) {
+                        img.image=[UIImage imageNamed:@"selected"];
+                    }else
+                    {
+                        img.image=[UIImage imageNamed:@"select"];
+                    }
+                }
+            }
+        }
+    }
+    [super layoutSubviews];
+}
 
-    // Configure the view for the selected state
+
+//适配第一次图片为空的情况
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    for (UIControl *control in self.subviews){
+        if ([control isMemberOfClass:NSClassFromString(@"UITableViewCellEditControl")]){
+            for (UIView *v in control.subviews)
+            {
+                if ([v isKindOfClass: [UIImageView class]]) {
+                    UIImageView *img=(UIImageView *)v;
+                    if (!self.selected) {
+                        img.image=[UIImage imageNamed:@"select"];
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 @end
