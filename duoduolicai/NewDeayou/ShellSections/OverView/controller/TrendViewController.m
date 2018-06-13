@@ -29,11 +29,15 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"趋势";
+    self.navigationController.navigationBar.titleTextAttributes=
+    @{NSForegroundColorAttributeName:[UIColor whiteColor],
+      NSFontAttributeName:[UIFont systemFontOfSize:16]};
     self.choseStr = @"1";
-    self.view.backgroundColor = kBackColor;
+    self.view.backgroundColor = [UIColor whiteColor];
 //    [self.dataAry removeAllObjects];
 //    [self.dataAry addObjectsFromArray:[ShellModelTool getRecord:0]];
+    [self.dataAry removeAllObjects];
+    [self.dataAry addObjectsFromArray:[ShellModelTool getAllRecord]];
     
     CGSize btnImageSize = CGSizeMake(20, 20);
     UIButton * btnLeft=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -54,6 +58,12 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void)configData {
+    
+    
+}
+
 - (NSMutableArray *)dataAry {
     if (!_dataAry) {
         self.dataAry = [NSMutableArray array];
@@ -67,7 +77,7 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
     self.tableView.showsVerticalScrollIndicator = false;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.estimatedRowHeight = 0;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
@@ -105,7 +115,9 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if ([self.choseStr isEqualToString:@"1"]) {
+        self.title = @"趋势";
         if (indexPath.row == 0) {
             TrendChartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:firstinentifier forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellAccessoryNone;
@@ -119,11 +131,20 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
         }
     }else {
         static NSString *inditifier = @"mine";
-        
+        self.title = @"商品";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:inditifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:inditifier];
         }
+        [tableView setSeparatorInset:UIEdgeInsetsMake(10, 15, 0, 0)];
+        cell.selectionStyle = UITableViewCellAccessoryNone;
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        ShellRecordModel *model = self.dataAry[indexPath.row];
+        cell.textLabel.text = model.nickName;
+        NSArray *ary = model.goods;
+        ShellGoodsModel *goodModel = ary[0];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"共销售%@件", goodModel.count];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
         return cell;
     }
     
@@ -170,6 +191,7 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
     switch (index) {
         case 0:
             self.choseStr = @"1";
+            self.nodataBackView.alpha = 0;
             [self.tableView reloadData];
            break;
         case 1:

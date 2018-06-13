@@ -25,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"用户统计信息";
+    self.navigationController.navigationBar.titleTextAttributes=
+    @{NSForegroundColorAttributeName:[UIColor whiteColor],
+      NSFontAttributeName:[UIFont systemFontOfSize:16]};
     self.view.backgroundColor = kBackColor;
     self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"暂无数据" image:@"shellNoData"];
     self.nodataBackView.frame = self.view.bounds;

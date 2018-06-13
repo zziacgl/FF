@@ -841,6 +841,7 @@
 		CAB90F2420205F5A009DE6C5 /* libFMDeviceManager_without_IDFA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB90F2320205F59009DE6C5 /* libFMDeviceManager_without_IDFA.a */; };
 		CAC3B3C520CF98BF0075EB6F /* ShellSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC3B3C320CF98BF0075EB6F /* ShellSearchTableViewCell.m */; };
 		CAC3B3C620CF98BF0075EB6F /* ShellSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC3B3C420CF98BF0075EB6F /* ShellSearchTableViewCell.xib */; };
+		CAC3B3CA20D0BD3E0075EB6F /* shellqidong.png in Resources */ = {isa = PBXBuildFile; fileRef = CAC3B3C920D0BD3E0075EB6F /* shellqidong.png */; };
 		CAC6F40A1FF4CA17002B9D5F /* FFMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC6F4091FF4CA17002B9D5F /* FFMineModel.m */; };
 		CACC37F41E2753DF0045F345 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC37F31E2753DF0045F345 /* libsqlite3.0.tbd */; };
 		CACC37F61E275B3B0045F345 /* 已转让_03.png in Resources */ = {isa = PBXBuildFile; fileRef = CACC37F51E275B3B0045F345 /* 已转让_03.png */; };
@@ -2204,6 +2205,7 @@
 		CAC3B3C220CF98BF0075EB6F /* ShellSearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShellSearchTableViewCell.h; sourceTree = "<group>"; };
 		CAC3B3C320CF98BF0075EB6F /* ShellSearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShellSearchTableViewCell.m; sourceTree = "<group>"; };
 		CAC3B3C420CF98BF0075EB6F /* ShellSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShellSearchTableViewCell.xib; sourceTree = "<group>"; };
+		CAC3B3C920D0BD3E0075EB6F /* shellqidong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shellqidong.png; sourceTree = "<group>"; };
 		CAC6F4081FF4CA17002B9D5F /* FFMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFMineModel.h; sourceTree = "<group>"; };
 		CAC6F4091FF4CA17002B9D5F /* FFMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFMineModel.m; sourceTree = "<group>"; };
 		CACC37F31E2753DF0045F345 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -3977,6 +3979,7 @@
 		B070926B1951200600137682 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CAC3B3C920D0BD3E0075EB6F /* shellqidong.png */,
 				CAEE2741208F1D4C008CC8C4 /* ffqidong.png */,
 				CA5A50D520CF58CF00B834D7 /* fengfengqidong.png */,
 				B070926C1951200600137682 /* NewDeayou-Info.plist */,
@@ -6112,6 +6115,7 @@
 				185D9F371C7FFC8C00297D7D /* 我的团队_未设置.png in Resources */,
 				B85BC3491BFEE0E100E83F84 /* 推荐奖励_推荐朋友.png in Resources */,
 				18FCF1771DB5F7220046E97C /* 订阅号二维码.png in Resources */,
+				CAC3B3CA20D0BD3E0075EB6F /* shellqidong.png in Resources */,
 				181FECC31DE68BC000A3E089 /* 多米_@2x.png in Resources */,
 				65C921E31DF7EC5B00135FCC /* CardView.xib in Resources */,
 				B886A36F1CC4C2B400A2E661 /* DYDrawPatternLockVC.xib in Resources */,

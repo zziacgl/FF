@@ -52,6 +52,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    
+    [self getVersionData];
 
     //友盟
     /* 打开调试日志 */
@@ -82,46 +84,89 @@
                  apsForProduction:isProduction
             advertisingIdentifier:nil];
 
-
+  
+    
+     [NSThread sleepForTimeInterval:3.0];
+  
+//    //版本更新
+    [self getVersion];
+//    //广告页
+    
+    
+  
+    return YES;
+}
+- (void)getVersionData {
+    DYOrderedDictionary *diyouDic=[[DYOrderedDictionary alloc]init];
+    [diyouDic insertObject:@"version" forKey:@"q" atIndex:0];
+    [diyouDic insertObject:@"stock" forKey:@"module" atIndex:0];
+    [diyouDic insertObject:@"get" forKey:@"method" atIndex:0];
+    [DDNetWoringTool postJSONWithUrl:nil parameters:diyouDic success:^(id object, BOOL isSuccess, NSString *errorMessage) {
+        if (isSuccess) {
+            NSLog(@"控制%@", object);
+            
+            NSString *storeVersion = [NSString stringWithFormat:@"%@", object[@"data"][@"code"]];
+            NSLog(@"版本更新%@", storeVersion);
+            NSString *lock = [NSString stringWithFormat:@"%@", object[@"data"][@"status"]];
+            NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+            NSLog(@"%@", version);
+            if ([lock isEqualToString:@"1"]) {//1开
+                if (![self needUpdateCurrentVersion:version appStoreVersion:storeVersion]) {
+                     [self gotoshellTabbar];
+                    
+                    NSLog(@"111");
+                }else {
+                    NSLog(@"222");
+                   
+                     [self gotoFengFengTabbar];
+                }
+            }else {
+                [self gotoFengFengTabbar];
+            }
+            
+          
+        }else {
+           
+             [self gotoshellTabbar];
+        }
+    } fail:^{
+          [self gotoshellTabbar];
+    }];
+    
+    
+    
+}
+- (void)gotoshellTabbar {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-//    DYMainTabBarController *mineVC = [[DYMainTabBarController alloc] init];
     ShellTabBarViewController *mineVC = [[ShellTabBarViewController alloc] init];
     self.window.rootViewController = mineVC;
     mineVC.delegate = self;
     [self.window makeKeyAndVisible];
-    
-    
-    //检测崩溃
-    // [DDCaughtExceptionHandler installUncaughtExceptionHandler:YES showAlert:YES];
-    
-//    [self appearanceCustom];
-//    //版本更新
-//    [self getVersion];
-//    //广告页
-//    
-//    
-//    // 1.判断沙盒中是否存在广告图片，如果存在，直接显示
-//    NSString *filePath = [self getFilePathWithImageName:[kUserDefaults valueForKey:adImageName]];
-//    BOOL isExist = [self isFileExistWithFilePath:filePath];
-//    if (isExist) {// 图片存在
-//        
-//        AdvertiseView *advertiseView = [[AdvertiseView alloc] initWithFrame:self.window.bounds];
-//        advertiseView.filePath = filePath;
-//        
-//        [advertiseView show];
-//        
-//    }
-//    
-//    // 2.无论沙盒中是否存在广告图片，都需要重新调用广告接口，判断广告是否更新
-//    [self getAdvertisingImage];
-//    
-//    
-//    [NSThread sleepForTimeInterval:1.0];
-//    
-    return YES;
 }
+- (void)gotoFengFengTabbar {
+     [self appearanceCustom];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    DYMainTabBarController *mineVC = [[DYMainTabBarController alloc] init];
+    self.window.rootViewController = mineVC;
+    mineVC.delegate = self;
+    [self.window makeKeyAndVisible];
+   
+    // 1.判断沙盒中是否存在广告图片，如果存在，直接显示
+    NSString *filePath = [self getFilePathWithImageName:[kUserDefaults valueForKey:adImageName]];
+    BOOL isExist = [self isFileExistWithFilePath:filePath];
+    if (isExist) {// 图片存在
+        AdvertiseView *advertiseView = [[AdvertiseView alloc] initWithFrame:self.window.bounds];
+        advertiseView.filePath = filePath;
+        [advertiseView show];
+    }
+    // 2.无论沙盒中是否存在广告图片，都需要重新调用广告接口，判断广告是否更新
+    [self getAdvertisingImage];
+    
 
+}
 
 + (DYAppDelegate *)getAppDelegate {
     return (DYAppDelegate *)[UIApplication sharedApplication].delegate;

@@ -47,7 +47,7 @@
     //选中字体颜色
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kMainColor,NSFontAttributeName:[UIFont boldSystemFontOfSize:12]} forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:12]} forState:UIControlStateNormal];
-
+   
     // 拿到整个导航控制器的外观
     UIBarButtonItem * item = [UIBarButtonItem appearance];
     item.tintColor = [UIColor whiteColor];

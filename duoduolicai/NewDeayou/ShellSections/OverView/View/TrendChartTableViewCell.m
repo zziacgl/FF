@@ -12,17 +12,90 @@
 #import "UIColor+Hex.h"
 
 @interface TrendChartTableViewCell () <DVLineChartViewDelegate>
-
+@property (nonatomic, strong) NSMutableArray *dataAry;
+@property (nonatomic, strong) NSMutableArray *inMoenyAry;
+@property (nonatomic, strong) NSMutableArray *countAry;
+@property (nonatomic, strong) NSMutableArray *allinMoneyAry;
+@property (nonatomic, copy) NSString * allMoneyStr;
+@property (nonatomic, strong) NSMutableArray *myary;
 @end
 @implementation TrendChartTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setUpChartView];
+   
+    [self.dataAry removeAllObjects];
+    [self.dataAry addObjectsFromArray:[ShellModelTool getRecord:0]];
     
+    if (self.dataAry.count > 0) {
+        dispatch_queue_t queue =dispatch_queue_create("serial",DISPATCH_QUEUE_SERIAL);
+        dispatch_sync(queue, ^{
+            for (ShellRecordModel *model in self.dataAry[0]) {
+                NSLog(@"%@", model.goods);
+                for (ShellGoodsModel *goodsModel in model.goods) {
+                    NSLog(@"dad%@", goodsModel.count);
+                    [self.inMoenyAry addObject:goodsModel.buyingPrice];//进价
+                    [self.countAry addObject:goodsModel.count];
+                    
+                }
+            }
+        });
+        dispatch_sync(queue, ^{
+            for (int i = 0; i < self.inMoenyAry.count; i++) {
+                float a = [self.inMoenyAry[i] floatValue];//进价
+                float b = [self.countAry[i] floatValue];//数量
+                float c = a*b;
+                [self.allinMoneyAry addObject:[NSString stringWithFormat:@"%.2f", c]];
+                
+            }
+        
+        });
+        dispatch_sync(queue, ^{
+            NSNumber *allsum = [self.allinMoneyAry valueForKeyPath:@"@sum.self"];
+            float money = [allsum floatValue];
+            self.allMoneyStr = [NSString stringWithFormat:@"%.2f", money];
+            [self.myary insertObject:allsum atIndex:0];
+            NSLog(@"我的%@", self.myary);
+        });
+        
+        
+    }
+     [self setUpChartView];
     // Initialization code
 }
 
+    
+- (NSMutableArray *)dataAry {
+    if (!_dataAry) {
+        self.dataAry = [NSMutableArray array];
+    }
+    return _dataAry;
+}
+- (NSMutableArray *)inMoenyAry {
+    if (!_inMoenyAry) {
+        self.inMoenyAry = [NSMutableArray array];
+    }
+    return _inMoenyAry;
+}
+- (NSMutableArray *)countAry {
+    if (!_countAry) {
+        self.countAry = [NSMutableArray array];
+    }
+    return _countAry;
+}
+- (NSMutableArray *)allinMoneyAry {
+    if (!_allinMoneyAry) {
+        self.allinMoneyAry = [NSMutableArray array];
+    }
+    return _allinMoneyAry;
+}
+
+- (NSMutableArray *)myary {
+    if (!_myary) {
+        self.myary = [NSMutableArray array];
+    }
+    return _myary;
+}
 - (void)setUpChartView {
     DVLineChartView *ccc = [[DVLineChartView alloc] init];
     [self.contentView addSubview:ccc];
@@ -58,7 +131,7 @@
     
     
     DVPlot *plot = [[DVPlot alloc] init];
-    plot.pointArray = @[@100, @550, @700, @200, @370, @890, @760, @430, @210, @30, @300, @550, @700, @200, @370, @890, @760, @430, @210, @30, @300, @550, @700, @200, @370, @890, @760, @430, @210, @30];
+    plot.pointArray = @[@340,@550];
     
     
     

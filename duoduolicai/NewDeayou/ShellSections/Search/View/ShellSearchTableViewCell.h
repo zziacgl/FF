@@ -14,5 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *goodsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noteLabel;
-
+@property (nonatomic, strong) ShellRecordModel *model;
 @end
