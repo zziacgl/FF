@@ -20,7 +20,7 @@ static NSString *inentifier = @"ShellSearchTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = kBackColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     [self setOutNavView];
     [self setUpTableView];
     // Do any additional setup after loading the view.
@@ -79,6 +79,18 @@ static NSString *inentifier = @"ShellSearchTableViewCell";
     [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor clearColor]];
     
 }
+
+- (void)searchText:(NSString *)text {
+    [self.dataArray removeAllObjects];
+    for (ShellRecordModel *model in [ShellModelTool getAllRecord]) {
+        if ([model.nickName containsString:text]) {
+            [self.dataArray addObject:model];
+        }
+    }
+    [self.tableView reloadData];
+    
+}
+
 #pragma mark -- UITableViewDelegate, UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     

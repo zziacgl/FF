@@ -8,11 +8,16 @@
 
 #import "StatisticalViewController.h"
 #import "WJPopoverViewController.h"
+#import "ShellModelTool.h"
+#import "ShellNoDataView.h"
 
-@interface StatisticalViewController ()
+@interface StatisticalViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, strong) WJPopoverViewController *popView;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataAry;
+@property (nonatomic, strong) ShellNoDataView *nodataBackView;
+
 @end
 
 @implementation StatisticalViewController
@@ -21,6 +26,21 @@
     [super viewDidLoad];
     self.title = @"用户统计信息";
     self.view.backgroundColor = kBackColor;
+    self.nodataBackView = [[ShellNoDataView alloc] initWithTitle:@"暂无数据" image:@"shellNoData"];
+    self.nodataBackView.frame = self.view.bounds;
+    self.nodataBackView.alpha = 0;
+    [self.view addSubview:self.nodataBackView];
+    
+    [self.dataAry removeAllObjects];
+    [self.dataAry addObjectsFromArray:[ShellModelTool getRecord:0]];
+    NSLog(@"数据%@", self.dataAry);
+    if (self.dataAry.count > 0) {
+         [self configTableView];
+        self.nodataBackView.alpha = 0;
+    }else {
+        self.nodataBackView.alpha = 1;
+    }
+   
     self.rightButton =[UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame=CGRectMake(0, 0, 20, 20);
 //    self.rightButton.backgroundColor = [UIColor whiteColor];
@@ -43,12 +63,17 @@
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     [self.view addSubview:self.tableView];
 }
-
+- (NSMutableArray *)dataAry {
+    if (!_dataAry) {
+        self.dataAry = [NSMutableArray array];
+    }
+    return _dataAry;
+}
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -92,6 +117,7 @@
     NSInteger index = sender.tag - 500;
     switch (index) {
         case 0:
+            
             break;
         case 1:
             break;
@@ -99,6 +125,25 @@
         default:
             break;
     }
+}
+#pragma mark -- UITableViewDataSource, UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return[(NSArray *)self.dataAry[section] count];
+    
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    [tableView setSeparatorInset:UIEdgeInsetsMake(10, 15, 0, 0)];
+    cell.selectionStyle = UITableViewCellAccessoryNone;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    ShellRecordModel *model = self.dataAry[indexPath.section][indexPath.row];
+    cell.textLabel.text = model.nickName;
+    return cell;
 }
 
 - (void)cancelPopViewFromSuperView {

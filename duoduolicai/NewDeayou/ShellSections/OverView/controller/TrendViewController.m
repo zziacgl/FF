@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, strong) WJPopoverViewController *popView;
 @property (nonatomic, copy) NSString *choseStr;
-@property (nonatomic, strong) NSArray *dataAry;
+@property (nonatomic, strong) NSMutableArray *dataAry;
 @property (nonatomic, strong) ShellNoDataView *nodataBackView;
 
 @end
@@ -32,6 +32,9 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
     self.title = @"趋势";
     self.choseStr = @"1";
     self.view.backgroundColor = kBackColor;
+//    [self.dataAry removeAllObjects];
+//    [self.dataAry addObjectsFromArray:[ShellModelTool getRecord:0]];
+    
     CGSize btnImageSize = CGSizeMake(20, 20);
     UIButton * btnLeft=[UIButton buttonWithType:UIButtonTypeCustom];
     [btnLeft setImage:[UIImage imageNamed:@"shellBack"] forState:UIControlStateNormal];
@@ -51,9 +54,9 @@ static NSString *secondinentifier = @"TrendPieChartTableViewCell";
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (NSArray *)dataAry {
+- (NSMutableArray *)dataAry {
     if (!_dataAry) {
-        self.dataAry = [NSArray array];
+        self.dataAry = [NSMutableArray array];
     }
     return _dataAry;
 }

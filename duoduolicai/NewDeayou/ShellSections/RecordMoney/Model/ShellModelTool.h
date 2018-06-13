@@ -25,6 +25,8 @@ typedef enum : NSUInteger {
 
 + (NSArray *)getRecord:(RecordType)recordType;
 
++ (NSArray *)getAllRecord;
+
 + (void)saveRecordModel:(ShellRecordModel *)recordModel;
 
 + (void)modifyRecordModel:(ShellRecordModel *)recordModel;

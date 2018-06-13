@@ -36,6 +36,21 @@
     return modelArr;
 }
 
++ (NSArray *)getAllRecord {
+    NSArray *totalArr = [self totalArray];
+    NSMutableArray *modelArr = [NSMutableArray array];
+    for (NSString *path in totalArr) {
+        NSArray *dayArr = [NSArray arrayWithContentsOfFile:kCachePath(path)];
+        for (NSString *subPath in dayArr) {
+            NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:kCachePath(subPath)];
+            ShellRecordModel *model = [ShellRecordModel new];
+            [model setValuesForKeysWithDictionary:dict];
+                [modelArr addObject:model];
+        }
+    }
+    return modelArr;
+}
+
 + (void)saveRecordModel:(ShellRecordModel *)recordModel {
     if (!recordModel.recordId) {
         recordModel.recordId = [self recordId];

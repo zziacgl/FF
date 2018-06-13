@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface ShellOverViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *todayMoneyLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *monthMoneyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *allMoneyLabel;
+
+@property (nonatomic, strong) NSMutableArray *dataAry;
+@property (nonatomic, strong) NSMutableArray *sellAry;
+@property (nonatomic, strong) NSMutableArray *countAry;
+@property (nonatomic, strong) NSMutableArray *allSellAry;
+@property (nonatomic, copy) NSString *allSellStr;
 
 @end
