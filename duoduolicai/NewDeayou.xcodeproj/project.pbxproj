@@ -5733,9 +5733,9 @@
 		B07092591951200600137682 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = FF;
+				CLASSPREFIX = FFJF;
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = "丰丰金融";
+				ORGANIZATIONNAME = "丰丰金服";
 				TargetAttributes = {
 					B07092601951200600137682 = {
 						DevelopmentTeam = TCF5U2S67N;
